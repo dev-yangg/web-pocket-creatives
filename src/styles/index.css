@@ -13,4 +13,7 @@
   --breakpoint-xs: 280px;
   --breakpoint-xl: 1440px;
   --breakpoint-2xl: 1920px;
+
+  /* Typography */
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
 }
