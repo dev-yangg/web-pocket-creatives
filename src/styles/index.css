@@ -6,7 +6,8 @@
   --color-black: #000000;
   --color-white: #f2f2f2;
   --color-grayblue: #526e87;
-  --color-lightblue: #179cbd;
+  --color-blue: #179cbd;
+  --color-lightblue: #32d6ff;
   --color-yellow: #fcbe17;
 
   /* Breakpoints */
@@ -16,10 +17,18 @@
 
   --pad: 2em;
   --spacing-app-boundary: min(1440px, 100%);
-  --spacing-app-header: min(920px, 100% - var(--pad));
+  --spacing-app-header: min(920px, 100% - calc(var(--pad) * 1.25));
 
   /* Typography */
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --text-headline: clamp(2rem, 1.474rem + 2.105vw, 4rem);
+  --text-subheadline: clamp(1.5rem, 1.237rem + 1.053vw, 2.5rem);
+  --text-title: clamp(1.25rem, 1.053rem + 0.789vw, 2rem);
+  --text-subtitle: clamp(1.125rem, 1.026rem + 0.395vw, 1.5rem);
+  --text-regular: clamp(0.875rem, 0.809rem + 0.263vw, 1.125rem);
+  --text-button: clamp(0.875rem, 0.842rem + 0.132vw, 1rem);
+  --text-small: clamp(0.75rem, 0.717rem + 0.132vw, 0.875rem);
 }
 
 @layer base {
@@ -28,5 +37,12 @@
     color: var(--color-black);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: var(--text-regular);
+  }
+
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
   }
 }
