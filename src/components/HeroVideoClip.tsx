@@ -18,18 +18,16 @@ export default function HeroVideoClip() {
         *<span className="inline lg:hidden">Tap</span>
         <span className="hidden lg:inline">Click on</span> Video to toggle sound
       </figcaption>
-      <div className="rounded-2xl overflow-hidden relative w-full aspect-video">
-        <video
-          ref={videoRef}
-          muted={muted}
-          src={heroClip}
-          autoPlay
-          loop
-          playsInline
-          onClick={toggleSound}
-          className="cursor-pointer w-full h-full absolute inset-0 border-0 outline-0"
-        />
-      </div>
+      <video
+        ref={videoRef}
+        muted={muted}
+        src={heroClip}
+        autoPlay
+        loop
+        playsInline
+        onClick={toggleSound}
+        className="cursor-pointer w-full h-full rounded-2xl"
+      />
     </figure>
   );
 }
