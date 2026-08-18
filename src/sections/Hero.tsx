@@ -6,7 +6,7 @@ import HeroVideoClip from "../components/HeroVideoClip";
 export default function Hero() {
   return (
     <section className="flex flex-col gap-8 items-center">
-      <article className="w-[min(1000px,100%)] mx-auto">
+      <div className="content-boundary">
         <header className="custom-underline flex justify-between items-end">
           <div className="py-2 block md:hidden">
             <img src={flatLogo} />
@@ -19,7 +19,7 @@ export default function Hero() {
             <img src={stock2} alt="" className="w-auto object-contain" />
           </div>
         </header>
-        <p className="text-title text-grayblue text-pretty py-3">
+        <p className="text-heading-2 text-grayblue text-pretty py-3">
           A <span className="font-bold text-blue">fast</span> &{" "}
           <span className="font-bold text-blue md:text-yellow">friendly</span>{" "}
           <span className="font-bold text-black">Video Production</span> and{" "}
@@ -28,8 +28,8 @@ export default function Hero() {
           who <span className="text-red">♥</span> what we do.{" "}
           <span className="inline md:hidden">:)</span>
         </p>
-      </article>
-      <HeroVideoClip />
+        <HeroVideoClip />
+      </div>
     </section>
   );
 }
