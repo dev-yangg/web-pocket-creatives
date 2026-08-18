@@ -29,8 +29,8 @@
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
 
   --text-heading-1: clamp(1.75rem, 2rem + 4vw, 5rem);
-  --text-heading-2: clamp(1.25rem, 1.1rem + 1vw, 2rem);
-  --text-heading-3: clamp(1.15rem, 1.053rem + 0.789vw, 1.5rem);
+  --text-heading-2: clamp(1.875rem, 1.725rem + 1vw, 2.625rem);
+  --text-heading-3: clamp(1.25rem, 1.1rem + 1vw, 2rem);
   --text-heading-4: clamp(1.125rem, 1.026rem + 0.395vw, 1.5rem);
   --text-regular: clamp(0.875rem, 0.809rem + 0.263vw, 1.125rem);
   --text-button: clamp(0.875rem, 0.842rem + 0.132vw, 1rem);
@@ -57,6 +57,7 @@
   body {
     background-color: var(--color-white);
     color: var(--color-black);
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: var(--text-regular);
