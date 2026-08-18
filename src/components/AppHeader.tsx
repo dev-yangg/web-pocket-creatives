@@ -1,3 +1,4 @@
+import { FaWhatsapp } from "react-icons/fa";
 import AppAnchor from "./AppAnchor";
 import MainLinks from "./MainLinks";
 import MenuButton from "./MenuButton";
@@ -11,7 +12,9 @@ export default function AppHeader() {
           <MainLinks />
         </ul>
       </nav>
-      <button className="shrink-0 w-10 aspect-square bg-grayblue"></button>
+      <button className="shrink-0 w-8 aspect-square text-grayblue">
+        <FaWhatsapp className="fill-current w-full h-full" />
+      </button>
       <MenuButton />
     </header>
   );
