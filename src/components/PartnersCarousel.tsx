@@ -25,12 +25,12 @@ const carousel2Logos = [
 export default function PartnersCarousel() {
   return (
     <section className="overflow-hidden">
-      <div className="flex gap-4 animation-carousel-slide-x">
-        <ul className="grid grid-cols-3 p-1 gap-4 items-center min-w-full">
+      <div className="flex gap-4 animate-carousel-slide-x">
+        <ul className="grid grid-cols-3 p-1 gap-2 items-center min-w-full">
           {carousel1Logos.map((logo) => (
             <li
               key={logo.alt}
-              className="bg-[#fff] shadow-[0_4px_4px_0] shadow-black/25 rounded-xl px-4 py-1.25 h-14 lg:h-20 flex items-center justify-center ">
+              className="bg-[#fff] shadow-[0_4px_4px_0] shadow-black/25 rounded-xl px-2 py-1.25 h-14 lg:h-20 flex items-center justify-center ">
               <img
                 src={`/images/logo-carousel/carousel-1/${logo.src}`}
                 alt={logo.alt}
@@ -39,11 +39,11 @@ export default function PartnersCarousel() {
             </li>
           ))}
         </ul>
-        <ul className="grid grid-cols-3 p-1 gap-4 items-center min-w-full">
+        <ul className="grid grid-cols-3 p-1 gap-2 items-center min-w-full">
           {carousel2Logos.map((logo) => (
             <li
               key={logo.alt}
-              className="bg-[#fff] shadow-[0_4px_4px_0] shadow-black/25 rounded-xl px-4 py-1.25 h-14 lg:h-20 flex items-center justify-center ">
+              className="bg-[#fff] shadow-[0_4px_4px_0] shadow-black/25 rounded-xl p-2 h-14 lg:h-20 flex items-center justify-center ">
               <img
                 src={`/images/logo-carousel/carousel-2/${logo.src}`}
                 alt={logo.alt}
