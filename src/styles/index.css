@@ -35,6 +35,7 @@
   --text-regular: clamp(0.875rem, 0.809rem + 0.263vw, 1.125rem);
   --text-button: clamp(0.875rem, 0.842rem + 0.132vw, 1rem);
   --text-small: clamp(0.75rem, 0.717rem + 0.132vw, 0.875rem);
+  --text-tiny: clamp(0.6rem, 0.517rem + 0.132vw, 0.775rem);
 
   /* --- Z-index scale --- */
   --z-index-base: 0;
