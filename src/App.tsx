@@ -1,5 +1,6 @@
 import AppHeader from "./components/AppHeader";
 import Hero from "./sections/Hero";
+import PartnerShowcase from "./sections/PartnerShowcase";
 
 export default function App() {
   return (
@@ -7,6 +8,7 @@ export default function App() {
       <AppHeader />
       <main className="pt-28 w-app-boundary mx-auto">
         <Hero />
+        <PartnerShowcase />
       </main>
     </>
   );
