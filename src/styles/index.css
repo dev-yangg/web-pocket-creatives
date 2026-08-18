@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+:root {
+  font-size: 125%;
+  letter-spacing: -0.05em;
+}
+
 @theme {
   /* Palette */
   --color-*: initial;
@@ -16,17 +21,17 @@
   --breakpoint-xl: 1440px;
   --breakpoint-2xl: 1920px;
 
-  --pad: 2em;
-  --spacing-app-boundary: min(1440px, 100% - calc(var(--pad) * 1.25));
+  --pad: 1.5em;
+  --spacing-content-boundary: min(1200px, 100% - calc(var(--pad) * 1.25));
   --spacing-app-header: min(920px, 100% - calc(var(--pad) * 1.25));
 
   /* Typography */
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
 
-  --text-headline: clamp(2rem, 1.474rem + 2.105vw, 4rem);
-  --text-subheadline: clamp(1.5rem, 1.237rem + 1.053vw, 2.5rem);
-  --text-title: clamp(1.25rem, 1.053rem + 0.789vw, 2rem);
-  --text-subtitle: clamp(1.125rem, 1.026rem + 0.395vw, 1.5rem);
+  --text-heading-1: clamp(1.75rem, 2rem + 4vw, 5rem);
+  --text-heading-2: clamp(1.25rem, 1.1rem + 1vw, 2rem);
+  --text-heading-3: clamp(1.15rem, 1.053rem + 0.789vw, 1.5rem);
+  --text-heading-4: clamp(1.125rem, 1.026rem + 0.395vw, 1.5rem);
   --text-regular: clamp(0.875rem, 0.809rem + 0.263vw, 1.125rem);
   --text-button: clamp(0.875rem, 0.842rem + 0.132vw, 1rem);
   --text-small: clamp(0.75rem, 0.717rem + 0.132vw, 0.875rem);
@@ -58,19 +63,19 @@
   }
 
   h1 {
-    font-size: var(--text-headline);
+    font-size: var(--text-heading-1);
   }
 
   h2 {
-    font-size: var(--text-subheadline);
+    font-size: var(--text-heading-2);
   }
 
   h3 {
-    font-size: var(--text-title);
+    font-size: var(--text-heading-3);
   }
 
   h4 {
-    font-size: var(--text-subtitle);
+    font-size: var(--text-heading-4);
   }
 
   svg {
@@ -94,6 +99,11 @@
   }
 }
 
+@utility content-boundary {
+  width: var(--spacing-content-boundary);
+  margin-inline: auto;
+}
+
 @utility carousel-mask {
   mask-image: linear-gradient(
     to right,
@@ -111,7 +121,7 @@
   );
 }
 
-@utility animation-carousel-slide-x {
+@utility animate-carousel-slide-x {
   animation-name: carousel-slide-x;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
@@ -127,5 +137,24 @@
   55%,
   100% {
     transform: translateX(calc(-100% - 1rem));
+  }
+}
+
+@utility animate-float {
+  animation-name: float;
+  animation-duration: var(--transition-duration-slow);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes float {
+  0%,
+  40% {
+    transform: translateY(0px);
+  }
+  90%,
+  100% {
+    transform: translateY(40px);
   }
 }
