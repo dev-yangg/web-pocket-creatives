@@ -1,4 +1,5 @@
 import flatLogo from "../assets/logo-flat.svg";
+import logo from "../assets/logo.svg";
 import stock1 from "../assets/stock1.webp";
 import stock2 from "../assets/stock2.webp";
 import HeroVideoClip from "../components/HeroVideoClip";
@@ -8,13 +9,13 @@ export default function Hero() {
     <section className="flex flex-col gap-8 items-center">
       <div className="content-boundary">
         <header className="custom-underline flex justify-between items-end">
-          <div className="py-2 block md:hidden">
-            <img src={flatLogo} />
+          <div className="py-2 w-45 lg:hidden">
+            <img src={flatLogo} className="w-full h-auto" />
           </div>
-          <h2 className="text-grayblue capitalize font-black hidden md:block">
-            Pocket Creatives
-          </h2>
-          <div className="hidden md:flex h-24">
+          <div className="w-45 hidden lg:block">
+            <img src={logo} className="w-full h-auto" />
+          </div>
+          <div aria-hidden="true" className="hidden lg:flex h-24">
             <img src={stock1} alt="" className="w-auto object-contain" />
             <img src={stock2} alt="" className="w-auto object-contain" />
           </div>
