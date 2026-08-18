@@ -8,13 +8,16 @@ const links = [
 ];
 
 export default function MainLinks() {
-  return links.map((link) => (
-    <li>
-      <a
-        href={link.href}
-        className="block hover:bg-lightblue rounded-full px-4 py-1">
-        {link.label}
-      </a>
-    </li>
-  ));
+  return links.map((link) => {
+    const isContact = link.label.toLowerCase() === "contact";
+    return (
+      <li key={link.label}>
+        <a
+          href={link.href}
+          className={`block hover:bg-yellow ${isContact ? "bg-lightblue" : ""} rounded-full px-4 py-1`}>
+          {link.label}
+        </a>
+      </li>
+    );
+  });
 }
