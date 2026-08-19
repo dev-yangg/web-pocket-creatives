@@ -39,7 +39,7 @@ export default function VideoClip({
       playsInline
       onClick={toggleSound}
       aria-label={ariaLabel}
-      className={className ?? "cursor-pointer"}
+      className={`cursor-pointer ${className ?? " "}`}
     />
   );
 }
