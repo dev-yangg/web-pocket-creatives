@@ -14,7 +14,7 @@ export default function VideoShowcaseSection() {
         />
         <ContactCta
           label="Let's Talk"
-          className="order-3 md:order-2 justify-self-center"
+          className="bg-yellow md:bg-blue md:text-white order-3 md:order-2 justify-self-center"
         />
         <VideoShowcaseCarousel className="md:order-3 md:col-start-1 md:col-end-3" />
       </div>
