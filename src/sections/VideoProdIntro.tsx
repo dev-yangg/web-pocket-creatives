@@ -7,7 +7,7 @@ export default function VideoProdIntro() {
         <h1 className="md:col-start-1 md:col-end-4 text-white font-bold leading-none text-balance">
           Take a look at some of our video work...
         </h1>
-        <p className="w-[min(600px,100%)] justify-self-start text-pretty md:col-start-1 md:col-end-3">
+        <p className="w-[min(600px,100%)] justify-self-start text-pretty md:col-start-1 md:col-end-3 leading-7">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem,
           voluptatibus alias architecto eveniet doloremque illo distinctio
           suscipit eaque, voluptatum expedita dolores eius ut sed?

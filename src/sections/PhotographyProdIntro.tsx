@@ -6,10 +6,10 @@ export default function PhotographyProdIntro() {
           We <span className="text-yellow tracking-[-0.15em]">squeeze</span>{" "}
           quality into every pixel...
         </h1>
-        <p className="md:col-start-1 md:col-end-3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-          blanditiis earum sequi corporis asperiores iure. Vitae totam ducimus
-          voluptatibus laudantium est voluptas sed. Fugit!
+        <p className="md:col-start-1 md:col-end-3 leading-7">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+          earum sequi corporis asperiores iure. Vitae totam ducimus voluptatibus
+          laudantium est voluptas sed. Fugit!
         </p>
         <p className="md:col-start-3 md:col-end-5 text-heading-3 text-white font-semibold leading-none">
           See some of our Photography work for different industries below.
