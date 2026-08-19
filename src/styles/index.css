@@ -109,6 +109,14 @@
   margin-inline: auto;
 }
 
+@utility bleed-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    var(--spacing-content-boundary)
+    minmax(0, 1fr);
+}
+
 @utility carousel-mask {
   mask-image: linear-gradient(
     to right,
