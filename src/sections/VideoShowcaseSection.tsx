@@ -12,7 +12,7 @@ export default function VideoShowcaseSection() {
           iconClass="stroke-[2.5]"
           label="Video Production"
         />
-        <ContactCta />
+        <ContactCta label="Let's Talk" />
         <VideoShowcaseCarousel className="md:order-3 md:col-start-1 md:col-end-3" />
       </div>
     </section>
