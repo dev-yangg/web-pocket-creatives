@@ -1,5 +1,5 @@
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import VideoClip from "./VideoClip";
+import CarouselControls from "./CarouselControls";
 
 const videoProdSamples = [
   { label: "Beauty", src: "/videos/video-prod/beauty-slider.mp4" },
@@ -38,21 +38,11 @@ export default function VideoShowcaseCarousel({
         ))}
       </ul>
       <div className="flex justify-between items-center gap-y-2 gap-x-4">
-        <div
-          role="group"
-          aria-label="carousel navigation"
-          className="flex gap-4">
-          <button
-            aria-label="previous slide"
-            className="w-6 aspect-square bg-blue rounded-full p-1">
-            <FaArrowLeft />
-          </button>
-          <button
-            aria-label="next slide"
-            className="w-6 aspect-square bg-blue rounded-full p-1">
-            <FaArrowRight />
-          </button>
-        </div>
+        <CarouselControls
+          className="bg-blue"
+          onPrevious={() => console.log("Prev Video")}
+          onNext={() => console.log("Next Video")}
+        />
         <p className="text-tiny text-grayblue text-pretty leading-tight">
           *Drag to play the next Video, Tap to toggle sound
         </p>
