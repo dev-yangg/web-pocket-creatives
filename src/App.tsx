@@ -1,4 +1,5 @@
 import AppHeader from "./components/AppHeader";
+import Features from "./sections/Features";
 import Hero from "./sections/Hero";
 import PartnerShowcase from "./sections/PartnerShowcase";
 import PhotographyProdIntro from "./sections/PhotographyProdIntro";
@@ -17,6 +18,7 @@ export default function App() {
         <VideoShowcaseSection />
         <PhotographyProdIntro />
         <PhotographyShowcaseSection />
+        <Features />
       </main>
     </>
   );
