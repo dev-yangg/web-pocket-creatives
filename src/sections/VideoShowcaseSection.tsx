@@ -1,6 +1,7 @@
 import { LuCirclePlay } from "react-icons/lu";
 import VideoShowcaseCarousel from "../components/VideoShowcaseCarousel";
 import SectionShowcaseHeading from "../components/SectionShowcaseHeading";
+import ContactCta from "../components/ContactCta";
 
 export default function VideoShowcaseSection() {
   return (
@@ -11,11 +12,7 @@ export default function VideoShowcaseSection() {
           iconClass="stroke-[2.5]"
           label="Video Production"
         />
-        <button className="order-3 md:order-2 @container justify-self-center bg-yellow md:bg-blue md:text-white font-bold leading-none w-24 md:w-14  aspect-square rounded-full rotate-10 drop-shadow-[3px_3px_3px] drop-shadow-grayblue">
-          <span className="text-[30cqw] inline-block">
-            Let's <br /> Talk
-          </span>
-        </button>
+        <ContactCta />
         <VideoShowcaseCarousel className="md:order-3 md:col-start-1 md:col-end-3" />
       </div>
     </section>
