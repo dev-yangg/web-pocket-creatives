@@ -2,6 +2,7 @@ import AppHeader from "./components/AppHeader";
 import Hero from "./sections/Hero";
 import PartnerShowcase from "./sections/PartnerShowcase";
 import PhotographyProdIntro from "./sections/PhotographyProdIntro";
+import PhotographyShowcaseSection from "./sections/PhotographyShowcaseSection";
 import VideoProdIntro from "./sections/VideoProdIntro";
 import VideoShowcaseSection from "./sections/VideoShowcaseSection";
 
@@ -15,6 +16,7 @@ export default function App() {
         <VideoProdIntro />
         <VideoShowcaseSection />
         <PhotographyProdIntro />
+        <PhotographyShowcaseSection />
       </main>
     </>
   );
