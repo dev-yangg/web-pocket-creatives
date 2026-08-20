@@ -45,8 +45,8 @@ export default function VideoClip({
       className={cn("cursor-pointer", className)}
     />
   ) : (
-    <figure className="w-full flex flex-col">
-      <figcaption className="text-small text-grayblue mb-2">
+    <figure className="w-full flex flex-col relative">
+      <figcaption className="text-small text-grayblue mb-2 absolute bottom-full left-0">
         *<span className="inline lg:hidden">Tap</span>
         <span className="hidden lg:inline">Click on</span> Video to toggle sound
       </figcaption>
