@@ -45,19 +45,25 @@ const reviewList: ReviewProps[] = [
 
 export default function ReviewsCarousel() {
   return (
-    <ul
-      style={{ "--col-gap": "0.75rem" } as React.CSSProperties}
-      className="flex gap-x-3 overflow-x-auto scrollbar-none">
-      {reviewList.map((review) => (
-        <li key={review.id} className="shrink-0 w-[min(380px,100%)]">
-          <ReviewCard
-            id={review.id}
-            quote={review.quote}
-            author={review.author}
-          />
-        </li>
-      ))}
-    </ul>
+    <div className="overflow-x-hidden">
+      <ul
+        style={
+          {
+            "--col-gap": "0.75rem",
+          } as React.CSSProperties
+        }
+        className="flex gap-x-3 scrollbar-none animate-marquee-x w-max">
+        {[...reviewList, ...reviewList].map((review, index) => (
+          <li key={`${review.id}-${index}`} className="shrink-0 w-75">
+            <ReviewCard
+              id={review.id}
+              quote={review.quote}
+              author={review.author}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

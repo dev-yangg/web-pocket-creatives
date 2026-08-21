@@ -141,6 +141,7 @@
   );
 }
 
+/* Partners Display Anim */
 @utility animate-carousel-slide-x {
   animation-name: carousel-slide-x;
   animation-duration: 5s;
