@@ -179,3 +179,85 @@
     transform: translateY(40px);
   }
 }
+
+/* Reviews Anim */
+@utility animate-marquee-x {
+  animation-name: animate-marquee-x;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animate-marquee-x {
+  to {
+    transform: translateX(calc(-50% - 0.75rem));
+  }
+}
+
+@utility team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "header header"
+    "tablist tablist"
+    "image image"
+    "name cta"
+    "bio bio";
+  gap: 1em;
+
+  @variant sm {
+    grid-template-areas:
+      "header header"
+      "tablist tablist"
+      "image name"
+      "image cta"
+      "bio bio";
+    gap: 1em;
+  }
+
+  @variant md {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 1fr) minmax(0, 10fr);
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "header tablist"
+      "image name"
+      "image bio"
+      "image cta";
+    align-items: start;
+    gap: 0;
+  }
+}
+@utility team-header {
+  grid-area: header;
+}
+
+@utility team-tablist {
+  grid-area: tablist;
+
+  @variant md {
+    align-self: center;
+    grid-column-start: 3;
+  }
+}
+
+@utility team-image {
+  grid-area: image;
+}
+@utility team-name {
+  grid-area: name;
+  @variant md {
+    grid-column-start: 3;
+  }
+}
+@utility team-cta {
+  grid-area: cta;
+  @variant md {
+    grid-column-start: 3;
+  }
+}
+@utility team-bio {
+  grid-area: bio;
+  @variant md {
+    grid-column-start: 3;
+  }
+}
