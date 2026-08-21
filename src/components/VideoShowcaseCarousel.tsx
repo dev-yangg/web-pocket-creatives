@@ -20,7 +20,9 @@ export default function VideoShowcaseCarousel({
 }) {
   return (
     <section className={`${className ?? " "} flex flex-col gap-2.5`}>
-      <ul className="flex gap-3 overflow-x-auto snap-mandatory snap-x cursor-grab scrollbar-none pr-[calc(100%-min(450px,100%))]">
+      <ul
+        style={{ "--gap-x": "0.75rem" } as React.CSSProperties}
+        className="flex gap-(--gap-x) overflow-x-auto snap-mandatory snap-x cursor-grab scrollbar-none pr-[calc(100%-min(450px,100%))]">
         {videoProdSamples.map((video, index) => (
           <li
             key={video.label}
@@ -39,8 +41,8 @@ export default function VideoShowcaseCarousel({
         <li className="snap-start flex flex-col justify-center w-[min(450px,100%)] shrink-0">
           <a
             href="/"
-            className="inline-block leading-none w-full text-heading-1 font-extrabold hover:text-yellow underline px-4">
-            View All.
+            className="inline-block leading-none w-fit text-heading-1 font-extrabold ml-(--gap-x) hover:text-yellow underline">
+            View <br /> All.
           </a>
         </li>
       </ul>
