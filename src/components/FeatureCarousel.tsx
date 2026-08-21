@@ -86,7 +86,8 @@ export default function FeatureCarousel({ className }: { className?: string }) {
     });
     setActiveIndex(clamped);
   };
-
+  const canGoPrev = activeIndex > 0;
+  const canGoNext = activeIndex < maxIndex;
   const handlePrev = () => scrollToIndex(activeIndex - 1);
   const handleNext = () => scrollToIndex(activeIndex + 1);
 
@@ -120,6 +121,8 @@ export default function FeatureCarousel({ className }: { className?: string }) {
           className="bg-white"
           onPrevious={handlePrev}
           onNext={handleNext}
+          disableNext={!canGoNext}
+          disablePrevious={!canGoPrev}
         />
       </div>
     </section>

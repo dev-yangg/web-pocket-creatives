@@ -64,9 +64,11 @@ function ArrowButton({
       disabled={disabled}
       onClick={onClick}
       className={cn(
-        "w-6 aspect-square rounded-full p-1",
-        "disabled:opacity-40 disabled:cursor-not-allowed",
+        "w-6 aspect-square rounded-full p-1 transition-transform duration-150 ease-swap",
         className,
+        {
+          "scale-0": disabled,
+        },
       )}>
       <Icon />
     </button>
