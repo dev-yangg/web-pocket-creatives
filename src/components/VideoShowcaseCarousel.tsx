@@ -20,13 +20,13 @@ export default function VideoShowcaseCarousel({
 }) {
   return (
     <section className={`${className ?? " "} flex flex-col gap-2.5`}>
-      <ul className="flex gap-3 overflow-x-clip cursor-grab">
+      <ul className="flex gap-3 overflow-x-auto snap-mandatory snap-x cursor-grab scrollbar-none pr-[calc(100%-min(450px,100%))]">
         {videoProdSamples.map((video, index) => (
           <li
             key={video.label}
             aria-roledescription="slide"
             aria-label={`${index + 1} of ${videoProdSamples.length}: ${video.label}`}
-            className="flex flex-col w-[min(380px,100%)] xl:w-[min(550px,100%)] shrink-0">
+            className="snap-start flex flex-col w-[min(450px,100%)] shrink-0">
             <h3 className="font-extrabold text-grayblue">{video.label}</h3>
             <VideoClip
               className="w-full h-auto object-cover rounded-lg"
@@ -36,6 +36,13 @@ export default function VideoShowcaseCarousel({
             />
           </li>
         ))}
+        <li className="snap-start flex flex-col justify-center w-[min(450px,100%)] shrink-0">
+          <a
+            href="/"
+            className="inline-block leading-none w-full text-heading-1 font-extrabold hover:text-yellow underline px-4">
+            View All.
+          </a>
+        </li>
       </ul>
       <div className="flex justify-between items-center gap-y-2 gap-x-4">
         <CarouselControls
