@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 interface ReviewProps {
   id: number;
   author: string;
@@ -43,18 +45,122 @@ const reviewList: ReviewProps[] = [
   },
 ];
 
+const STEP_DURATION = 600; // ms — how long one card's scroll animation takes
+const HOLD_DURATION = 2000; // ms — how long it rests on each card before scrolling again
+const PAUSE_POLL_INTERVAL = 200; // ms — how often to check "are we still paused" while paused
+
+function easeInOutQuad(t: number) {
+  return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+}
+
 export default function ReviewsCarousel() {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
+
+  const stepWidthRef = useRef(0); // one card's width + gap, in px
+  const halfWidthRef = useRef(0); // width of one full (non-duplicated) list, in px
+  const currentIndexRef = useRef(0); // which "step" we're currently sitting on
+
+  const timeoutRef = useRef<number | undefined>(undefined);
+  const rafRef = useRef<number | undefined>(undefined);
+
+  useEffect(() => {
+    const track = itemRefs.current[0]?.parentElement as HTMLUListElement | null;
+    if (!track) return;
+
+    const measure = () => {
+      const a = itemRefs.current[0];
+      const b = itemRefs.current[1];
+      const firstOfSecondCopy = itemRefs.current[reviewList.length]; // start of the duplicate list
+
+      if (a && b) {
+        stepWidthRef.current = b.offsetLeft - a.offsetLeft;
+      }
+      if (a && firstOfSecondCopy) {
+        // exact distance from copy-1's first card to copy-2's first card
+        halfWidthRef.current = firstOfSecondCopy.offsetLeft - a.offsetLeft;
+      }
+    };
+    measure();
+
+    const ro = new ResizeObserver(measure);
+    ro.observe(track);
+
+    // animate scrollLeft from `from` to `from + distance` over `duration`, then call onDone
+    const animateStep = (
+      from: number,
+      distance: number,
+      duration: number,
+      onDone: () => void,
+    ) => {
+      const start = performance.now();
+      const el = containerRef.current;
+
+      const frame = (now: number) => {
+        if (!el) return;
+        const elapsed = now - start;
+        const t = Math.min(elapsed / duration, 1);
+        el.scrollLeft = from + distance * easeInOutQuad(t);
+
+        if (t < 1) {
+          rafRef.current = requestAnimationFrame(frame);
+        } else {
+          onDone();
+        }
+      };
+      rafRef.current = requestAnimationFrame(frame);
+    };
+
+    const runLoop = () => {
+      const el = containerRef.current;
+      if (!el || stepWidthRef.current === 0) {
+        timeoutRef.current = window.setTimeout(runLoop, PAUSE_POLL_INTERVAL);
+        return;
+      }
+
+      const from = el.scrollLeft;
+      const distance = stepWidthRef.current;
+
+      animateStep(from, distance, STEP_DURATION, () => {
+        currentIndexRef.current += 1;
+
+        // once stepped past the original list length, we're sitting on
+        // the duplicate's first card — which looks identical to the real first card, so jump back instantly and reset the counter
+
+        if (currentIndexRef.current >= reviewList.length) {
+          el.scrollLeft -= halfWidthRef.current;
+          currentIndexRef.current -= reviewList.length;
+        }
+
+        timeoutRef.current = window.setTimeout(runLoop, HOLD_DURATION);
+      });
+    };
+
+    runLoop();
+
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+      ro.disconnect();
+    };
+  }, []);
+
   return (
-    <div className="overflow-x-hidden">
+    <div ref={containerRef} className="overflow-x-hidden">
       <ul
         style={
           {
             "--col-gap": "0.75rem",
           } as React.CSSProperties
         }
-        className="flex gap-x-3 scrollbar-none animate-marquee-x w-max">
+        className="flex gap-x-3 scrollbar-none w-max">
         {[...reviewList, ...reviewList].map((review, index) => (
-          <li key={`${review.id}-${index}`} className="shrink-0 w-75">
+          <li
+            key={`${review.id}-${index}`}
+            ref={(el) => {
+              itemRefs.current[index] = el;
+            }}
+            className="shrink-0 w-[min(340px,100%)]">
             <ReviewCard
               id={review.id}
               quote={review.quote}
