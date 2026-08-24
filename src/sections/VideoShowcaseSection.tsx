@@ -5,7 +5,7 @@ import ContactCta from "../components/ContactCta";
 
 export default function VideoShowcaseSection() {
   return (
-    <section className="py-6 md:py-14">
+    <section className="py-14">
       <div className="content-boundary gap-y-4 grid grid-cols-1 md:grid-cols-2">
         <SectionShowcaseHeading
           icon={LuCirclePlay}
