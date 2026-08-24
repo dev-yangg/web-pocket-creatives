@@ -1,6 +1,7 @@
 import { RiCameraLensLine } from "react-icons/ri";
 import SectionShowcaseHeading from "../components/SectionShowcaseHeading";
 import photographDisplay from "/images/photography/beauty.webp";
+import ContactCta from "../components/ContactCta";
 
 const photographyCateg = [
   { name: "Beauty", path: "/works/beauty" },
@@ -16,11 +17,15 @@ const photographyCateg = [
 export default function PhotographyShowcaseSection() {
   return (
     <section className="py-6 md:py-14 flex flex-col gap-6">
-      <div className="content-boundary">
+      <div className="content-boundary grid grid-cols-1 md:grid-cols-2">
         <SectionShowcaseHeading
           icon={RiCameraLensLine}
           iconClass="fill-blue"
           label="Photography"
+        />
+        <ContactCta
+          label="Let's Talk"
+          className="bg-blue text-white hover:bg-yellow justify-self-center hidden md:block"
         />
       </div>
       <section className="max-md:content-boundary md:bleed-grid">

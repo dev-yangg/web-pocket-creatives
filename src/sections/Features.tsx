@@ -19,7 +19,7 @@ export default function Features() {
         </header>
         <ContactCta
           label="Say Hello"
-          className="bg-white text-blue order-3 md:order-2 justify-self-center md:self-center md:col-start-3 md:col-end-4"
+          className="bg-white text-blue hover:bg-blue hover:text-white order-3 md:order-2 justify-self-center md:self-center md:col-start-3 md:col-end-4"
         />
         <FeatureCarousel className="md:order-3 md:col-start-1 md:col-end-4" />
       </div>
