@@ -1,7 +1,7 @@
 import { LuCirclePlay } from "react-icons/lu";
-import VideoShowcaseCarousel from "../components/VideoShowcaseCarousel";
-import SectionShowcaseHeading from "../components/SectionShowcaseHeading";
-import ContactCta from "../components/ContactCta";
+import VideoShowcaseCarousel from "../../components/VideoShowcaseCarousel";
+import SectionShowcaseHeading from "../../components/SectionShowcaseHeading";
+import ContactCta from "../../components/ContactCta";
 
 export default function VideoShowcaseSection() {
   return (

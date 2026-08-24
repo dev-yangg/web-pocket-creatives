@@ -1,7 +1,7 @@
-import googleLogo from "../assets/google-logo.svg";
+import googleLogo from "../../assets/google-logo.svg";
 import bts from "/videos/bts-clip.mp4";
-import VideoClip from "../components/VideoClip";
-import ReviewsCarousel from "../components/ReviewsCarousel";
+import VideoClip from "../../components/VideoClip";
+import ReviewsCarousel from "../../components/ReviewsCarousel";
 
 export default function BtsReviews() {
   return (

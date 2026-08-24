@@ -1,4 +1,4 @@
-import PartnersCarousel from "../components/PartnersCarousel";
+import PartnersCarousel from "../../components/PartnersCarousel";
 
 export default function PartnerShowcase() {
   return (

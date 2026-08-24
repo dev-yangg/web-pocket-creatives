@@ -1,14 +1,14 @@
 import AppHeader from "./components/AppHeader";
-import BtsReviews from "./sections/BtsReviews";
-import Features from "./sections/Features";
-import Hero from "./sections/Hero";
-import PartnerShowcase from "./sections/PartnerShowcase";
-import PhotographyProdIntro from "./sections/PhotographyProdIntro";
-import PhotographyShowcaseSection from "./sections/PhotographyShowcaseSection";
-import Pricing from "./sections/Pricing";
-import Team from "./sections/Team";
-import VideoProdIntro from "./sections/VideoProdIntro";
-import VideoShowcaseSection from "./sections/VideoShowcaseSection";
+import BtsReviews from "./pages/home/BtsReviews";
+import Features from "./pages/home/Features";
+import Hero from "./pages/home/Hero";
+import PartnerShowcase from "./pages/home/PartnerShowcase";
+import PhotographyProdIntro from "./pages/home/PhotographyProdIntro";
+import PhotographyShowcaseSection from "./pages/home/PhotographyShowcaseSection";
+import Pricing from "./pages/home/Pricing";
+import Team from "./pages/home/Team";
+import VideoProdIntro from "./pages/home/VideoProdIntro";
+import VideoShowcaseSection from "./pages/home/VideoShowcaseSection";
 
 export default function App() {
   return (
