@@ -31,7 +31,7 @@
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
 
   --text-heading-1: clamp(1.75rem, 3rem + 4vw, 5rem);
-  --text-heading-2: clamp(1.4rem, 2rem + 0.15vw, 3.25rem);
+  --text-heading-2: clamp(1.4rem, 1.8rem + 0.15vw, 3.25rem);
   --text-heading-3: clamp(1.25rem, 1.7rem + 1vw, 1.75rem);
   --text-heading-4: clamp(1.125rem, 1.026rem + 1vw, 1.5rem);
   --text-regular: clamp(0.875rem, 0.809rem + 0.263vw, 1.125rem);
