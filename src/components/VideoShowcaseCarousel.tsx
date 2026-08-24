@@ -1,6 +1,8 @@
 import VideoClip from "./VideoClip";
 import CarouselControls from "./CarouselControls";
-import { useCarouselControls } from "../hooks/useCarouselControl";
+import type { Swiper as SwiperType } from "swiper";
+import { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const videoProdSamples = [
   { label: "Beauty", src: "/videos/video-prod/beauty-slider.mp4" },
@@ -14,53 +16,58 @@ const videoProdSamples = [
   { label: "TV", src: "/videos/video-prod/tv-slider.mp4" },
 ];
 
-// taking into account the last slide item (view all link)
-const TOTAL_SLIDES = videoProdSamples.length + 1;
-
 export default function VideoShowcaseCarousel({
   className,
 }: {
   className?: string;
 }) {
-  const { activeIndex, setItemRef, handlePrevious, handleNext } =
-    useCarouselControls(TOTAL_SLIDES);
+  const swiperRef = useRef<SwiperType | null>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
 
   return (
     <section className={`${className ?? " "} flex flex-col gap-2.5`}>
-      <ul
-        style={{ "--gap-x": "0.75rem" } as React.CSSProperties}
-        className="flex gap-(--gap-x) overflow-x-auto snap-mandatory snap-x cursor-grab scrollbar-none pr-[calc(100%-min(450px,100%))]">
+      <Swiper
+        style={
+          {
+            paddingRight: "calc(100% - min(450px, 100%))",
+          } as React.CSSProperties
+        }
+        spaceBetween={24}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
+        slidesPerView="auto"
+        className="w-full">
         {videoProdSamples.map((video, index) => (
-          <li
-            ref={setItemRef(index)}
+          <SwiperSlide
             key={video.label}
+            style={{ width: "min(450px, 100%)" }}
             aria-roledescription="slide"
             aria-label={`${index + 1} of ${videoProdSamples.length}: ${video.label}`}
-            className="snap-start flex flex-col w-[min(450px,100%)] shrink-0">
+            className="flex flex-col">
             <h3 className="font-extrabold text-grayblue">{video.label}</h3>
             <VideoClip
               className="w-full h-auto object-cover rounded-lg"
-              isActive={index === activeIndex}
+              isActive={index === activeSlide}
               src={video.src}
               ariaLabel={`${video.label} video`}
             />
-          </li>
+          </SwiperSlide>
         ))}
-        <li
-          ref={setItemRef(videoProdSamples.length)}
-          className="snap-start flex flex-col justify-center w-[min(450px,100%)] shrink-0">
+        <SwiperSlide
+          style={{ width: "min(450px, 100%)" }}
+          className="flex items-center justify-center">
           <a
             href="/"
-            className="inline-block leading-none w-fit text-heading-1 font-extrabold ml-(--gap-x) hover:text-yellow underline">
+            className="inline-flex items-center justify-center h-full leading-none w-fit text-heading-1 font-extrabold ml-4 hover:text-yellow underline">
             View <br /> All.
           </a>
-        </li>
-      </ul>
+        </SwiperSlide>
+      </Swiper>
       <div className="flex justify-between items-center gap-y-2 gap-x-4">
         <CarouselControls
           className="bg-blue"
-          onPrevious={handlePrevious}
-          onNext={handleNext}
+          onPrevious={() => swiperRef.current?.slidePrev()}
+          onNext={() => swiperRef.current?.slideNext()}
         />
         <p className="text-tiny text-grayblue text-pretty leading-tight">
           *Drag to play the next Video, Tap to toggle sound
