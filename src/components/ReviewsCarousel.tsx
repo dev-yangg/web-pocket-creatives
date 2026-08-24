@@ -48,7 +48,7 @@ const reviewList: ReviewProps[] = [
 ];
 
 export default function ReviewsCarousel() {
-  const { md } = useBreakpoint();
+  const { sm, md, lg } = useBreakpoint();
 
   return (
     <div className="overflow-x-hidden">
@@ -59,7 +59,9 @@ export default function ReviewsCarousel() {
         className="scrollbar-none w-full"
         slidesPerView={1}
         breakpoints={{
-          [md]: { slidesPerView: 3, spaceBetween: 20 },
+          600: { slidesPerView: 2, spaceBetween: 20 },
+          [md]: { slidesPerView: 2.5, spaceBetween: 20 },
+          [lg]: { slidesPerView: 3, spaceBetween: 20 },
         }}>
         {reviewList.map((rev) => (
           <SwiperSlide key={rev.id} style={{ height: "auto" }}>
