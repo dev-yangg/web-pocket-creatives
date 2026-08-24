@@ -48,7 +48,7 @@ const reviewList: ReviewProps[] = [
 ];
 
 export default function ReviewsCarousel() {
-  const { sm, md, lg } = useBreakpoint();
+  const { md, lg } = useBreakpoint();
 
   return (
     <div className="overflow-x-hidden">
