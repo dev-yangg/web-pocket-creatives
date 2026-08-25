@@ -7,6 +7,7 @@ type VideoClipProps = {
   className?: string;
   ariaLabel?: string;
   toggleMuteCaption?: boolean;
+  captionAtTop?: boolean;
 };
 
 export default function VideoClip({
@@ -15,6 +16,7 @@ export default function VideoClip({
   className,
   ariaLabel,
   toggleMuteCaption,
+  captionAtTop = true,
 }: VideoClipProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
@@ -46,9 +48,17 @@ export default function VideoClip({
     />
   ) : (
     <figure className="w-full flex flex-col relative">
-      <figcaption className="text-small text-grayblue mb-2 absolute bottom-full left-0">
-        *<span className="inline lg:hidden">Tap</span>
-        <span className="hidden lg:inline">Click on</span> Video to toggle sound
+      <figcaption
+        className={cn(
+          "left-0",
+          { "mb-2 absolute bottom-full": captionAtTop },
+          { "mt-2 absolute top-full": !captionAtTop },
+        )}>
+        <span className="text-small text-grayblue ">
+          *<span className="inline lg:hidden">Tap</span>
+          <span className="hidden lg:inline">Click on</span> Video to toggle
+          sound
+        </span>
       </figcaption>
       <video
         ref={videoRef}
