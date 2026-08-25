@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { cn } from "../lib/utils";
-import CarouselControls from "./CarouselControls";
+import { cn } from "../../../lib/utils";
+import CarouselControls from "../../../components/CarouselControls";
 
 const featureList = [
   {

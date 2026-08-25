@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { cn } from "../../lib/utils";
-import ContactCta from "../../components/ContactCta";
+import { cn } from "../../../lib/utils";
+import ContactCta from "../../../components/ContactCta";
 import { BsLinkedin } from "react-icons/bs";
 
 interface TeamMember {

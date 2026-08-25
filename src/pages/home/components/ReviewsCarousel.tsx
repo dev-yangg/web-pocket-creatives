@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useBreakpoint } from "../hooks/useBreakpoint";
+import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import { Autoplay } from "swiper/modules";
 
 interface ReviewProps {

@@ -1,5 +1,5 @@
-import VideoClip from "./VideoClip";
-import CarouselControls from "./CarouselControls";
+import VideoClip from "../../../components/VideoClip";
+import CarouselControls from "../../../components/CarouselControls";
 import type { Swiper as SwiperType } from "swiper";
 import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";

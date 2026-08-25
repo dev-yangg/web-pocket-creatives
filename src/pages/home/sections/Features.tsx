@@ -1,6 +1,6 @@
 import { BiCheck } from "react-icons/bi";
-import ContactCta from "../../components/ContactCta";
-import FeatureCarousel from "../../components/FeatureCarousel";
+import ContactCta from "../../../components/ContactCta";
+import FeatureCarousel from "../components/FeatureCarousel";
 
 const commitments = ["Services", "Quality", "People"];
 
