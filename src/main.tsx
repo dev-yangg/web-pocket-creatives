@@ -6,10 +6,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "./styles/index.css";
-import App from "./App.tsx";
+import { RouterProvider } from "react-router";
+import { router } from "./routes.ts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>,
 );
