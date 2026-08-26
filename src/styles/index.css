@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  font-size: 125%;
   letter-spacing: -0.05em;
 }
 
@@ -30,11 +29,11 @@
   /* Typography */
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
 
-  --text-heading-1: clamp(1.5rem, 3rem + 2vw, 4rem);
-  --text-heading-2: clamp(1.3rem, 2.25rem + 0.75vw, 3.25rem);
-  --text-heading-3: clamp(1.25rem, 1.7rem + 1vw, 1.75rem);
-  --text-heading-4: clamp(1.125rem, 1.026rem + 1vw, 1.5rem);
-  --text-regular: clamp(1rem, 0.6rem + 0.263vw, 1.725rem);
+  --text-heading-1: clamp(3.75rem, 2.43rem + 5.63vw, 7.5rem);
+  --text-heading-2: clamp(2.5rem, 1.62rem + 3.76vw, 5rem);
+  --text-heading-3: clamp(1.875rem, 1.65rem + 0.94vw, 2.5rem);
+  --text-heading-4: clamp(1.25rem, 0.81rem + 1.878vw, 2.5rem);
+  --text-regular: clamp(1.125rem, 1.16rem + 0.38vw, 1.25rem);
   --text-button: clamp(0.875rem, 0.842rem + 0.132vw, 1rem);
   --text-small: clamp(0.75rem, 0.717rem + 0.132vw, 0.875rem);
   --text-tiny: clamp(0.6rem, 0.517rem + 0.132vw, 0.775rem);
@@ -139,6 +138,11 @@
     black 95%,
     transparent
   );
+}
+
+/* Partners Carousel Box */
+@utility client-box {
+  @apply shadow-[0_4px_4px_0] shadow-black/25 rounded-xl px-3 py-1.25 h-14 lg:h-18;
 }
 
 /* Partners Display Anim */

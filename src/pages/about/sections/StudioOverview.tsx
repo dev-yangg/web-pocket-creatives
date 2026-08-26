@@ -3,7 +3,7 @@ export default function StudioOverview() {
   return (
     <section className="bg-blue py-14">
       <div className="content-boundary flex flex-col gap-y-6 md:gap-y-12">
-        <h2 className="font-bold leading-tight md:leading-none text-white md:text-balance md:text-heading-1">
+        <h2 className="font-bold leading-tight md:leading-none text-white md:text-balance">
           Video production and photography at Pocket Creatives
         </h2>
         <section className="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-x-8">
