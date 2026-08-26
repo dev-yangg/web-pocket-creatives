@@ -1,4 +1,4 @@
-import PartnersCarousel from "../components/PartnersCarousel";
+import PartnersCarousel from "../../../components/PartnersCarousel";
 
 export default function PartnerShowcase() {
   return (
@@ -7,7 +7,7 @@ export default function PartnerShowcase() {
         <article className="text-grayblue text-pretty">
           <hgroup className="font-semibold flex flex-col gap-6">
             <h3>
-              As you can see, we’ve{" "}
+              As you can see, we've{" "}
               <span className="text-yellow md:text-blue">partnered</span> with a
               lot of amazing people
             </h3>
