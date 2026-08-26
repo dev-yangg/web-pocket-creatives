@@ -1,7 +1,7 @@
 import us from "/images/about/us.webp";
 export default function StudioOverview() {
   return (
-    <section className="bg-blue py-14">
+    <section className="bg-blue py-14 lg:py-24">
       <div className="content-boundary flex flex-col gap-y-6 md:gap-y-12">
         <h2 className="font-bold leading-tight md:leading-none text-white md:text-balance">
           Video production and photography at Pocket Creatives
