@@ -36,7 +36,7 @@ export default function PartnersCarousel({
           {carousel1Logos.map((logo) => (
             <li
               key={logo.alt}
-              className="bg-[#fff] shadow-[0_4px_4px_0] shadow-black/25 rounded-xl px-2 py-1.25 h-14 lg:h-20 flex items-center justify-center ">
+              className="bg-[#fff] client-box flex items-center justify-center ">
               <img
                 src={`/images/logo-carousel/carousel-1/${logo.src}`}
                 alt={logo.alt}
@@ -49,7 +49,7 @@ export default function PartnersCarousel({
           {carousel2Logos.map((logo) => (
             <li
               key={logo.alt}
-              className="bg-[#fff] shadow-[0_4px_4px_0] shadow-black/25 rounded-xl p-2 h-14 lg:h-20 flex items-center justify-center ">
+              className="bg-[#fff] client-box flex items-center justify-center ">
               <img
                 src={`/images/logo-carousel/carousel-2/${logo.src}`}
                 alt={logo.alt}
