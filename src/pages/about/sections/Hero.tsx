@@ -14,7 +14,7 @@ export default function Hero() {
               <span className="text-blue font-bold">Pocket</span>{" "}
               <span className="text-yellow font-bold">Creatives</span>
             </span>
-            <span className="hidden 2xl:inline-block w-[14.5em] max-w-full">
+            <span className="hidden 2xl:inline-block w-[12em] max-w-full">
               <img src={flatLogo} alt="" className="w-full h-auto" />
             </span>
           </h2>
