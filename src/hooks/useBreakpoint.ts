@@ -23,7 +23,7 @@ export function useBreakpoint(): Record<BreakpointKey, number> {
     xs: readBreakpointPx("breakpoint-xs", FALLBACK.xs),
     sm: readBreakpointPx("breakpoint-sm", FALLBACK.sm),
     md: readBreakpointPx("breakpoint-md", FALLBACK.md),
-    lg: readBreakpointPx("breakpoint-md", FALLBACK.lg),
+    lg: readBreakpointPx("breakpoint-lg", FALLBACK.lg),
     xl: readBreakpointPx("breakpoint-xl", FALLBACK.xl),
     "2xl": readBreakpointPx("breakpoint-2xl", FALLBACK["2xl"]),
   }));
