@@ -1,3 +1,5 @@
+import { cn } from "../lib/utils";
+
 const carousel1Logos = [
   { src: "argos.webp", alt: "Argos" },
   { src: "business-insider.webp", alt: "Business Insider" },
@@ -22,9 +24,13 @@ const carousel2Logos = [
   { src: "vida-glow.webp", alt: "Vida Glow" },
 ];
 
-export default function PartnersCarousel() {
+export default function PartnersCarousel({
+  className,
+}: {
+  className?: string;
+}) {
   return (
-    <section className="overflow-hidden">
+    <section className={cn("overflow-hidden", className)}>
       <div className="flex gap-4 animate-carousel-slide-x">
         <ul className="grid grid-cols-3 p-1 gap-2 items-center min-w-full">
           {carousel1Logos.map((logo) => (
