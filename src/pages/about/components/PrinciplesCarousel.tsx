@@ -37,10 +37,10 @@ export default function PrinciplesCarousel() {
       grabCursor={true}
       slidesPerView={1.2}
       spaceBetween={46}
-      breakpoints={{ [md]: { slidesPerView: 1.5, spaceBetween: 56 } }}>
+      breakpoints={{ [md]: { slidesPerView: 1.35 } }}>
       {principles.map((princip, index) => (
         <SwiperSlide key={princip.title}>
-          <div className="w-[min(750px,100%)] flex flex-col gap-y-6">
+          <div className="w-[min(650px,100%)] flex flex-col gap-y-6">
             <header className="flex min-h-18 items-end gap-[1ch] leading-none font-bold">
               <h1 className="text-blue leading-[.8]">{index + 1}</h1>
               <h3 className="w-[min(500px,100%)]">{princip.title}</h3>

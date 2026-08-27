@@ -12,7 +12,9 @@ export default function Principles() {
             business. Here are the guidelines that we happily work to...
           </p>
         </header>
-        <PrinciplesCarousel />
+        <section className="w-[min(1000px,100%)] mx-auto">
+          <PrinciplesCarousel />
+        </section>
       </div>
     </section>
   );
