@@ -8,13 +8,13 @@ export default function Hero() {
     <section className="pb-14">
       <div className="content-boundary flex flex-col gap-4">
         <header>
-          <h2 className="leading-none sm:text-heading-1 md:text-balance 2xl:text-grayblue w-[min(900px,100%)] 2xl:w-full">
+          <h2 className="leading-none sm:text-heading-1 md:text-balance 3xl:text-grayblue w-[min(900px,100%)] 3xl:w-full">
             About us at{" "}
-            <span className="2xl:hidden">
+            <span className="3xl:hidden">
               <span className="text-blue font-bold">Pocket</span>{" "}
               <span className="text-yellow font-bold">Creatives</span>
             </span>
-            <span className="hidden 2xl:inline-block w-[12em] max-w-full">
+            <span className="hidden 3xl:inline-block w-[12em] max-w-full">
               <img src={flatLogo} alt="" className="w-full h-auto" />
             </span>
           </h2>
