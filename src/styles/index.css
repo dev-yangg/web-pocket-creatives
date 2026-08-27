@@ -25,13 +25,15 @@
   --pad: 1.5em;
   --spacing-content-boundary: min(1280px, 100% - calc(var(--pad) * 1.25));
   --spacing-app-header: min(1200px, 100% - var(--pad));
-
-  /* Typography */
+  --spacing-fluid-width-1000: min(
+    1000px,
+    100% - calc(var(--pad) * 1.25)
+  ); /* Typography */
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
 
   --text-heading-1: clamp(3rem, 1.944rem + 4.504vw, 6rem); /* 60px -> 120px */
   --text-heading-2: clamp(2rem, 1.296rem + 3vw, 4rem); /* 40px -> 80px */
-  --text-heading-3: clamp(1.5rem, 1.32rem + 0.752vw, 2rem); /* 30px -> 40px */
+  --text-heading-3: clamp(1.5rem, 1.4rem + 1vw, 3rem); /* 30px -> 40px */
   --text-heading-4: clamp(1rem, 0.648rem + 1.5vw, 1.75rem); /* 20px -> 40px */
   --text-heading-5: clamp(1.75rem, 1.71rem + 0.188vw, 2rem);
   --text-regular: clamp(1.125rem, 1.16rem + 0.38vw, 1.25rem);
