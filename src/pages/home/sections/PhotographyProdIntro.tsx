@@ -1,6 +1,6 @@
 export default function PhotographyProdIntro() {
   return (
-    <section className="bg-blue py-14 grid xl:place-items-center xl:min-h-dvh">
+    <section className="bg-blue py-14 grid 2xl:place-items-center 2xl:min-h-dvh">
       <div className="content-boundary grid grid-cols-1 gap-5 md:gap-y-10 md:grid-cols-4 text-pretty">
         <h1 className="text-white leading-none font-bold md:col-start-1 md:col-end-5">
           We <span className="text-yellow tracking-[-0.15em]">squeeze</span>{" "}

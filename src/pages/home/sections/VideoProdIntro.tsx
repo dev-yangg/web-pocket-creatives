@@ -2,7 +2,7 @@ import { SlArrowDown } from "react-icons/sl";
 
 export default function VideoProdIntro() {
   return (
-    <section className="bg-yellow py-14 grid xl:place-items-center xl:min-h-dvh">
+    <section className="bg-yellow py-14 grid 2xl:place-items-center 2xl:min-h-dvh">
       <div className="w-[min(1000px,(100%-2em))] mx-auto content-boundary grid grid-cols-1 place-items-center gap-6 md:grid-cols-3">
         <h1 className="md:col-start-1 md:col-end-4 text-white font-bold leading-none text-balance">
           Take a look at some of our video work...
