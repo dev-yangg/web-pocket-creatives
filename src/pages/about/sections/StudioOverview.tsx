@@ -1,3 +1,4 @@
+import { HiOutlineMail } from "react-icons/hi";
 import us from "/images/about/us.webp";
 export default function StudioOverview() {
   return (
@@ -42,6 +43,11 @@ export default function StudioOverview() {
             </p>
           </div>
         </section>
+        <a
+          href="mailto:"
+          className="hidden md:block w-12 aspect-square bg-yellow rounded-full p-2.5">
+          <HiOutlineMail className="w-full h-full" />
+        </a>
       </div>
     </section>
   );
