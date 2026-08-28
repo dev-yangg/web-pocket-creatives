@@ -1,6 +1,7 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
 import VideoClip from "../../../components/VideoClip";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
+import { useRef } from "react";
 
 interface Work {
   id: string;
@@ -51,15 +52,22 @@ const ourWorks: Work[] = [
 
 export default function WorksCarousel() {
   const { md, lg } = useBreakpoint();
+  const swiperRef = useRef<SwiperRef>(null);
+
   return (
     <Swiper
-      loop
+      ref={swiperRef}
       slidesPerView={1.15}
       spaceBetween={28}
-      breakpoints={{ [md]: { slidesPerView: 2 }, [lg]: { slidesPerView: 3 } }}
-      className="w-full h-full">
-      {ourWorks.map((work) => (
-        <SwiperSlide key={work.id}>
+      loop
+      slideToClickedSlide
+      breakpoints={{
+        [md]: { slidesPerView: 2, centeredSlides: false },
+        [lg]: { slidesPerView: 3, centeredSlides: true },
+      }}
+      className="w-full h-full works-swiper">
+      {[...ourWorks, ...ourWorks].map((work, index) => (
+        <SwiperSlide key={`${work.id}-${index}`} className="">
           <WorkCard work={work} />
         </SwiperSlide>
       ))}
@@ -67,9 +75,11 @@ export default function WorksCarousel() {
   );
 }
 
-function WorkCard({ work }: { work: Work }) {
+function WorkCard({ work, onClick }: { work: Work; onClick?: () => void }) {
   return (
-    <figure className="aspect-2/4 min-[670px]:aspect-2/3  flex flex-col justify-end h-full relative ">
+    <figure
+      onClick={onClick}
+      className="aspect-2/4 min-[670px]:aspect-2/3.5  flex flex-col justify-end h-full relative ">
       <div className="absolute inset-0 -z-10">
         {work.type === "image" && (
           <img
