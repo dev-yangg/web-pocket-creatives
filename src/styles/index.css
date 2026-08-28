@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "swiper/css" layer(base);
 
 :root {
   letter-spacing: -0.05em;
@@ -270,5 +271,18 @@
   grid-area: bio;
   @variant md {
     grid-column-start: 3;
+  }
+}
+
+.works-swiper {
+  .swiper-slide {
+    opacity: 0.6;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+  }
+  .swiper-slide-active,
+  .swiper-slide-duplicate-active {
+    opacity: 1;
+    transform: scale(1);
   }
 }
