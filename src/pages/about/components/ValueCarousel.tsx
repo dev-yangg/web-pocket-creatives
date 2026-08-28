@@ -1,7 +1,8 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
 import { cn } from "../../../lib/utils";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import CarouselControls from "../../../components/CarouselControls";
+import { useRef } from "react";
 
 const values = [
   {
@@ -60,9 +61,11 @@ const values = [
 ];
 export default function ValueCarousel({ className }: { className?: string }) {
   const { md, xl } = useBreakpoint();
+  const swiperRef = useRef<SwiperRef>(null);
   return (
     <div className={cn("flex flex-col gap-y-14", className)}>
       <Swiper
+        ref={swiperRef}
         slidesPerView={1}
         spaceBetween={56}
         breakpoints={{
@@ -89,8 +92,8 @@ export default function ValueCarousel({ className }: { className?: string }) {
       </Swiper>
       <CarouselControls
         className="bg-yellow"
-        onPrevious={() => console.log("prev")}
-        onNext={() => console.log("next")}
+        onPrevious={() => swiperRef.current?.swiper.slidePrev()}
+        onNext={() => swiperRef.current?.swiper.slideNext()}
       />
     </div>
   );
