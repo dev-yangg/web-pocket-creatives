@@ -70,15 +70,17 @@ export default function ValueCarousel({ className }: { className?: string }) {
           [xl]: { slidesPerView: 3.5 },
         }}
         className="w-full">
-        {values.map((value) => (
-          <SwiperSlide key={value.title}>
+        {values.map((value, index) => (
+          <SwiperSlide key={`${value.title}-${index}`}>
             <div className="flex flex-col gap-y-8">
               <h5 className="font-bold leading-none text-white">
                 {value.title}
               </h5>
               <div className="flex flex-col gap-y-6">
-                {value.description.map((descrip) => (
-                  <p className="text-black">{descrip}</p>
+                {value.description.map((descrip, index) => (
+                  <p key={`${index}-${descrip}`} className="text-black">
+                    {descrip}
+                  </p>
                 ))}
               </div>
             </div>

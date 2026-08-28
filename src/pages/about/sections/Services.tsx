@@ -52,9 +52,10 @@ export default function Services() {
             breakpoints={{ [md]: { slidesPerView: 1.5 } }}>
             {services.map((service) => (
               <SwiperSlide
-                key={service.type}
+                key={service.headline}
                 className="[&:nth-child(2)_section_img]:row-start-1 [&:nth-child(2)_section_img]:mb-8">
                 <ServiceContent
+                  key={service.headline}
                   type={service.type}
                   headline={service.headline}
                   highlight={service.highlight}
@@ -70,6 +71,7 @@ export default function Services() {
         <div className="grid grid-cols-[minmax(0,1fr)_minmax(min(1440px,100%),1fr)_minmax(0,1fr)] lg:gap-y-18">
           {services.map((service) => (
             <ServiceContent
+              key={service.headline}
               type={service.type}
               headline={service.headline}
               highlight={service.highlight}
@@ -103,8 +105,8 @@ function ServiceContent({
           />
         </h3>
         <div className="flex flex-col gap-y-4">
-          {description.map((descrip) => (
-            <p key={type}>{descrip}</p>
+          {description.map((descrip, index) => (
+            <p key={`${descrip}-${index}`}>{descrip}</p>
           ))}
         </div>
       </div>
