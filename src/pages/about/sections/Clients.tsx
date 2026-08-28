@@ -1,4 +1,5 @@
 import PartnersCarousel from "../../../components/PartnersCarousel";
+import ClientNameAnim from "../components/ClientNameAnim";
 
 export default function Clients() {
   return (
@@ -24,7 +25,7 @@ export default function Clients() {
             <p>
               We're very proud to have worked with known clients such as{" "}
               <span className="bg-yellow font-bold text-nowrap px-2 text-black">
-                Prestige Flowers
+                <ClientNameAnim />
               </span>{" "}
               and many more emerging names that you'll come to know very soon.
             </p>
