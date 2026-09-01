@@ -70,6 +70,7 @@ export default function MilestoneCarousel() {
         <div className="pointer-events-none absolute left-1 right-1 top-1/2 h-0.5 -translate-y-1/2 bg-black z-0"></div>
 
         <Swiper
+          grabCursor
           ref={swiperRef}
           slidesPerView={1}
           breakpoints={{
