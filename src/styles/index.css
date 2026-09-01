@@ -274,6 +274,7 @@
   }
 }
 
+/* scale and opacity effect on works slide */
 .works-swiper {
   .swiper-slide {
     opacity: 0.6;
