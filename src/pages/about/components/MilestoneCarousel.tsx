@@ -1,8 +1,10 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import type { HighlightText } from "../../../types";
 import { HighlightedText } from "../../../components/HighlightedText";
 import { cn } from "../../../lib/utils";
+import CarouselControls from "../../../components/CarouselControls";
+import { useRef, useState } from "react";
 
 interface MilestoneContent extends Partial<HighlightText> {
   content: string;
@@ -52,76 +54,98 @@ const contents: MilestoneContent[] = [
 ];
 export default function MilestoneCarousel() {
   const { md } = useBreakpoint();
+  const swiperRef = useRef<SwiperRef>(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  const updateNavState = (swiper: SwiperRef["swiper"]) => {
+    setIsBeginning(swiper.isBeginning);
+    setIsEnd(swiper.isEnd);
+  };
+
   return (
-    <div className="relative w-full">
-      {/* milestone line thing in the middle */}
-      <div className="pointer-events-none absolute left-1 right-1 top-1/2 h-0.5 -translate-y-1/2 bg-black z-0"></div>
+    <>
+      <div className="relative w-full">
+        {/* milestone line thing in the middle */}
+        <div className="pointer-events-none absolute left-1 right-1 top-1/2 h-0.5 -translate-y-1/2 bg-black z-0"></div>
 
-      <Swiper
-        slidesPerView={1}
-        breakpoints={{
-          640: { slidesPerView: 1.25 },
-          [md]: { slidesPerView: 2.15 },
-        }}
-        className="w-full px-1">
-        {contents.map((milestone, i) => {
-          const isTop = i % 2 === 0;
-          const isFirst = i === 0;
-          const isLast = i === contents.length - 1;
-          return (
-            <SwiperSlide key={i} className="h-auto">
-              <div className="grid grid-rows-[1fr_auto_1fr] h-full">
-                <div className="flex items-end justify-center px-4 pb-4">
-                  {/* top content */}
-                  {isTop && (
-                    <Content
-                      content={milestone.content}
-                      highlight={milestone.highlight}
-                      highlightClassName={milestone.highlightClassName}
-                      className={milestone.className}
-                    />
-                  )}
-                </div>
-                {/* landmark thing in the middle */}
-                <div className="relative flex items-center justify-center">
-                  {isFirst && (
-                    <div className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 w-4 aspect-square rotate-45 bg-black z-10" />
-                  )}
-                  {isLast && (
-                    <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 w-4 aspect-square rotate-45 bg-black z-10" />
-                  )}
-                  <span
-                    className={cn(
-                      "@container z-10 inline-grid place-content-center aspect-square rounded-full bg-blue text-white  text-center",
-                      {
-                        "w-8": !milestone.landmarkLabel,
-                      },
-                      {
-                        "w-25 text-[1.15em] md:w-32 md:text-[2.15em]":
-                          milestone.landmarkLabel,
-                      },
-                    )}>
-                    {milestone.landmarkLabel && milestone.landmarkLabel}
-                  </span>
-                </div>
+        <Swiper
+          ref={swiperRef}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 1.25 },
+            [md]: { slidesPerView: 2.15 },
+          }}
+          onSwiper={updateNavState}
+          onSlideChange={updateNavState}
+          onBreakpoint={updateNavState}
+          className="w-full px-1">
+          {contents.map((milestone, i) => {
+            const isTop = i % 2 === 0;
+            const isFirst = i === 0;
+            const isLast = i === contents.length - 1;
+            return (
+              <SwiperSlide key={i} className="h-auto">
+                <div className="grid grid-rows-[1fr_auto_1fr] h-full">
+                  <div className="flex items-end justify-center px-4 pb-4">
+                    {/* top content */}
+                    {isTop && (
+                      <Content
+                        content={milestone.content}
+                        highlight={milestone.highlight}
+                        highlightClassName={milestone.highlightClassName}
+                        className={milestone.className}
+                      />
+                    )}
+                  </div>
+                  {/* landmark thing in the middle */}
+                  <div className="relative flex items-center justify-center">
+                    {isFirst && (
+                      <div className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 w-4 aspect-square rotate-45 bg-black z-10" />
+                    )}
+                    {isLast && (
+                      <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 w-4 aspect-square rotate-45 bg-black z-10" />
+                    )}
+                    <span
+                      className={cn(
+                        "@container z-10 inline-grid place-content-center aspect-square rounded-full bg-blue text-white  text-center",
+                        {
+                          "w-8": !milestone.landmarkLabel,
+                        },
+                        {
+                          "w-25 text-[1.15em] md:w-32 md:text-[2.15em]":
+                            milestone.landmarkLabel,
+                        },
+                      )}>
+                      {milestone.landmarkLabel && milestone.landmarkLabel}
+                    </span>
+                  </div>
 
-                {/* bottom content */}
-                <div className="flex items-start justify-center px-4 pt-4">
-                  {!isTop && (
-                    <Content
-                      content={milestone.content}
-                      highlight={milestone.highlight}
-                      highlightClassName={milestone.highlightClassName}
-                      className={milestone.className}
-                    />
-                  )}
+                  {/* bottom content */}
+                  <div className="flex items-start justify-center px-4 pt-4">
+                    {!isTop && (
+                      <Content
+                        content={milestone.content}
+                        highlight={milestone.highlight}
+                        highlightClassName={milestone.highlightClassName}
+                        className={milestone.className}
+                      />
+                    )}
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-    </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+      <CarouselControls
+        className="bg-white"
+        onPrevious={() => swiperRef.current?.swiper.slidePrev()}
+        onNext={() => swiperRef.current?.swiper.slideNext()}
+        disablePrevious={isBeginning}
+        disableNext={isEnd}
+      />
+    </>
   );
 }
 
