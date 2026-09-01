@@ -3,6 +3,7 @@ import DiscoveryNudge from "./sections/DiscoveryNudge";
 import Hero from "./sections/Hero";
 import Principles from "./sections/Principles";
 import Services from "./sections/Services";
+import Story from "./sections/Story";
 import StudioOverview from "./sections/StudioOverview";
 import ValueProposition from "./sections/ValueProposition";
 import Works from "./sections/Works";
@@ -18,6 +19,7 @@ export default function AboutPage() {
       <Principles />
       <Clients />
       <DiscoveryNudge />
+      <Story />
     </>
   );
 }
