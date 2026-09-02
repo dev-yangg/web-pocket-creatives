@@ -1,16 +1,8 @@
 import { Link } from "react-router";
-
-const links = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Works", href: "/works" },
-  { label: "Services", href: "/services" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Contact", href: "/contact" },
-];
+import { applinks } from "../data/globals";
 
 export default function MainLinks() {
-  return links.map((link) => {
+  return applinks.map((link) => {
     const isContact = link.label.toLowerCase() === "contact";
     return (
       <li key={link.label}>
