@@ -20,6 +20,7 @@
   /* Breakpoints */
   --breakpoint-xs: 360px;
   --breakpoint-sm: 430px;
+  --breakpoint-nav-breakpoint: 900px;
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1440px;
   --breakpoint-3xl: 1920px;
@@ -27,10 +28,9 @@
   --pad: 1.5em;
   --spacing-content-boundary: min(1280px, 100% - calc(var(--pad) * 1.25));
   --spacing-app-header: min(1200px, 100% - var(--pad));
-  --spacing-fluid-width-1000: min(
-    1000px,
-    100% - calc(var(--pad) * 1.25)
-  ); /* Typography */
+  --spacing-fluid-width-1000: min(1000px, 100% - calc(var(--pad) * 1.25));
+
+  /* Typography */
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
 
   --text-heading-1: clamp(3rem, 1.944rem + 4.504vw, 6rem); /* 60px -> 120px */
