@@ -101,7 +101,7 @@ export default function AppFooter() {
       </div>
       <div className="custom-underline py-4">
         <section className="content-boundary items-center grid grid-cols-1 md:grid-cols-2 gap-y-4">
-          <SocialsList className="flex flex-wrap gap-y-2 gap-x-6" />
+          <SocialsList className="flex flex-wrap gap-y-2 gap-x-6 text-white" />
           <small className="text-white md:text-right">
             Designed & Built By SeekSocial 2024
           </small>
