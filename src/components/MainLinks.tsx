@@ -1,19 +1,24 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import { applinks } from "../data/globals";
 import { cn } from "../lib/utils";
 
-export default function MainLinks() {
+export default function MainLinks({ className }: { className?: string }) {
   return applinks.map((link) => {
     const isContact = link.label.toLowerCase() === "contact";
     return (
       <li key={link.label}>
-        <Link
+        <NavLink
           to={link.href}
-          className={cn("block hover:bg-yellow rounded-full px-3 py-1", {
-            "bg-lightblue": isContact,
-          })}>
+          className={({ isActive }) =>
+            cn(
+              "block hover:bg-yellow rounded-full transition-colors duration-150 ease-linear px-3 py-1",
+              { "bg-lightblue": isContact },
+              { "bg-yellow": isActive },
+              className,
+            )
+          }>
           {link.label}
-        </Link>
+        </NavLink>
       </li>
     );
   });

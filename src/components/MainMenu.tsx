@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import { applinks } from "../data/globals";
 import SocialsList from "./SocialsList";
 import { cn } from "../lib/utils";
@@ -28,15 +28,19 @@ export default function MainMenu({
                     "--custom-underline-color": "var(--color-yellow)",
                   } as React.CSSProperties
                 }
-                className={cn(" w-full flex justify-center", {
+                className={cn(" w-full flex justify-center py-2", {
                   "custom-underline": !isLast,
                 })}>
-                <Link
+                <NavLink
                   to={link.href}
-                  className="inline-block py-4"
+                  className={({ isActive }) =>
+                    cn("block py-2 w-fit px-20 rounded-lg text-center", {
+                      "bg-yellow": isActive,
+                    })
+                  }
                   onClick={closeMenu}>
                   {link.label}
-                </Link>
+                </NavLink>
               </li>
             );
           })}
