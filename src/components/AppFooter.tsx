@@ -1,6 +1,7 @@
 import { Link } from "react-router";
-import { applinks, socials } from "../data/globals";
+import { applinks } from "../data/globals";
 import logo from "../assets/logo.svg";
+import SocialsList from "./SocialsList";
 
 export default function AppFooter() {
   return (
@@ -101,15 +102,7 @@ export default function AppFooter() {
       <div className="custom-underline py-4">
         <section className="content-boundary items-center grid grid-cols-1 md:grid-cols-2 gap-y-4">
           <ul className="flex flex-wrap gap-y-2 gap-x-6 @container">
-            {socials.map(({ href, label, icon: Icon }) => (
-              <li key={label}>
-                <a
-                  href={href}
-                  className="inline-block w-[clamp(1.5rem,3.5cqi,2rem)] aspect-square text-white">
-                  <Icon className="w-full h-full" />
-                </a>
-              </li>
-            ))}
+            <SocialsList />
           </ul>
           <small className="text-white md:text-right">
             Designed & Built By SeekSocial 2024
