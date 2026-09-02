@@ -3,7 +3,7 @@ import { cn } from "../lib/utils";
 
 export default function SocialsList({ className }: { className?: string }) {
   return (
-    <ul className={cn("", className)}>
+    <ul className={cn("@container", className)}>
       {socials.map(({ href, label, icon: Icon }) => (
         <li key={label}>
           <a
