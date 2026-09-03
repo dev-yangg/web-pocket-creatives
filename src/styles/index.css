@@ -278,6 +278,26 @@
   }
 }
 
+@utility portfolio-gallery-header {
+  display: flex;
+  flex-direction: column;
+  @apply gap-y-8;
+
+  @variant md {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h3 {
+    @apply font-extrabold text-black;
+  }
+
+  small {
+    @apply text-grayblue;
+  }
+}
+
 /* scale and opacity effect on works slide */
 .works-swiper {
   .swiper-slide {
