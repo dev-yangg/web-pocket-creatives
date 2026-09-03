@@ -1,4 +1,9 @@
-import { Swiper, SwiperSlide, type SwiperRef } from "swiper/react";
+import {
+  Swiper,
+  SwiperSlide,
+  useSwiperSlide,
+  type SwiperRef,
+} from "swiper/react";
 import VideoClip from "../../../components/VideoClip";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import { useRef } from "react";
@@ -65,7 +70,7 @@ export default function WorksCarousel() {
         [md]: { slidesPerView: 2, centeredSlides: false },
         [lg]: { slidesPerView: 3, centeredSlides: true },
       }}
-      className="w-full h-full works-swiper">
+      className="w-full h-full works-swiper py-8">
       {[...ourWorks, ...ourWorks].map((work, index) => (
         <SwiperSlide key={`${work.id}-${index}`} className="">
           <WorkCard work={work} />
@@ -75,11 +80,10 @@ export default function WorksCarousel() {
   );
 }
 
-function WorkCard({ work, onClick }: { work: Work; onClick?: () => void }) {
+function WorkCard({ work }: { work: Work }) {
+  const swiperSlide = useSwiperSlide();
   return (
-    <figure
-      onClick={onClick}
-      className="aspect-2/4 min-[670px]:aspect-2/3.5  flex flex-col justify-end h-full relative ">
+    <figure className="aspect-2/4 min-[670px]:aspect-2/3.5  flex flex-col justify-end h-full relative isolate">
       <div className="absolute inset-0 -z-10">
         {work.type === "image" && (
           <img
@@ -91,12 +95,21 @@ function WorkCard({ work, onClick }: { work: Work; onClick?: () => void }) {
         {work.type === "video" && (
           <VideoClip
             src={work.src}
-            isActive
+            isActive={swiperSlide.isActive}
             className="w-full h-full object-cover"
           />
         )}
       </div>
-      <div className="absolute inset-0 bg-linear-to-t from-yellow from-30% via-yellow/40 via-50% to-transparent" />
+      {work.type === "video" && (
+        <p className="z-20 top-[calc(100%+.25em)] absolute text-small text-grayblue">
+          * <span className="inline lg:hidden">Tap</span>
+          <span className="hidden lg:inline">Tap</span> on Video to toggle sound
+        </p>
+      )}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-linear-to-t from-yellow from-30% via-yellow/40 via-50% to-transparent"
+      />
       <figcaption className="z-10 flex flex-col gap-y-2 py-8 px-4 md:p-8">
         <span className="bg-blue text-white px-1.5 py-0.5 self-start">
           {work.tag}
