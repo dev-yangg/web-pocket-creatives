@@ -1,8 +1,8 @@
 import PhotographyGrid from "../components/PhotographyGrid";
-import type { WorksGridSample } from "../data";
+import type { PhotographySample } from "../data";
 interface Props {
   category: string;
-  items: WorksGridSample[];
+  items: PhotographySample[];
 }
 
 export default function Photography({ category, items }: Props) {

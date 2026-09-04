@@ -1,10 +1,10 @@
-import type { WorksGridSample } from "../data";
+import type { PhotographySample } from "../data";
 import Skeleton from "./Skeleton";
 
 export default function PhotographyGrid({
   items,
 }: {
-  items: WorksGridSample[];
+  items: PhotographySample[];
 }) {
   const mockCells = Array.from({ length: 12 });
   console.log({ "Photography Items": items });
