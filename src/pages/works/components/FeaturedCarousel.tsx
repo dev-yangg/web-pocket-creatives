@@ -1,5 +1,6 @@
 import { cn } from "../../../lib/utils";
 import type { FeaturedWorksSample } from "../data";
+import AutoplayToggle from "./AutoplayToggle";
 import Skeleton from "./Skeleton";
 
 interface Props {
@@ -21,14 +22,7 @@ export default function FeaturedCarousel({ category, featured }: Props) {
       )}
       <div className="content-boundary flex justify-between items-center">
         <h2 className="uppercase text-blue font-extrabold">{category}</h2>
-        <button className="@container bg-yellow rounded-full w-8 aspect-square flex justify-center gap-0.75 p-2">
-          <div
-            aria-hidden="true"
-            className="w-[clamp(.25em,4cqi,.75em)] h-full bg-black"></div>
-          <div
-            aria-hidden="true"
-            className="w-[clamp(.25em,4cqi,.75em)] h-full bg-black"></div>
-        </button>
+        <AutoplayToggle />
       </div>
     </section>
   );
