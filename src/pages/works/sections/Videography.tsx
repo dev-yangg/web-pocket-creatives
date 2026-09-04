@@ -1,8 +1,8 @@
 import VideographyGrid from "../components/VideographyGrid";
-import type { WorksGridSample } from "../data";
+import type { VideographySample } from "../data";
 interface Props {
   category: string;
-  items: WorksGridSample[];
+  items: VideographySample[];
 }
 
 export default function Videography({ category, items }: Props) {
