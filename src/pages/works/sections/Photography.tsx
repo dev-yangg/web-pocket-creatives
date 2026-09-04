@@ -20,7 +20,7 @@ export default function Photography({ category, items }: Props) {
             *Click on thumbnail for large view
           </small>
         </header>
-        <PhotographyGrid />
+        <PhotographyGrid items={items} />
       </div>
     </section>
   );

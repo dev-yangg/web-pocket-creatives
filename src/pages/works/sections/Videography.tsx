@@ -18,7 +18,7 @@ export default function Videography({ category, items }: Props) {
             *Click on Video to play in large view
           </small>
         </header>
-        <VideographyGrid />
+        <VideographyGrid items={items} />
       </div>
     </section>
   );
