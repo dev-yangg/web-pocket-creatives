@@ -1,10 +1,10 @@
 import { BsArrowRight } from "react-icons/bs";
-import type { WorksGridSample } from "../data";
+import type { PhotographySample, VideographySample } from "../data";
 
 interface Props {
   category: string;
-  videography: WorksGridSample[];
-  photography: WorksGridSample[];
+  videography: VideographySample[];
+  photography: PhotographySample[];
 }
 
 export default function CategoryOverview({
@@ -35,10 +35,16 @@ export default function CategoryOverview({
           <nav className="flex flex-col gap-y-4 md:place-self-center md:self-start">
             <span className="font-extrabold">Go to...</span>
             {hasVideoSamples && (
-              <ScrollTo target="#videography" category={category} />
+              <ScrollTo
+                target="#videography"
+                label={`More ${category} Videography`}
+              />
             )}
             {hasPhotoSamples && (
-              <ScrollTo target="#photography" category={category} />
+              <ScrollTo
+                target="#photography"
+                label={`More ${category} Photography`}
+              />
             )}
           </nav>
         )}
@@ -47,14 +53,14 @@ export default function CategoryOverview({
   );
 }
 
-function ScrollTo({ target, category }: { target: string; category: string }) {
+function ScrollTo({ target, label }: { target: string; label: string }) {
   return (
     <a href={target} className="text-white flex items-start gap-x-4 group">
       <span className="inline-block w-6 scale-x-[0.85] group-hover:scale-x-110 text-black group-hover:translate-x-1.5 origin-left transition-transform duration-150 ease-in-out">
         <BsArrowRight className="w-full h-auto fill-current stroke-[0.5]" />
       </span>
       <span className="leading-[1.2] group-hover:translate-x-1 transition-transform duration-150 ease-in-out pb-0.5 relative after:absolute after:bg-current after:h-0.5 after:w-full after:left-0 after:bottom-0 after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-in-out after:origin-left">
-        More <span className="capitalize">{category}</span> Photography
+        <span className="capitalize">{label}</span>
       </span>
     </a>
   );
