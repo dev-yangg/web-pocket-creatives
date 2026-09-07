@@ -1,29 +1,57 @@
+import { useState } from "react";
 import type { PhotographySample } from "../data";
-import Skeleton from "./Skeleton";
+import PhotoCard from "./PhotoCard";
+import PhotoLightbox from "./PhotoLightbox";
+import { type PhotoLightboxProps } from "./PhotoLightbox";
 
 export default function PhotographyGrid({
   items,
 }: {
   items: PhotographySample[];
 }) {
-  const mockCells = Array.from({ length: 12 });
-  console.log({ "Photography Items": items });
+  const [lightboxData, setLightboxData] = useState<PhotoLightboxProps | null>(
+    null,
+  );
+
+  const handlePhotoClick = ({ images, startIndex }: PhotoLightboxProps) => {
+    console.log("CLICKED");
+    setLightboxData({ images, startIndex });
+  };
   return (
     <section className="">
       <div className="grid md:hidden grid-cols-2 gap-6">
-        {mockCells.map((_, index) => (
-          <Skeleton key={index} />
+        {items.map((img) => (
+          <PhotoCard
+            key={img.id}
+            id={img.id}
+            label={img.label}
+            images={img.images}
+            onClick={handlePhotoClick}
+          />
         ))}
       </div>
       <div className="hidden md:grid md:grid-cols-3 gap-10">
-        {gridHelper(mockCells).map((groups, index) => (
+        {gridHelper(items).map((groups, index) => (
           <div key={index} className="grid grid-cols-2 gap-3">
-            {groups.map((_, index) => (
-              <Skeleton key={index} />
+            {groups.map((img) => (
+              <PhotoCard
+                key={img.id}
+                id={img.id}
+                label={img.label}
+                images={img.images}
+                onClick={handlePhotoClick}
+              />
             ))}
           </div>
         ))}
       </div>
+
+      {lightboxData && (
+        <PhotoLightbox
+          props={lightboxData}
+          onClose={() => setLightboxData(null)}
+        />
+      )}
     </section>
   );
 }
