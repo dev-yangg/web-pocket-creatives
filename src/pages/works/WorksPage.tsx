@@ -1,13 +1,14 @@
 import { useState } from "react";
 import CategoryOverview from "./sections/CategoryOverview";
 import WorksCategory from "./sections/WorksCategory";
-import { works } from "./data";
 import Videography from "./sections/Videography";
 import Photography from "./sections/Photography";
+import { getWorks } from "../../lib/services/works";
 
 export default function WorksPage() {
-  const [category, setCategory] = useState(works[1].category ?? "");
-  const activeCategory = works.find((work) => work.category === category);
+  const localWorks = getWorks();
+  const [category, setCategory] = useState(localWorks[1].category ?? "");
+  const activeCategory = localWorks.find((work) => work.category === category);
   const {
     featured = [],
     videography = [],
