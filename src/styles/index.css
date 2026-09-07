@@ -300,6 +300,10 @@
   }
 }
 
+@utility overlay {
+  @apply fixed inset-0 bg-black/75 z-lightbox backdrop-blur-sm;
+}
+
 /* scale and opacity effect on works slide */
 .works-swiper {
   .swiper-slide {
