@@ -14,7 +14,6 @@ export default function PhotographyGrid({
   );
 
   const handlePhotoClick = ({ images, startIndex }: PhotoLightboxProps) => {
-    console.log("CLICKED");
     setLightboxData({ images, startIndex });
   };
   return (

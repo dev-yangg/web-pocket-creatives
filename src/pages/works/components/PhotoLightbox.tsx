@@ -1,10 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { SwiperClass } from "swiper/react";
 import type { GalleryImage } from "../data";
-import { IoClose } from "react-icons/io5";
 import { Thumbs, Navigation } from "swiper/modules";
 import { useState } from "react";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
+import LightboxCloseButton from "../../../components/LightboxCloseButton";
+import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 
 export interface PhotoLightboxProps {
   images: GalleryImage[];
@@ -18,18 +19,19 @@ export default function PhotoLightbox({
   props: PhotoLightboxProps;
   onClose: () => void;
 }) {
+  useLockBodyScroll();
   const { images, startIndex } = props;
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
   const { md } = useBreakpoint();
   return (
-    <div className="fixed inset-0 bg-black/75 z-lightbox flex md:justify-center items-center backdrop-blur-sm">
-      <div className="w-full h-dvh md:h-auto md:w-[min(1200px,100%)] flex flex-col items-center py-6 px-4 md:py-0">
+    <div
+      className="overlay flex md:justify-center items-center"
+      onClick={onClose}>
+      <div
+        className="w-full h-dvh md:h-auto md:w-[min(1200px,100%)] flex flex-col items-center py-6 px-4 md:py-0"
+        onClick={(e) => e.stopPropagation()}>
         <div className="flex-1 min-h-0 w-auto max-w-full self-center aspect-9/16 md:w-full md:flex-none md:aspect-[2.39] relative isolate">
-          <button
-            onClick={onClose}
-            className="right-4 top-4 absolute w-8 aspect-square rounded-full bg-yellow text-black z-10">
-            <IoClose className="w-full h-full" />
-          </button>
+          <LightboxCloseButton onClose={onClose} />
           <Swiper
             initialSlide={startIndex}
             modules={[Thumbs, Navigation]}
