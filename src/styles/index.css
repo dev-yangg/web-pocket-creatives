@@ -55,6 +55,7 @@
   --z-index-menu: 400;
   --z-index-app-header: 500;
   --z-index-toast: 600;
+  --z-index-lightbox: 700;
 
   /* Durations */
   --transition-duration-blink: 0.15s;
