@@ -192,6 +192,127 @@ export const works: WorkCategory[] = [
           },
         ],
       },
+      {
+        id: "client-2",
+        label: "Client 2",
+        images: [
+          {
+            id: "client-2-01",
+            path: "/works/photography/beauty/client-2/client-2-01.png",
+            alt: "Client 2 beauty photo, frame 1",
+          },
+        ],
+      },
+      {
+        id: "client-3",
+        label: "Client 3",
+        images: [
+          {
+            id: "client-3-01",
+            path: "/works/photography/beauty/client-3/client-3-01.png",
+            alt: "Client 3 beauty photo, frame 1",
+          },
+        ],
+      },
+      {
+        id: "client-4",
+        label: "Client 4",
+        images: [
+          {
+            id: "client-4-01",
+            path: "/works/photography/beauty/client-4/client-4-01.png",
+            alt: "Client 4 beauty photo, frame 1",
+          },
+        ],
+      },
+      {
+        id: "client-5",
+        label: "Client 5",
+        images: [
+          {
+            id: "client-5-01",
+            path: "/works/photography/beauty/client-5/client-5-01.png",
+            alt: "Client 5 beauty photo, frame 1",
+          },
+        ],
+      },
+      {
+        id: "client-6",
+        label: "Client 6",
+        images: [
+          {
+            id: "client-6-01",
+            path: "/works/photography/beauty/client-6/client-6-01.png",
+            alt: "Client 6 beauty photo, frame 1",
+          },
+        ],
+      },
+      {
+        id: "client-7",
+        label: "Client 7",
+        images: [
+          {
+            id: "client-7-01",
+            path: "/works/photography/beauty/client-7/client-7-01.png",
+            alt: "Client 7 beauty photo, frame 1",
+          },
+        ],
+      },
+      {
+        id: "client-8",
+        label: "Client 8",
+        images: [
+          {
+            id: "client-8-01",
+            path: "/works/photography/beauty/client-8/client-8-01.png",
+            alt: "Client 8 beauty photo, frame 1",
+          },
+        ],
+      },
+      {
+        id: "client-9",
+        label: "Client 9",
+        images: [
+          {
+            id: "client-9-01",
+            path: "/works/photography/beauty/client-9/client-9-01.png",
+            alt: "Client 9 beauty photo, frame 1",
+          },
+        ],
+      },
+      {
+        id: "client-10",
+        label: "Client 10",
+        images: [
+          {
+            id: "client-10-01",
+            path: "/works/photography/beauty/client-10/client-10-01.png",
+            alt: "Client 10 beauty photo, frame 1",
+          },
+        ],
+      },
+      {
+        id: "client-11",
+        label: "Client 11",
+        images: [
+          {
+            id: "client-11-01",
+            path: "/works/photography/beauty/client-11/client-11-01.png",
+            alt: "Client 11 beauty photo, frame 1",
+          },
+        ],
+      },
+      {
+        id: "client-12",
+        label: "Client 12",
+        images: [
+          {
+            id: "client-12-01",
+            path: "/works/photography/beauty/client-12/client-12-01.png",
+            alt: "Client 12 beauty photo, frame 1",
+          },
+        ],
+      },
     ],
   },
   { category: "product", featured: [], videography: [], photography: [] },
