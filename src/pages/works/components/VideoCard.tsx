@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { cn } from "../../../lib/utils";
 import Skeleton from "./Skeleton";
 
-interface VideoCardProps {
+interface Props {
   label: string;
   className?: string;
   path: string;
@@ -18,7 +18,7 @@ export default function VideoCard({
   alt,
   onHover,
   onHoverEnd,
-}: VideoCardProps) {
+}: Props) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   return (
