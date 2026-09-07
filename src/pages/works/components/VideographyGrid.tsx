@@ -7,6 +7,15 @@ export default function VideographyGrid({
 }: {
   items: VideographySample[];
 }) {
+  const handleHover = (el: HTMLVideoElement | HTMLImageElement | null) => {
+    if (el instanceof HTMLVideoElement) el.play();
+  };
+  const handleHoverEnd = (el: HTMLVideoElement | HTMLImageElement | null) => {
+    if (el instanceof HTMLVideoElement) {
+      el.pause();
+      el.currentTime = 0;
+    }
+  };
   return (
     <section className="grid grid-cols-1 md:grid-cols-4 gap-5">
       {items.length < 1 &&
@@ -19,6 +28,8 @@ export default function VideographyGrid({
             path={item.path}
             alt={item.alt}
             mediaType={item.mediaType}
+            onHover={handleHover}
+            onHoverEnd={handleHoverEnd}
           />
         ))}
     </section>
