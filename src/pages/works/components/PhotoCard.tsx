@@ -36,7 +36,7 @@ export default function PhotoCard({ id, label, images, onClick }: Props) {
 
   return (
     <figure
-      className="aspect-square flex flex-col cursor-pointer"
+      className="aspect-1/1.25 flex flex-col cursor-pointer"
       onMouseEnter={startCycle}
       onMouseLeave={stopCycle}
       onClick={() => onClick({ images, startIndex: index })}>
@@ -45,7 +45,7 @@ export default function PhotoCard({ id, label, images, onClick }: Props) {
           key={id}
           src={images[index].path}
           alt={images[index].alt}
-          className="absolute inset-0 object-fill object-center w-full h-full"
+          className="absolute inset-0 object-cover object-center w-full h-full"
         />
       </div>
       <figcaption className="py-1">{label}</figcaption>
