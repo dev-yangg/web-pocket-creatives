@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { cn } from "../../../lib/utils";
 import Skeleton from "./Skeleton";
+import type { VideolightboxProps } from "./VideoLightbox";
 
 interface Props {
   label: string;
@@ -9,6 +10,7 @@ interface Props {
   alt: string;
   onHover?: (el: HTMLVideoElement | null) => void;
   onHoverEnd?: (el: HTMLVideoElement | null) => void;
+  onClick: ({ path, alt }: VideolightboxProps) => void;
 }
 
 export default function VideoCard({
@@ -18,6 +20,7 @@ export default function VideoCard({
   alt,
   onHover,
   onHoverEnd,
+  onClick,
 }: Props) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -37,6 +40,7 @@ export default function VideoCard({
         onLoadedData={() => setIsVideoLoaded(true)}
         onMouseEnter={() => onHover?.(videoRef.current)}
         onMouseLeave={() => onHoverEnd?.(videoRef.current)}
+        onClick={() => onClick({ path, alt })}
       />
       {isVideoLoaded && <figcaption className="py-1">{label}</figcaption>}
     </figure>
