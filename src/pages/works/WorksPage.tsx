@@ -7,7 +7,7 @@ import { getWorks } from "../../lib/services/works";
 
 export default function WorksPage() {
   const localWorks = getWorks();
-  const [category, setCategory] = useState(localWorks[1].category ?? "");
+  const [category, setCategory] = useState(localWorks[0].category ?? "");
   const activeCategory = localWorks.find((work) => work.category === category);
   const {
     featured = [],
