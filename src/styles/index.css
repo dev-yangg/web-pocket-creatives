@@ -197,20 +197,19 @@
   }
 }
 
-/* Reviews Anim */
+/* Featured Works Anim (works page) */
 @utility animate-marquee-x {
   animation-name: animate-marquee-x;
-  animation-duration: 30s;
+  animation-duration: 15s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
 @keyframes animate-marquee-x {
   to {
-    transform: translateX(calc(-50% - 0.75rem));
+    transform: translateX(calc(-1 * var(--marquee-distance)));
   }
 }
-
 @utility team-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
