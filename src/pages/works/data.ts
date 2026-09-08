@@ -1,13 +1,31 @@
 export type SampleType = "photo" | "photo-comp" | "video";
 export type MediaType = "image" | "video";
 
-export interface FeaturedWorksSample {
+export interface BaseWorksSample {
   id: string;
   label: string;
   path: string;
   type: SampleType;
   alt: string;
 }
+
+export interface PhotoFeaturedSample extends BaseWorksSample {
+  type: "photo";
+}
+
+export interface VideoFeaturedSample extends BaseWorksSample {
+  type: "video";
+}
+
+export interface PhotoCompFeaturedSample extends Omit<BaseWorksSample, "path"> {
+  type: "photo-comp";
+  images: string[];
+}
+
+export type FeaturedWorksSample =
+  | PhotoFeaturedSample
+  | VideoFeaturedSample
+  | PhotoCompFeaturedSample;
 
 export interface VideographySample {
   id: string;
@@ -42,22 +60,29 @@ export const works: WorkCategory[] = [
       {
         id: "nursem-01",
         label: "Nursem",
-        path: "/images/works/nursem-01.jpg",
         type: "photo",
+        path: "/images/works/featured/beauty/nursem/nursem-photo.png",
         alt: "Nursem beauty campaign photo",
       },
       {
         id: "soap-glory-01",
         label: "Soap & Glory",
-        path: "/images/works/soap-glory-01.jpg",
         type: "photo-comp",
+        images: [
+          "/images/works/featured/beauty/soap-glory/comp-01.png",
+          "/images/works/featured/beauty/soap-glory/comp-02.png",
+          "/images/works/featured/beauty/soap-glory/comp-03.png",
+          "/images/works/featured/beauty/soap-glory/comp-04.png",
+          "/images/works/featured/beauty/soap-glory/comp-05.png",
+          "/images/works/featured/beauty/soap-glory/comp-06.png",
+        ],
         alt: "Soap & Glory beauty campaign photo comp",
       },
       {
         id: "hairo-01",
         label: "HairO Brand Advert",
-        path: "/videos/works/hairo-01.mp4",
         type: "video",
+        path: "/images/works/featured/beauty/hairo/hairo-brand-advert.mp4",
         alt: "HairO Brand Advert beauty campaign video",
       },
     ],
