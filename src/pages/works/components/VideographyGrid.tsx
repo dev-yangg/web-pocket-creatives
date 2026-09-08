@@ -3,6 +3,7 @@ import type { VideographySample } from "../data";
 import VideoCard from "./VideoCard";
 import type { VideolightboxProps } from "./VideoLightbox";
 import VideoLightbox from "./VideoLightbox";
+import Skeleton from "./Skeleton";
 
 export default function VideographyGrid({
   items,
@@ -26,6 +27,8 @@ export default function VideographyGrid({
   };
   return (
     <section className="grid grid-cols-1 md:grid-cols-4 gap-5">
+      {items.length < 1 &&
+        Array.from({ length: 12 }).map((_, index) => <Skeleton key={index} />)}
       {items.length > 0 &&
         items.map((item) => (
           <VideoCard

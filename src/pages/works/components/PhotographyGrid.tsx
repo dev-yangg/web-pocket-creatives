@@ -3,6 +3,7 @@ import type { PhotographySample } from "../data";
 import PhotoCard from "./PhotoCard";
 import PhotoLightbox from "./PhotoLightbox";
 import { type PhotoLightboxProps } from "./PhotoLightbox";
+import Skeleton from "./Skeleton";
 
 export default function PhotographyGrid({
   items,
@@ -19,30 +20,47 @@ export default function PhotographyGrid({
   return (
     <section className="">
       <div className="grid md:hidden grid-cols-2 gap-6">
-        {items.map((img) => (
-          <PhotoCard
-            key={img.id}
-            id={img.id}
-            label={img.label}
-            images={img.images}
-            onClick={handlePhotoClick}
-          />
-        ))}
+        {items.length > 0 &&
+          items.map((img) => (
+            <PhotoCard
+              key={img.id}
+              id={img.id}
+              label={img.label}
+              images={img.images}
+              onClick={handlePhotoClick}
+            />
+          ))}
+        {items.length < 1 &&
+          Array.from({ length: 12 }).map((_, index) => (
+            <Skeleton key={index} />
+          ))}
       </div>
       <div className="hidden md:grid md:grid-cols-3 gap-10">
-        {gridHelper(items).map((groups, index) => (
-          <div key={index} className="grid grid-cols-2 gap-3">
-            {groups.map((img) => (
-              <PhotoCard
-                key={img.id}
-                id={img.id}
-                label={img.label}
-                images={img.images}
-                onClick={handlePhotoClick}
-              />
-            ))}
-          </div>
-        ))}
+        {/* Skeletons just for layout visualization */}
+        {items.length < 1 &&
+          gridHelper(Array.from({ length: 12 })).map((groups, index) => (
+            <div key={index} className="grid grid-cols-2 gap-3">
+              {groups.map((_, index) => (
+                <Skeleton key={index} />
+              ))}
+            </div>
+          ))}
+        {/* --------------------------- */}
+
+        {items.length > 0 &&
+          gridHelper(items).map((groups, index) => (
+            <div key={index} className="grid grid-cols-2 gap-3">
+              {groups.map((img) => (
+                <PhotoCard
+                  key={img.id}
+                  id={img.id}
+                  label={img.label}
+                  images={img.images}
+                  onClick={handlePhotoClick}
+                />
+              ))}
+            </div>
+          ))}
       </div>
 
       {lightboxData && (
