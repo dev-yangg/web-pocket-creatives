@@ -1,6 +1,6 @@
 import { works, type FeaturedWorksSample } from "../data";
 import { cn } from "../../../lib/utils";
-import FeaturedCarousel from "../components/FeaturedCarousel";
+import FeaturedWorks from "./FeaturedWorks";
 
 interface Props {
   category: string;
@@ -14,7 +14,7 @@ export default function WorksCategory({
   setCategory,
 }: Props) {
   return (
-    <section>
+    <section className="flex flex-col gap-y-8">
       <header className="content-boundary flex flex-col justify-center items-center text-center gap-y-6">
         <h3 className="capitalize font-extrabold">View by Category</h3>
         <div
@@ -36,7 +36,7 @@ export default function WorksCategory({
           ))}
         </div>
       </header>
-      <FeaturedCarousel category={category} featured={featured} />
+      <FeaturedWorks category={category} featured={featured} />
     </section>
   );
 }
