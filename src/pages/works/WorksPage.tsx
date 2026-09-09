@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import CategoryOverview from "./sections/CategoryOverview";
 import WorksCategory from "./sections/WorksCategory";
 import Videography from "./sections/Videography";
@@ -14,6 +14,9 @@ export default function WorksPage() {
     videography = [],
     photography = [],
   } = activeCategory ?? {};
+
+  const videographyRef = useRef<HTMLDivElement>(null);
+  const photographyRef = useRef<HTMLDivElement>(null);
   return (
     <>
       <WorksCategory
@@ -25,9 +28,19 @@ export default function WorksPage() {
         category={category}
         videography={videography}
         photography={photography}
+        videographyRef={videographyRef}
+        photographyRef={photographyRef}
       />
-      <Videography category={category} items={videography} />
-      <Photography category={category} items={photography} />
+      <Videography
+        category={category}
+        items={videography}
+        ref={videographyRef}
+      />
+      <Photography
+        category={category}
+        items={photography}
+        ref={photographyRef}
+      />
     </>
   );
 }

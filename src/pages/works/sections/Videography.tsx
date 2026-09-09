@@ -1,13 +1,15 @@
+import type { Ref } from "react";
 import VideographyGrid from "../components/VideographyGrid";
 import type { VideographySample } from "../data";
 interface Props {
   category: string;
   items: VideographySample[];
+  ref?: Ref<HTMLElement>;
 }
 
-export default function Videography({ category, items }: Props) {
+export default function Videography({ category, items, ref }: Props) {
   return (
-    <section className="py-14">
+    <section ref={ref} className="py-14 scroll-mt-8">
       <div className="content-boundary flex flex-col gap-y-2 md:gap-y-4">
         <header className="portfolio-gallery-header">
           <h3 className="font-extrabold">
