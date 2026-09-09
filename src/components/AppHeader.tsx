@@ -8,10 +8,12 @@ type AppHeaderProps = Pick<UseMenuReturn, "isOpen" | "toggleMenu">;
 
 export default function AppHeader({ isOpen, toggleMenu }: AppHeaderProps) {
   return (
-    <header className="bg-white z-app-header w-app-header fixed top-4 left-1/2 -translate-x-1/2 shadow-[0_4px_16px_0] shadow-black/10 rounded-3xl px-6 py-2 grid grid-cols-[1fr_2fr_1fr] items-center">
-      <AppAnchor className="" />
+    <header className="bg-white z-app-header w-app-header fixed top-4 left-1/2 -translate-x-1/2 shadow-[0_4px_16px_0] shadow-black/10 rounded-3xl px-6 py-2 flex justify-between items-center gap-x-4">
+      <div className="flex shrink-0 items-center">
+        <AppAnchor className="" />
+      </div>
       <nav className="hidden nav-breakpoint:grid place-content-center">
-        <ul className="w-[min(800px,100%)] flex gap-x-4 items-center justify-between">
+        <ul className="flex items-center gap-x-3 lg:gap-x-5 text-small lg:text-base whitespace-nowrap">
           <MainLinks />
         </ul>
       </nav>
