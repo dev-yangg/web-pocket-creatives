@@ -18,6 +18,10 @@ export const applinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+export const footerExtraLinks = [
+  { label: "How we work", href: "/how-we-work" },
+];
+
 export const socials = [
   { label: "YouTube", href: "https://www.youtube.com", icon: FaYoutube },
   { label: "Vimeo", href: "https://vimeo.com", icon: FaVimeoV },

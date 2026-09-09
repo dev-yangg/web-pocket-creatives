@@ -1,5 +1,5 @@
-import { Link } from "react-router";
-import { applinks } from "../data/globals";
+import { Link, NavLink } from "react-router";
+import { applinks, footerExtraLinks } from "../data/globals";
 import logo from "../assets/logo.svg";
 import SocialsList from "./SocialsList";
 
@@ -67,25 +67,25 @@ export default function AppFooter() {
           </div>
         </div>
       </div>
-      <div className="custom-underline">
-        <section className="content-boundary grid grid-cols-1 md:grid-cols-[2fr_1fr] py-4 @container">
+      <div className="max-md:custom-underline">
+        <section className="content-boundary grid grid-cols-1 md:grid-cols-[2fr_1fr] pt-4 pb-8 md:pb-0 @container">
           <h3 className="font-extrabold">QuickLinks</h3>
           <ul className="flex flex-wrap gap-x-4 gap-y-1 text-white text-[clamp(1.15rem,3.5cqi,1.35rem)]">
             {applinks.map((link) => (
               <li key={link.href}>
-                <Link
+                <NavLink
                   to={link.href}
                   className="inline-block uppercase font-normal ">
                   {link.label}
-                </Link>
+                </NavLink>
               </li>
             ))}
             <li>
-              <Link
+              <NavLink
                 to={"/blog"}
                 className="inline-block uppercase font-normal ">
                 blog
-              </Link>
+              </NavLink>
             </li>
           </ul>
           <Link
@@ -97,6 +97,21 @@ export default function AppFooter() {
               className="w-[clamp(8rem,20cqi,10rem)] h-auto"
             />
           </Link>
+        </section>
+      </div>
+      <div className="custom-underline">
+        <section className="content-boundary py-2 md:pt-0 md:pb-4">
+          <ul className="uppercase text-white font-light">
+            {footerExtraLinks.map((link) => (
+              <li key={link.label}>
+                <NavLink
+                  to={link.href}
+                  className="text-[clamp(1rem,2cqi,1.25rem)]">
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </section>
       </div>
       <div className="custom-underline py-4">
