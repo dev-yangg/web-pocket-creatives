@@ -11,7 +11,7 @@ export default function MainLinks({ className }: { className?: string }) {
           to={link.href}
           className={({ isActive }) =>
             cn(
-              "block hover:bg-yellow rounded-full transition-colors duration-150 ease-linear px-3 py-1",
+              "block hover:bg-yellow rounded-full transition-colors duration-150 ease-linear px-5 py-0.5",
               { "bg-lightblue": isContact },
               { "bg-yellow": isActive },
               className,
