@@ -197,6 +197,10 @@
   }
 }
 
+@utility shadow-below {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.25);
+}
+
 /* Featured Works Anim (works page) */
 @utility animate-marquee-x {
   animation-name: animate-marquee-x;
@@ -313,5 +317,24 @@
   .swiper-slide-duplicate-active {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@utility accordion {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition-duration-fast) ease-in-out;
+
+  .accordion-content {
+    overflow: hidden;
+    transition: padding var(--transition-duration-fast) ease-in-out;
+  }
+
+  &.isOpen {
+    grid-template-rows: 1fr;
+
+    .accordion-content {
+      @apply py-4;
+    }
   }
 }
