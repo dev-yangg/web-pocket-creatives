@@ -12,12 +12,12 @@ export default function AppHeader({ isOpen, toggleMenu }: AppHeaderProps) {
       <div className="flex shrink-0 items-center">
         <AppAnchor className="" />
       </div>
-      <nav className="hidden nav-breakpoint:grid place-content-center">
+      <nav className="hidden screen-900:grid place-content-center">
         <ul className="flex items-center gap-x-3 lg:gap-x-5 text-small lg:text-base whitespace-nowrap">
           <MainLinks />
         </ul>
       </nav>
-      <div className="grid place-content-center nav-breakpoint:place-content-end">
+      <div className="grid place-content-center screen-900:place-content-end">
         <button className=" w-8 aspect-square text-grayblue">
           <FaWhatsapp className="fill-current hover:fill-[#25d366] transition-colors duration-150 ease-in-out w-full h-full " />
         </button>
@@ -26,7 +26,7 @@ export default function AppHeader({ isOpen, toggleMenu }: AppHeaderProps) {
         <MenuButton
           isOpen={isOpen}
           onClick={toggleMenu}
-          className="flex flex-col nav-breakpoint:hidden justify-between"
+          className="flex flex-col screen-900:hidden justify-between"
         />
       </div>
     </header>
