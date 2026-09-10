@@ -2,6 +2,7 @@ import { useState } from "react";
 import { cn } from "../../../lib/utils";
 import { processAccordion } from "../data";
 import { IoIosArrowDown } from "react-icons/io";
+import SVG1 from "../components/SVG1";
 export default function ProcessAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -10,7 +11,16 @@ export default function ProcessAccordion() {
   };
 
   return (
-    <section className="bg-blue py-14">
+    <section className="bg-blue py-24 relative">
+      <div
+        aria-hidden="true"
+        className="content-boundary absolute inset-0 pointer-events-none">
+        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 h-[90%] md:left-0 md:translate-x-0">
+          <div className="w-full h-full">
+            <SVG1 />
+          </div>
+        </div>
+      </div>
       <div className="content-boundary">
         <ul className="flex flex-col gap-y-4">
           {processAccordion.map((accord, index) => {
@@ -20,7 +30,7 @@ export default function ProcessAccordion() {
               <li key={accord.title}>
                 <h3
                   className={cn(
-                    "text-[clamp(1.56rem,0.7rem+2.5vw,5rem)] bg-yellow text-black md:text-white md:bg-transparent flex md:inline-flex gap-x-8 justify-between px-4 py-2 transition-colors duration-fast ease-swap cursor-pointer",
+                    "text-[clamp(1.56rem,0.7rem+2.5vw,5rem)] bg-yellow text-black md:text-white md:bg-transparent flex md:inline-flex gap-x-8 justify-between px-4 py-2 transition-colors duration-fast ease-swap cursor-pointer leading-tight",
                     { "md:bg-yellow md:text-black": target },
                   )}
                   onClick={() => handleClick(index)}>
