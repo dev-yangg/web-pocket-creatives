@@ -68,7 +68,7 @@ export default function Services() {
           </Swiper>
         </div>
       ) : (
-        <div className="grid grid-cols-[minmax(0,1fr)_minmax(min(1440px,100%),1fr)_minmax(0,1fr)] lg:gap-y-18">
+        <div className="bleed-grid-1440 lg:gap-y-18">
           {services.map((service) => (
             <ServiceContent
               key={service.headline}

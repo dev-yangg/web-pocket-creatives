@@ -26,6 +26,7 @@
   --breakpoint-3xl: 1920px;
 
   --pad: 1.5em;
+  --spacing-content-boundary-1440: min(1440px, 100%);
   --spacing-content-boundary: min(1280px, 100% - calc(var(--pad) * 1.25));
   --spacing-app-header: min(1200px, 100% - var(--pad));
   --spacing-fluid-width-1000: min(1000px, 100% - calc(var(--pad) * 1.25));
@@ -133,6 +134,14 @@
   grid-template-columns:
     minmax(0, 1fr)
     var(--spacing-content-boundary)
+    minmax(0, 1fr);
+}
+
+@utility bleed-grid-1440 {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    var(--spacing-content-boundary-1440)
     minmax(0, 1fr);
 }
 
