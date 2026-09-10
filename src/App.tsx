@@ -1,4 +1,4 @@
-import { Outlet } from "react-router";
+import { Outlet, ScrollRestoration } from "react-router";
 import AppHeader from "./components/AppHeader";
 import AppFooter from "./components/AppFooter";
 import MainMenu from "./components/MainMenu";
@@ -14,6 +14,7 @@ export default function App() {
       </main>
       <AppFooter />
       <MainMenu isOpen={isOpen} closeMenu={closeMenu} />
+      <ScrollRestoration />
     </>
   );
 }
