@@ -86,28 +86,28 @@ export const processForm = {
     fields: [
       {
         name: "fullName",
-        label: "Full Name",
+        label: { base: "Full Name", breakpoint: "What's your name?" },
         placeholder: "Full Name",
         required: true,
       },
       {
         name: "contactNumber",
-        label: "Contact Number",
+        label: { base: "Contact Number", breakpoint: "Your contact number?" },
         placeholder: "Contact Number",
         required: true,
       },
       {
         name: "email",
-        label: "Email Address",
+        label: { base: "Email Address", breakpoint: "Your email address?" },
         placeholder: "Email Address",
         required: true,
         type: "email",
       },
       {
         name: "message",
-        label: "Message",
+        label: { base: "Message", breakpoint: "How can we help?" },
         placeholder: "Message",
-        required: false,
+        required: true,
         type: "textarea",
       },
     ],
