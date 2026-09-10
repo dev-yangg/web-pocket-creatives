@@ -54,9 +54,10 @@ export const processAccordion = [
   },
 ];
 
-export const processFeatures = [
+export const collabFeats = [
   {
     image: "/how-we-work/sample1.jpg",
+    alt: "Crew filming on set with camera and lighting equipment during a client shoot",
     title: "Yes, you can join us for the shoot!",
     content: [
       "Crazily, we still hear stories about clients being banned from attending shoots when working with some other agencies or production companies. It just doesn't make sense to us. We love having clients with us on set, and here's why... If the shot isn't as you like, you can tell us and we can change it. As simple as it is brilliant! We can avoid all of those difficult conversations in the edit about \"wishing that cup was placed just a bit more to the left…\" and just fix it there and then.",
@@ -66,6 +67,7 @@ export const processFeatures = [
   },
   {
     image: "/how-we-work/sample2.jpg",
+    alt: "Team reviewing and discussing edits on a monitor during a feedback session",
     title: "If it's right first time, something's wrong",
     content: [
       "With a million and one ways to edit a video or a still image, the distance between right and wrong gets further apart. One great aspect of working digitally is that you get to move things, delete things, put things back as they were four versions ago, all with relative ease.",
@@ -73,7 +75,6 @@ export const processFeatures = [
     ],
   },
 ];
-
 export const processForm = {
   headline: "See you next time",
   content: [
