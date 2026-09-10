@@ -101,12 +101,12 @@ export default function AppFooter() {
       </div>
       <div className="custom-underline">
         <section className="content-boundary py-2 md:pt-0 md:pb-4">
-          <ul className="uppercase text-white font-light">
+          <ul className="uppercase text-white font-light flex flex-col md:flex-row gap-x-4">
             {footerExtraLinks.map((link) => (
-              <li key={link.label}>
+              <li key={link.label} className="w-fit">
                 <NavLink
                   to={link.href}
-                  className="text-[clamp(1rem,2cqi,1.25rem)]">
+                  className="inline-block text-[clamp(1rem,2cqi,1.25rem)]">
                   {link.label}
                 </NavLink>
               </li>

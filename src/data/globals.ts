@@ -20,6 +20,7 @@ export const applinks = [
 
 export const footerExtraLinks = [
   { label: "How we work", href: "/how-we-work" },
+  { label: "Trainings", href: "/trainings" },
 ];
 
 export const socials = [
