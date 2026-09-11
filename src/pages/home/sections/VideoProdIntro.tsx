@@ -1,4 +1,4 @@
-import { SlArrowDown } from "react-icons/sl";
+import FloatingArrowDown from "../../../components/FloatingArrowDown";
 
 export default function VideoProdIntro() {
   return (
@@ -12,11 +12,7 @@ export default function VideoProdIntro() {
           voluptatibus alias architecto eveniet doloremque illo distinctio
           suscipit eaque, voluptatum expedita dolores eius ut sed?
         </p>
-        <div
-          aria-hidden="true"
-          className="w-34 aspect-square grid place-items-center justify-self-center md:justify-self-start md:col-start-3 md:col-end-4">
-          <SlArrowDown className="text-white fill-current w-full h-full animate-float" />
-        </div>
+        <FloatingArrowDown className="justify-self-center md:justify-self-start md:col-start-3 md:col-end-4 text-white" />
       </div>
     </section>
   );
