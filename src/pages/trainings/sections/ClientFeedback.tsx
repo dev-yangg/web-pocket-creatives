@@ -64,13 +64,11 @@ export default function ClientFeedback() {
     },
   };
 
-  console.log("activeClient", activeIndex);
-
   return (
     <section className="py-24 lg:py-64 grid items-center lg:min-h-[60dvh] relative">
       <div
         aria-hidden="true"
-        className="absolute h-[90%] lg:h-[80%] left-1/2 -translate-x-1/2 w-[min(1440px,100%-calc(var(--pad)*1.25))]">
+        className="absolute h-[90%] lg:h-[80%] left-1/2 -translate-x-1/2 w-[min(1440px,100%-calc(var(--pad)*1.25))] pointer-events-none">
         <QuoteMark />
       </div>
       <div className="content-boundary">
