@@ -1,3 +1,8 @@
+export type BlogBlock =
+  | { type: "heading"; text: string }
+  | { type: "paragraph"; text: string }
+  | { type: "list"; items: string[] };
+
 export interface Blog {
   slug: string;
   title: string;
@@ -5,6 +10,7 @@ export interface Blog {
   image: string;
   author?: string;
   createdAt?: string;
+  content?: BlogBlock[];
 }
 
 export const blogs: Blog[] = [
@@ -14,7 +20,8 @@ export const blogs: Blog[] = [
     tags: ["beauty", "products", "video"],
     image: "/blogs/blog-01.webp",
     author: "Pocket Creatives",
-    createdAt: "28TH FEBRUARY 2022",
+    createdAt: "28th February 2022",
+    content: [],
   },
   {
     slug: "beauty-product-photography-pony-revolution",
@@ -22,7 +29,8 @@ export const blogs: Blog[] = [
     tags: ["beauty", "photography", "products", "video"],
     image: "/blogs/blog-02.webp",
     author: "Pocket Creatives",
-    createdAt: "14TH MARCH 2022",
+    createdAt: "14th March 2022",
+    content: [],
   },
   {
     slug: "meeting-gouri-kubair-at-holy-lama",
@@ -30,7 +38,8 @@ export const blogs: Blog[] = [
     tags: ["beauty"],
     image: "/blogs/blog-03.webp",
     author: "Pocket Creatives",
-    createdAt: "3RD JANUARY 2022",
+    createdAt: "3rd January 2022",
+    content: [],
   },
   {
     slug: "shooting-stop-motion-video",
@@ -38,7 +47,8 @@ export const blogs: Blog[] = [
     tags: ["beauty", "video"],
     image: "/blogs/blog-04.webp",
     author: "Pocket Creatives",
-    createdAt: "21ST NOVEMBER 2021",
+    createdAt: "21st November 2021",
+    content: [],
   },
   {
     slug: "christmas-photography-2020",
@@ -46,7 +56,8 @@ export const blogs: Blog[] = [
     tags: ["photography", "beauty", "jewellery", "products"],
     image: "/blogs/blog-05.webp",
     author: "Pocket Creatives",
-    createdAt: "25TH DECEMBER 2020",
+    createdAt: "25th December 2020",
+    content: [],
   },
   {
     slug: "6-beauty-photography-tips",
@@ -54,7 +65,8 @@ export const blogs: Blog[] = [
     tags: ["beauty"],
     image: "/blogs/blog-06.webp",
     author: "Pocket Creatives",
-    createdAt: "9TH AUGUST 2021",
+    createdAt: "9th August 2021",
+    content: [],
   },
   {
     slug: "model-behaviour",
@@ -62,7 +74,8 @@ export const blogs: Blog[] = [
     tags: ["beauty", "people", "photography", "portraits"],
     image: "/blogs/blog-07.webp",
     author: "Pocket Creatives",
-    createdAt: "17TH JUNE 2021",
+    createdAt: "17th June 2021",
+    content: [],
   },
   {
     slug: "created-at-home",
@@ -70,7 +83,8 @@ export const blogs: Blog[] = [
     tags: ["photography", "beauty", "food", "food & drink", "products"],
     image: "/blogs/blog-08.webp",
     author: "Pocket Creatives",
-    createdAt: "2ND MAY 2021",
+    createdAt: "2nd May 2021",
+    content: [],
   },
   {
     slug: "christmas-photography-content",
@@ -78,7 +92,8 @@ export const blogs: Blog[] = [
     tags: ["photography", "beauty", "food", "food & drink", "watches"],
     image: "/blogs/blog-09.webp",
     author: "Pocket Creatives",
-    createdAt: "22ND DECEMBER 2020",
+    createdAt: "22nd December 2020",
+    content: [],
   },
   {
     slug: "fantastic-flat-lay",
@@ -86,7 +101,8 @@ export const blogs: Blog[] = [
     tags: ["photography", "beauty", "food", "food & drink"],
     image: "/blogs/blog-10.webp",
     author: "Pocket Creatives",
-    createdAt: "11TH SEPTEMBER 2021",
+    createdAt: "11th September 2021",
+    content: [],
   },
   {
     slug: "getting-our-nails-into-beauty",
@@ -94,7 +110,8 @@ export const blogs: Blog[] = [
     tags: ["beauty", "video"],
     image: "/blogs/blog-11.webp",
     author: "Pocket Creatives",
-    createdAt: "6TH JULY 2021",
+    createdAt: "6th July 2021",
+    content: [],
   },
   {
     slug: "scrubs-up-well",
@@ -102,7 +119,112 @@ export const blogs: Blog[] = [
     tags: ["crowdfunding", "beauty", "video"],
     image: "/blogs/blog-12.webp",
     author: "Pocket Creatives",
-    createdAt: "30TH APRIL 2021",
+    createdAt: "30th April 2021",
+    content: [],
+  },
+  {
+    slug: "what-is-a-treatment-in-video-production",
+    title: "What is a Treatment in Video Production? Expert Answers!",
+    tags: ["video"],
+    image: "/blogs/blog-13.webp",
+    author: "Pocket Creatives",
+    createdAt: "20th March 2025",
+    content: [
+      {
+        type: "paragraph",
+        text: "Ever had a brilliant video idea but struggled to communicate it clearly? Whether you're planning a product video, brand film, or social media advert, ensuring everyone shares the same vision is crucial. That's where a treatment comes in.",
+      },
+      {
+        type: "paragraph",
+        text: "A video treatment is a concise, structured document outlining your video's concept, tone, narrative, and stylistic approach. It acts as a roadmap before scriptwriting, helping directors, clients, and production teams stay aligned.",
+      },
+      {
+        type: "paragraph",
+        text: "A well-structured video treatment ensures clarity, minimises revisions, and keeps your creative vision intact. In this guide, we'll break down everything you need to know — from step-by-step structuring to common mistakes to avoid.",
+      },
+      { type: "heading", text: "What is a Treatment in Video Production?" },
+      {
+        type: "paragraph",
+        text: "A video treatment is a pre-production document that summarises a project's creative vision, story structure, and stylistic approach. It's often used before scriptwriting to define the mood, tone, and key messaging of the video.",
+      },
+      { type: "paragraph", text: "A treatment is particularly useful for:" },
+      {
+        type: "list",
+        items: [
+          "Aligning stakeholders — ensuring everyone shares the same creative vision.",
+          "Pitching ideas — helping clients, investors, or internal teams approve a concept.",
+          "Minimising revisions — reducing confusion and costly reshoots during production.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Treatment vs. Script vs. Storyboard — What's the Difference?",
+      },
+      {
+        type: "paragraph",
+        text: "A treatment covers high-level concept and visual style, focused on big-picture storytelling. A script covers detailed dialogue and scene actions, tracking every word and movement. A storyboard covers shot-by-shot visual representation, mapping camera angles and flow.",
+      },
+      {
+        type: "paragraph",
+        text: "If you're wondering what a treatment in video production is, it's essentially the first step to transforming an idea into a fully structured video concept.",
+      },
+      {
+        type: "heading",
+        text: "Different Types of Video Treatments & Their Use-Cases",
+      },
+      {
+        type: "paragraph",
+        text: "Not all video treatments are created equal! Depending on the type of video, a treatment can vary significantly in structure, tone, and purpose. Here's how treatments differ based on video type:",
+      },
+      {
+        type: "paragraph",
+        text: "Commercial Video Treatment — used by brands to develop advertising concepts before production, focusing on storytelling, emotional triggers, and brand messaging. Often includes a mood board, visual style guide, and proposed call-to-action (CTA).",
+      },
+      {
+        type: "paragraph",
+        text: "Corporate Video Treatment — ideal for company overview videos, testimonials, or training content. Emphasises clarity, professionalism, and messaging alignment, often with structured interview segments, voice over scripting, and branding elements.",
+      },
+      {
+        type: "paragraph",
+        text: "Product Video Treatment — essential for eCommerce, product showcases, and explainer videos. Focuses on highlighting product features, functionality, and benefits, and may include macro product shots, animation concepts, and demonstration sequences.",
+      },
+      {
+        type: "paragraph",
+        text: "Event Video Treatment — guides the filming of conferences, product launches, or live events. Details multi-camera setups, key interview shots, crowd interactions, and event highlights, ensuring smooth coverage with a shot list and schedule.",
+      },
+      {
+        type: "paragraph",
+        text: "Social Media Video Treatment — short-form, engaging, and highly visual. Optimised for Instagram Reels, TikTok, and YouTube Shorts, focusing on snappy edits, eye-catching transitions, and mobile-friendly framing.",
+      },
+      {
+        type: "paragraph",
+        text: "At Pocket Creatives, we tailor each treatment to match the brand's goals, audience, and video platform — ensuring every project delivers maximum impact. If you're still asking what a treatment in video production is, the answer is it's an essential blueprint for video success.",
+      },
+      { type: "heading", text: "Why is a Video Treatment Important?" },
+      {
+        type: "paragraph",
+        text: "A video production treatment isn't just a creative exercise — it's a practical tool that saves time, money, and confusion.",
+      },
+      { type: "paragraph", text: "Key Benefits:" },
+      {
+        type: "list",
+        items: [
+          "Clarity & Direction — A well-structured treatment eliminates misinterpretation between teams.",
+          "Client Approvals — Treatments provide a clear preview of the video's message before investing in production.",
+          "Fewer Revisions — A solid treatment reduces back-and-forth changes, cutting production delays.",
+          "Professionalism — Agencies and brands expect structured treatments before committing to large-scale projects.",
+          "Brand Consistency — A well-written treatment not only improves creative alignment but also strengthens brand consistency.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "By outlining visual and messaging guidelines upfront, businesses can ensure that every video reflects their brand identity. This makes marketing efforts more cohesive across different campaigns, improving audience trust and recognition.",
+      },
+      {
+        type: "paragraph",
+        text: "For example, at Pocket Creatives, when working on a crowdfunding video for a beauty brand, a treatment helped refine the product's visual story before production, avoiding costly mid-project changes.",
+      },
+    ],
   },
 ];
 
