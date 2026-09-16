@@ -18,6 +18,8 @@ export const applinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+export const footerLinks = [{ label: "Blogs", href: "/blogs" }];
+
 export const footerExtraLinks = [
   { label: "How we work", href: "/how-we-work" },
   { label: "Trainings", href: "/trainings" },

@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router";
-import { applinks, footerExtraLinks } from "../data/globals";
+import { applinks, footerExtraLinks, footerLinks } from "../data/globals";
 import logo from "../assets/logo.svg";
 import SocialsList from "./SocialsList";
 
@@ -71,7 +71,7 @@ export default function AppFooter() {
         <section className="content-boundary grid grid-cols-1 md:grid-cols-[2fr_1fr] pt-4 pb-8 md:pb-0 @container">
           <h3 className="font-extrabold">QuickLinks</h3>
           <ul className="flex flex-wrap gap-x-4 gap-y-1 text-white text-[clamp(1.15rem,3.5cqi,1.35rem)]">
-            {applinks.map((link) => (
+            {[...applinks, ...footerLinks].map((link) => (
               <li key={link.href}>
                 <NavLink
                   to={link.href}
@@ -80,13 +80,6 @@ export default function AppFooter() {
                 </NavLink>
               </li>
             ))}
-            <li>
-              <NavLink
-                to={"/blog"}
-                className="inline-block uppercase font-normal ">
-                blog
-              </NavLink>
-            </li>
           </ul>
           <Link
             to={"/"}
