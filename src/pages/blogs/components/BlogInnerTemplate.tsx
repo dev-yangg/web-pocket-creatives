@@ -30,7 +30,7 @@ export default function BlogInnerTemplate() {
           <h1 className="text-grayblue font-extrabold text-heading-2 leading-tight">
             {blog.title}
           </h1>
-          <div className="flex items-center flex-wrap gap-2 md:gap-4 text-blue text-[clamp(.85rem,1rem_+_0.5cqw,1.15rem)]">
+          <div className="flex items-center flex-wrap gap-2 md:gap-4 text-blue text-[clamp(.85rem,1rem+0.5cqw,1.15rem)]">
             <span>{blog.author}</span>
             <span aria-hidden="true">•</span>
             <span>{blog.createdAt}</span>
