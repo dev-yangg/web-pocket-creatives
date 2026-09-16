@@ -26,15 +26,15 @@ export default function BlogInnerTemplate() {
             Go back to blogs
           </span>
         </Link>
-        <header className="flex flex-col gap-y-4 pt-3 pb-6">
+        <header className="flex flex-col gap-y-4 pt-3 pb-6 @container">
           <h1 className="text-grayblue font-extrabold text-heading-2 leading-tight">
             {blog.title}
           </h1>
-          <p className="flex items-center flex-wrap gap-x-4 text-blue">
+          <div className="flex items-center flex-wrap gap-2 md:gap-4 text-blue text-[clamp(.85rem,1rem+0.5cqw,1.15rem)]">
             <span>{blog.author}</span>
             <span aria-hidden="true">•</span>
             <span>{blog.createdAt}</span>
-            <ul className="ml-3 flex flex-wrap items-center rounded-lg overflow-clip bg-yellow font-extrabold capitalize text-black px-4 gap-x-3 leading-none py-2">
+            <ul className="md:ml-2 flex flex-wrap items-center rounded-lg overflow-clip bg-yellow font-extrabold capitalize text-black px-2 md:px-4 gap-x-3 leading-none py-2">
               {blog.tags.map((tag, index) => {
                 const lastItem = index === blog.tags.length - 1;
 
@@ -48,7 +48,7 @@ export default function BlogInnerTemplate() {
                 );
               })}
             </ul>
-          </p>
+          </div>
         </header>
         <div className="py-10">
           <img
