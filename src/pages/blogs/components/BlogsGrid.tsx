@@ -46,7 +46,7 @@ function Card({ image, title, tags, slug, createdAt, author }: Blog) {
                 <li
                   key={tag}
                   className={cn(
-                    "bg-yellow font-extrabold capitalize text-black italic pl-2 pr-1 outline outline-yellow leading-none",
+                    "bg-yellow font-extrabold capitalize text-black italic pl-2 pr-1 outline outline-yellow leading-tight",
                     { "pr-2": lastItem },
                   )}>
                   <span className="text-small">
