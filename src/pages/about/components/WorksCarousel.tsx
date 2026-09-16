@@ -106,10 +106,7 @@ function WorkCard({ work }: { work: Work }) {
           <span className="hidden lg:inline">Tap</span> on Video to toggle sound
         </p>
       )}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-linear-to-t from-yellow from-30% via-yellow/40 via-50% to-transparent"
-      />
+      <div aria-hidden="true" className="yellow-gradient-overlay" />
       <figcaption className="z-10 flex flex-col gap-y-2 py-8 px-4 md:p-8">
         <span className="bg-blue text-white px-1.5 py-0.5 self-start">
           {work.tag}
