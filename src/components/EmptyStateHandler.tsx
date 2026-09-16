@@ -7,7 +7,7 @@ export default function EmptyStateHandler({
 }) {
   return (
     <div className={cn("grid place-items-center", className)}>
-      <p>Nothing to display here</p>
+      <p className="text-black/35 text-heading-3">Nothing to see here yet</p>
     </div>
   );
 }
