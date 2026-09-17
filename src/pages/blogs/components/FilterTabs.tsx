@@ -17,7 +17,7 @@ export default function FilterTabs({
           <button
             onClick={() => onClick(filter)}
             className={cn(
-              "font-semibold hover:text-blue transition-colors duration-175 ease-in-out",
+              "font-semibold hover:text-blue transition-colors duration-175 ease-in-out capitalize",
               {
                 "text-yellow hover:text-yellow": filter === selectedCategory,
               },
