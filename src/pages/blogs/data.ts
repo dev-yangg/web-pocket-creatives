@@ -13,6 +13,7 @@ export interface Blog {
   createdAt?: string;
   content?: BlogBlock[];
   relatedIds?: number[];
+  likeCount: number;
 }
 
 export const blogs: Blog[] = [
@@ -26,6 +27,7 @@ export const blogs: Blog[] = [
     createdAt: "28th February 2022",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 2,
@@ -37,6 +39,7 @@ export const blogs: Blog[] = [
     createdAt: "14th March 2022",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 3,
@@ -48,6 +51,7 @@ export const blogs: Blog[] = [
     createdAt: "3rd January 2022",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 4,
@@ -59,6 +63,7 @@ export const blogs: Blog[] = [
     createdAt: "21st November 2021",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 5,
@@ -70,6 +75,7 @@ export const blogs: Blog[] = [
     createdAt: "25th December 2020",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 6,
@@ -81,6 +87,7 @@ export const blogs: Blog[] = [
     createdAt: "9th August 2021",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 7,
@@ -92,6 +99,7 @@ export const blogs: Blog[] = [
     createdAt: "17th June 2021",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 8,
@@ -103,6 +111,7 @@ export const blogs: Blog[] = [
     createdAt: "2nd May 2021",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 9,
@@ -114,6 +123,7 @@ export const blogs: Blog[] = [
     createdAt: "22nd December 2020",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 10,
@@ -125,6 +135,7 @@ export const blogs: Blog[] = [
     createdAt: "11th September 2021",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 11,
@@ -136,6 +147,7 @@ export const blogs: Blog[] = [
     createdAt: "6th July 2021",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 12,
@@ -147,6 +159,7 @@ export const blogs: Blog[] = [
     createdAt: "30th April 2021",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 13,
@@ -157,6 +170,7 @@ export const blogs: Blog[] = [
     author: "Pocket Creatives",
     createdAt: "20th March 2025",
     relatedIds: [14, 15, 16, 17, 2, 18, 19, 20],
+    likeCount: 999,
     content: [
       {
         type: "paragraph",
@@ -264,6 +278,7 @@ export const blogs: Blog[] = [
     createdAt: "12th January 2023",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 15,
@@ -275,6 +290,7 @@ export const blogs: Blog[] = [
     createdAt: "3rd February 2023",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 16,
@@ -286,6 +302,7 @@ export const blogs: Blog[] = [
     createdAt: "18th April 2023",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 17,
@@ -297,6 +314,7 @@ export const blogs: Blog[] = [
     createdAt: "9th May 2023",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 18,
@@ -308,6 +326,7 @@ export const blogs: Blog[] = [
     createdAt: "27th June 2023",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 19,
@@ -319,6 +338,7 @@ export const blogs: Blog[] = [
     createdAt: "14th August 2023",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
   {
     id: 20,
@@ -330,6 +350,7 @@ export const blogs: Blog[] = [
     createdAt: "2nd October 2023",
     content: [],
     relatedIds: [],
+    likeCount: 0,
   },
 ];
 

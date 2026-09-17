@@ -210,6 +210,65 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.25);
 }
 
+@utility animate-move-right {
+  animation-name: animate-move-right;
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-iteration-count: 1;
+}
+
+@keyframes animate-move-right {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(2px);
+  }
+}
+
+@utility animate-hover-like {
+  animation-name: animate-hover-like;
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-iteration-count: 1;
+  transform-origin: bottom left;
+}
+
+@keyframes animate-hover-like {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(-15deg);
+  }
+}
+
+@utility animate-like {
+  animation-name: animate-like;
+  animation-duration: 450ms;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate-like {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(1.4) rotate(-15deg);
+  }
+  60% {
+    transform: scale(0.9) rotate(10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
 /* Featured Works Anim (works page) */
 @utility animate-marquee-x {
   animation-name: animate-marquee-x;

@@ -4,9 +4,12 @@ import { BsArrowRight } from "react-icons/bs";
 import { cn } from "../../../lib/utils";
 import EmptyStateHandler from "../../../components/EmptyStateHandler";
 
+type BlogCardData = Omit<Blog, "likeCount">;
+
 interface Props {
-  blogs: Blog[];
+  blogs: BlogCardData[];
 }
+
 export default function BlogsGrid({ blogs }: Props) {
   if (blogs.length === 0) {
     return <EmptyStateHandler className="py-24" />;
@@ -30,7 +33,7 @@ export default function BlogsGrid({ blogs }: Props) {
   );
 }
 
-function Card({ image, title, tags, slug, createdAt, author }: Blog) {
+function Card({ image, title, tags, slug, createdAt, author }: BlogCardData) {
   return (
     <figure className="outline-3 outline-grayblue p-2 h-full flex flex-col xl:min-h-130">
       <div className="aspect-3/2">
