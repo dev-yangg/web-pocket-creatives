@@ -156,7 +156,7 @@ export const blogs: Blog[] = [
     image: "/blogs/blog-13.webp",
     author: "Pocket Creatives",
     createdAt: "20th March 2025",
-    relatedIds: [14, 15, 16, 2, 17, 18, 19, 20],
+    relatedIds: [14, 15, 16, 17, 2, 18, 19, 20],
     content: [
       {
         type: "paragraph",
