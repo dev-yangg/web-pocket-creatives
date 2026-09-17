@@ -18,6 +18,8 @@ export default function Hero() {
     setCanGoPrev(swiper.isEnd);
   };
 
+  const visibleBlogs = blogs.slice(0, 12);
+
   return (
     <section className="pb-24">
       <div className="content-boundary">
@@ -30,7 +32,7 @@ export default function Hero() {
           onSwiper={updateEdges}
           onSlideChange={updateEdges}
           onResize={updateEdges}>
-          {blogs.map((blog) => (
+          {visibleBlogs.map((blog) => (
             <SwiperSlide>
               <SlideMedia
                 title={blog.title}
@@ -55,7 +57,12 @@ export default function Hero() {
   );
 }
 
-function SlideMedia({ title, tags, image, slug }: Blog) {
+function SlideMedia({
+  title,
+  tags,
+  image,
+  slug,
+}: Pick<Blog, "title" | "tags" | "image" | "slug">) {
   return (
     <figure className="relative aspect-1/1.5 md:aspect-2/2 lg:aspect-3/2 grid items-end @container">
       <div className="absolute inset-0">
@@ -73,19 +80,19 @@ function SlideMedia({ title, tags, image, slug }: Blog) {
         <h2 className="text-[clamp(1.375rem,1.25rem+1cqw,2rem)] bg-blue w-fit text-white font-bold p-3 leading-none text-balance mb-2 md:mb-0">
           {title}
         </h2>
-        <ul className="flex items-center gap-x-[.5ch]">
+        <ul className="flex flex-wrap items-center gap-x-[.5ch]">
           {tags.map((tag, index) => {
             const lastItem = index === tags.length - 1;
 
             return (
-              <li key={tag} className="font-extrabold capitalize">
+              <li key={tag} className="font-extrabold capitalize leading-tight">
                 {tag}
                 {!lastItem && ","}
               </li>
             );
           })}
         </ul>
-        <Link to={slug} className="flex items-center gap-x-2 group">
+        <Link to={slug} className="flex items-center gap-x-2 group mt-2">
           <span className="group-hover:translate-x-0.75 transition-transform duration-300 ease-in-out will-change-transform">
             Read More
           </span>
