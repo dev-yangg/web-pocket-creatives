@@ -50,10 +50,10 @@ function Card({ image, title, tags, slug, createdAt, author }: BlogCardData) {
                 <li
                   key={tag}
                   className={cn(
-                    "bg-yellow font-extrabold capitalize text-black italic pl-2 pr-1 outline outline-yellow leading-tight",
+                    "bg-yellow font-extrabold capitalize text-black italic pl-1 pr-1 outline outline-yellow flex items-center py-0.5",
                     { "pr-2": lastItem },
                   )}>
-                  <span className="text-small">
+                  <span className="text-small leading-tight">
                     {tag}
                     {!lastItem && ","}
                   </span>
