@@ -27,7 +27,7 @@ export default function RelatedNews({ relatedIds }: Props) {
 
 function Card({ image, title, slug }: Pick<Blog, "image" | "title" | "slug">) {
   return (
-    <Link to={slug}>
+    <Link to={`/blogs/${slug}`}>
       <figure className="grid grid-cols-[.5fr_1fr] md:grid-cols-1 gap-4 items-center">
         <div className="aspect-3/2 overflow-hidden">
           <img src={image} alt={title} className="w-full h-full object-cover" />
