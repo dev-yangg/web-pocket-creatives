@@ -7,7 +7,7 @@ import { useSearchParams } from "react-router";
 
 const PAGE_SIZE = 9;
 
-export default function BlogsPagination() {
+export default function BlogsFilter() {
   const { headline, filters } = blogsPagination;
   const [searchParams, setSearchParams] = useSearchParams();
   const sectionRef = useRef<HTMLElement | null>(null);
