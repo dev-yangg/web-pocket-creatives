@@ -16,6 +16,7 @@ export default function BlogsGrid({ blogs }: Props) {
       {blogs.map((blog) => (
         <li key={blog.slug}>
           <Card
+            id={blog.id}
             image={blog.image}
             title={blog.title}
             tags={blog.tags}
