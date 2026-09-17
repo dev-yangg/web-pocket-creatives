@@ -11,6 +11,7 @@ export interface Blog {
   author?: string;
   createdAt?: string;
   content?: BlogBlock[];
+  relatedSlugs?: string[];
 }
 
 export const blogs: Blog[] = [
@@ -22,6 +23,7 @@ export const blogs: Blog[] = [
     author: "Pocket Creatives",
     createdAt: "28th February 2022",
     content: [],
+    relatedSlugs: [],
   },
   {
     slug: "beauty-product-photography-pony-revolution",
@@ -31,6 +33,7 @@ export const blogs: Blog[] = [
     author: "Pocket Creatives",
     createdAt: "14th March 2022",
     content: [],
+    relatedSlugs: [],
   },
   {
     slug: "meeting-gouri-kubair-at-holy-lama",
@@ -40,6 +43,7 @@ export const blogs: Blog[] = [
     author: "Pocket Creatives",
     createdAt: "3rd January 2022",
     content: [],
+    relatedSlugs: [],
   },
   {
     slug: "shooting-stop-motion-video",
@@ -49,6 +53,7 @@ export const blogs: Blog[] = [
     author: "Pocket Creatives",
     createdAt: "21st November 2021",
     content: [],
+    relatedSlugs: [],
   },
   {
     slug: "christmas-photography-2020",
@@ -58,6 +63,7 @@ export const blogs: Blog[] = [
     author: "Pocket Creatives",
     createdAt: "25th December 2020",
     content: [],
+    relatedSlugs: [],
   },
   {
     slug: "6-beauty-photography-tips",
@@ -67,6 +73,7 @@ export const blogs: Blog[] = [
     author: "Pocket Creatives",
     createdAt: "9th August 2021",
     content: [],
+    relatedSlugs: [],
   },
   {
     slug: "model-behaviour",
@@ -76,6 +83,7 @@ export const blogs: Blog[] = [
     author: "Pocket Creatives",
     createdAt: "17th June 2021",
     content: [],
+    relatedSlugs: [],
   },
   {
     slug: "created-at-home",
@@ -85,6 +93,7 @@ export const blogs: Blog[] = [
     author: "Pocket Creatives",
     createdAt: "2nd May 2021",
     content: [],
+    relatedSlugs: [],
   },
   {
     slug: "christmas-photography-content",
@@ -94,6 +103,7 @@ export const blogs: Blog[] = [
     author: "Pocket Creatives",
     createdAt: "22nd December 2020",
     content: [],
+    relatedSlugs: [],
   },
   {
     slug: "fantastic-flat-lay",
@@ -103,6 +113,7 @@ export const blogs: Blog[] = [
     author: "Pocket Creatives",
     createdAt: "11th September 2021",
     content: [],
+    relatedSlugs: [],
   },
   {
     slug: "getting-our-nails-into-beauty",
@@ -112,6 +123,7 @@ export const blogs: Blog[] = [
     author: "Pocket Creatives",
     createdAt: "6th July 2021",
     content: [],
+    relatedSlugs: [],
   },
   {
     slug: "scrubs-up-well",
@@ -121,6 +133,7 @@ export const blogs: Blog[] = [
     author: "Pocket Creatives",
     createdAt: "30th April 2021",
     content: [],
+    relatedSlugs: [],
   },
   {
     slug: "what-is-a-treatment-in-video-production",
@@ -129,6 +142,16 @@ export const blogs: Blog[] = [
     image: "/blogs/blog-13.webp",
     author: "Pocket Creatives",
     createdAt: "20th March 2025",
+    relatedSlugs: [
+      "what-is-dp-in-video-production",
+      "what-are-the-5-stages-of-video-production",
+      "crowdfunding-video-for-synergised-uk",
+      "beauty-product-photography-pony-revolution",
+      "our-product-videographers-shoot-with-skinny-tan",
+      "video-production-for-publishing",
+      "photography-and-video-production-with-energy",
+      "our-first-tv-ad-as-a-video-production-company",
+    ],
     content: [
       {
         type: "paragraph",
@@ -225,6 +248,76 @@ export const blogs: Blog[] = [
         text: "For example, at Pocket Creatives, when working on a crowdfunding video for a beauty brand, a treatment helped refine the product's visual story before production, avoiding costly mid-project changes.",
       },
     ],
+  },
+  {
+    slug: "what-is-dp-in-video-production",
+    title: "What is DP in Video Production? Role & Importance Explained",
+    tags: ["video", "company"],
+    image: "/blogs/blog-14.webp",
+    author: "Pocket Creatives",
+    createdAt: "12th January 2023",
+    content: [],
+    relatedSlugs: [],
+  },
+  {
+    slug: "what-are-the-5-stages-of-video-production",
+    title: "What Are The 5 Stages of Video Production? (Essential Guide)",
+    tags: ["video", "company"],
+    image: "/blogs/blog-15.webp",
+    author: "Pocket Creatives",
+    createdAt: "3rd February 2023",
+    content: [],
+    relatedSlugs: [],
+  },
+  {
+    slug: "crowdfunding-video-for-synergised-uk",
+    title: "Crowdfunding video for Synergised UK",
+    tags: ["crowdfunding", "video"],
+    image: "/blogs/blog-16.webp",
+    author: "Paula",
+    createdAt: "18th April 2023",
+    content: [],
+    relatedSlugs: [],
+  },
+  {
+    slug: "our-product-videographers-shoot-with-skinny-tan",
+    title: "Our Product Videographers Shoot With Skinny Tan",
+    tags: ["beauty", "products", "video"],
+    image: "/blogs/blog-01.webp",
+    author: "Pocket Creatives",
+    createdAt: "9th May 2023",
+    content: [],
+    relatedSlugs: [],
+  },
+  {
+    slug: "video-production-for-publishing",
+    title: "Video Production For Publishing",
+    tags: ["video", "company"],
+    image: "/blogs/blog-18.webp",
+    author: "Ian Sanders",
+    createdAt: "27th June 2023",
+    content: [],
+    relatedSlugs: [],
+  },
+  {
+    slug: "photography-and-video-production-with-energy",
+    title: "Photography and video production with energy",
+    tags: ["photography", "video"],
+    image: "/blogs/blog-19.webp",
+    author: "Pocket Creatives",
+    createdAt: "14th August 2023",
+    content: [],
+    relatedSlugs: [],
+  },
+  {
+    slug: "our-first-tv-ad-as-a-video-production-company",
+    title: "Our first TV ad as a Video Production Company",
+    tags: ["video", "company"],
+    image: "/blogs/blog-20.webp",
+    author: "Pocket Creatives",
+    createdAt: "2nd October 2023",
+    content: [],
+    relatedSlugs: [],
   },
 ];
 
