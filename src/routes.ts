@@ -7,6 +7,7 @@ import HowWeWork from "./pages/how-we-work/HowWeWork";
 import Trainings from "./pages/trainings/Trainings";
 import Blogs from "./pages/blogs/Blogs";
 import BlogInnerTemplate from "./pages/blogs/components/BlogInnerTemplate";
+import ServicesPage from "./pages/services/ServicesPage";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
       {
         path: "works",
         Component: WorksPage,
+      },
+      {
+        path: "services",
+        Component: ServicesPage,
       },
       {
         path: "how-we-work",
