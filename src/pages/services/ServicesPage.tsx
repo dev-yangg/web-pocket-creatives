@@ -22,12 +22,12 @@ export default function ServicesPage() {
   const handleClick = (reference: ServicesSectionKey) => jumpTo[reference]();
 
   return (
-    <>
+    <main className="pt-app-padding-top bg-yellow">
       <SectionScroller
         {...servicesIntro1}
         sectionRef={videographyServicesRef}
         onClick={handleClick}
-        className="bg-yellow"
+        className="bg-yellow max-md:pt-0"
       />
       <SectionScroller
         {...servicesIntro2}
@@ -41,6 +41,6 @@ export default function ServicesPage() {
         onClick={handleClick}
         className="bg-yellow"
       />
-    </>
+    </main>
   );
 }

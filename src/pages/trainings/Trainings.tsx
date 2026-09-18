@@ -6,12 +6,12 @@ import Hero from "./sections/Hero";
 
 export default function Trainings() {
   return (
-    <>
+    <main className="pt-app-padding-top">
       <Hero />
       <CourseProcess />
       <ExampleCourses />
       <BehindTheScene />
       <ClientFeedback />
-    </>
+    </main>
   );
 }

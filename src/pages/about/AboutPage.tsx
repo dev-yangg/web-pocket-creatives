@@ -10,7 +10,7 @@ import Works from "./sections/Works";
 
 export default function AboutPage() {
   return (
-    <>
+    <main className="pt-app-padding-top">
       <Hero />
       <StudioOverview />
       <Works />
@@ -20,6 +20,6 @@ export default function AboutPage() {
       <Clients />
       <DiscoveryNudge />
       <Story />
-    </>
+    </main>
   );
 }

@@ -18,7 +18,7 @@ export default function WorksPage() {
   const videographyRef = useRef<HTMLDivElement>(null);
   const photographyRef = useRef<HTMLDivElement>(null);
   return (
-    <>
+    <main className="pt-app-padding-top">
       <WorksCategory
         category={category}
         featured={featured}
@@ -41,6 +41,6 @@ export default function WorksPage() {
         items={photography}
         ref={photographyRef}
       />
-    </>
+    </main>
   );
 }

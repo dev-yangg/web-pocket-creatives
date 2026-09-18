@@ -19,7 +19,7 @@ export default function SectionScroller({
   onClick,
 }: Props) {
   return (
-    <section ref={sectionRef} className={cn("py-44", className)}>
+    <section ref={sectionRef} className={cn("py-24 md:py-44", className)}>
       <div className="content-boundary grid grid-cols-1 md:grid-cols-2 gap-y-14">
         <h2 className="flex flex-col text-[clamp(2.5rem,4vw+1vw,5rem)]  min-[490px]:text-heading-1 text-white leading-none font-extrabold text-balance md:col-span-2">
           <span>{headline}</span>

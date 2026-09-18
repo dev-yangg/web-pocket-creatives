@@ -11,7 +11,7 @@ import VideoShowcaseSection from "./sections/VideoShowcaseSection";
 
 export default function Homepage() {
   return (
-    <>
+    <main className="pt-app-padding-top">
       <Hero />
       <PartnerShowcase />
       <VideoProdIntro />
@@ -22,6 +22,6 @@ export default function Homepage() {
       <Team />
       <BtsReviews />
       <Pricing />
-    </>
+    </main>
   );
 }
