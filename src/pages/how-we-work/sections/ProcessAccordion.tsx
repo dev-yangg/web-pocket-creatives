@@ -22,6 +22,7 @@ export default function ProcessAccordion() {
         </div>
       </div>
       <div className="content-boundary">
+        <h2 className="sr-only">Our Process</h2>
         <ul className="flex flex-col gap-y-4">
           {processAccordion.map((accord, index) => {
             const target = openIndex === index;

@@ -13,12 +13,12 @@ export default function SectionShowcaseHeading({
 }: SectionHeadingProps) {
   return (
     <header>
-      <h3 className="flex flex-wrap items-center gap-2">
+      <h2 className="flex flex-wrap items-center gap-2 text-heading-3">
         <span className="inline-block w-8">
           <Icon className={`stroke-blue w-full h-auto ${iconClass ?? " "}`} />
         </span>
         <span className="text-grayblue">{label}</span>
-      </h3>
+      </h2>
     </header>
   );
 }

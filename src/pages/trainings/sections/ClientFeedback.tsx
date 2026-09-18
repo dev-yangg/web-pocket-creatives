@@ -73,7 +73,7 @@ export default function ClientFeedback() {
       </div>
       <div className="content-boundary">
         {activeClient && (
-          <div
+          <figure
             className="grid grid-cols-1 lg:grid-cols-[.35fr_1fr]
                        gap-5 lg:gap-x-12 lg:gap-y-4 items-end">
             <div className="lg:row-span-2 self-start flex justify-self-center lg:justify-self-auto mb-2 lg:mb-0 col-start-1 col-end-2 overflow-hidden">
@@ -91,7 +91,7 @@ export default function ClientFeedback() {
               </AnimatePresence>
             </div>
 
-            <div className="lg:col-start-2 lg:px-8 overflow-hidden">
+            <blockquote className="lg:col-start-2 lg:px-8 overflow-hidden">
               <AnimatePresence mode="popLayout">
                 <motion.p
                   key={activeIndex}
@@ -108,9 +108,9 @@ export default function ClientFeedback() {
                   />
                 </motion.p>
               </AnimatePresence>
-            </div>
+            </blockquote>
 
-            <h2 className="lg:col-start-2 relative md:text-heading-3 font-extrabold tracking-tighter text-right overflow-hidden pb-1">
+            <figcaption className="lg:col-start-2 relative md:text-heading-3 font-extrabold tracking-tighter text-right overflow-hidden pb-1">
               <AnimatePresence mode="popLayout">
                 <motion.span
                   key={activeIndex}
@@ -129,8 +129,8 @@ export default function ClientFeedback() {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 className="absolute right-0 -bottom-1 h-3/6 bg-yellow -z-10"
               />
-            </h2>
-          </div>
+            </figcaption>
+          </figure>
         )}
       </div>
     </section>

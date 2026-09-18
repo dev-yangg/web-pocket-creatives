@@ -2,10 +2,10 @@ export default function PhotographyProdIntro() {
   return (
     <section className="bg-blue py-14 grid 2xl:place-items-center 2xl:min-h-dvh">
       <div className="content-boundary grid grid-cols-1 gap-5 md:gap-y-10 md:grid-cols-4 text-pretty">
-        <h1 className="text-white leading-none font-bold md:col-start-1 md:col-end-5">
+        <h2 className="text-heading-1 text-white leading-none font-bold md:col-start-1 md:col-end-5">
           We <span className="text-yellow tracking-[-0.15em]">squeeze</span>{" "}
           quality into every pixel...
-        </h1>
+        </h2>
         <p className="md:col-start-1 md:col-end-3 leading-7">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
           earum sequi corporis asperiores iure. Vitae totam ducimus voluptatibus

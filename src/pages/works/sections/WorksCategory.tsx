@@ -16,7 +16,7 @@ export default function WorksCategory({
   return (
     <section className="flex flex-col gap-y-8">
       <header className="content-boundary flex flex-col justify-center items-center text-center gap-y-6">
-        <h3 className="capitalize font-extrabold">View by Category</h3>
+        <h2 className="capitalize font-extrabold">View by Category</h2>
         <div
           role="tablist"
           aria-label="Work Categories"

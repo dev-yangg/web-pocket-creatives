@@ -5,10 +5,10 @@ export default function Pricing() {
   return (
     <section className="py-14">
       <div className="content-boundary grid grid-cols-1 md:grid-cols-4 gap-8">
-        <h3 className="font-extrabold leading-none md:text-[clamp(1.5rem,1.75rem+0.25rem,4rem)] lg:text-[clamp(1.75rem,2.25rem+0.75rem,4rem)] text-balance md:col-span-3">
+        <h2 className="font-extrabold leading-none text-heading-3 md:text-[clamp(1.5rem,1.75rem+0.25rem,4rem)] lg:text-[clamp(1.75rem,2.25rem+0.75rem,4rem)] text-balance md:col-span-3">
           We value <span className="text-blue">transparency</span>, so let’s
           talk about pricing.
-        </h3>
+        </h2>
         <button className="bg-yellow rounded-full px-3 py-1 leading-none justify-self-center md:self-start shrink-0">
           View Pricing
         </button>

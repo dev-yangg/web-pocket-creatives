@@ -28,7 +28,7 @@ export default function CategoryOverview({
   return (
     <section className="bg-yellow py-14 lg:py-0 lg:min-h-dvh grid place-items-center">
       <div className="content-boundary grid grid-cols-1 md:grid-cols-2 gap-8">
-        <h1 className="flex flex-col text-white leading-none font-extrabold md:col-span-2">
+        <h1 className="flex flex-col text-white leading-none font-extrabold md:col-span-2 text-heading-1">
           <span>Category:</span>
           <span className="capitalize">{category}</span>
         </h1>

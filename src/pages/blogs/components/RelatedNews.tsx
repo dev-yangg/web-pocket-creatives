@@ -10,7 +10,7 @@ export default function RelatedNews({ relatedIds }: Props) {
 
   return (
     <section className="flex flex-col gap-y-6 pb-20">
-      <h3 className="text-regular font-bold">Related News</h3>
+      <h2 className="text-regular font-bold">Related News</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {relatedBlogs?.map((blog) => (
           <Card

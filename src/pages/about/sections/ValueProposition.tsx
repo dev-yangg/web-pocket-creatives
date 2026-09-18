@@ -5,7 +5,7 @@ export default function ValueProposition() {
     <section className="pt-16 pb-8 md:pb-16 bg-yellow flex flex-col gap-y-12 lg:gap-y-16">
       <div className="content-boundary text-white px-6">
         <header className="flex flex-col gap-y-6">
-          <h1 className="font-bold">Why us?</h1>
+          <h2 className="font-bold text-heading-1">Why us?</h2>
           <p className="text-heading-4 md:text-black">
             We know that you have a wonderful variety of creative video and
             photography companies out there to choose from, so here are the

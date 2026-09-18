@@ -4,7 +4,7 @@ export default function Works() {
   return (
     <section className="py-20">
       <div className="content-boundary flex flex-col gap-y-18">
-        <h1 className="text-center font-bold">Our Works</h1>
+        <h2 className="text-center font-bold text-heading-1">Our Works</h2>
         <section>
           <WorksCarousel />
         </section>

@@ -12,7 +12,7 @@ export default function FeaturedWorks({ category, featured }: Props) {
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
   return (
     <section className="pb-14 flex flex-col">
-      <div className="w-[min(1440px,100%)] mx-auto">
+      <div className="w-content-boundary-1440 mx-auto">
         {featured.length < 1 && (
           <div className="grid grid-cols-3 gap-x-8 px-8">
             {Array.from({ length: 3 }).map((_, index) => (
@@ -28,7 +28,9 @@ export default function FeaturedWorks({ category, featured }: Props) {
         )}
       </div>
       <div className="content-boundary flex justify-between items-center mt-4">
-        <h2 className="uppercase text-blue font-extrabold">{category}</h2>
+        <p className="uppercase text-heading-2 text-blue font-extrabold">
+          {category}
+        </p>
         <AutoplayToggle
           isCarouselPaused={isCarouselPaused}
           onClick={() => setIsCarouselPaused((prev) => !prev)}

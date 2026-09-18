@@ -11,14 +11,16 @@ interface Props {
 export default function Photography({ category, items, ref }: Props) {
   return (
     <section className="py-14 flex flex-col content-boundary">
-      <h1 className="hidden md:inline-block w-[min(600px,100%)] my-28">
+      <div
+        aria-hidden="true"
+        className="hidden md:inline-block w-[min(600px,100%)] my-28">
         <PhotographyHeadline />
-      </h1>
+      </div>
       <div ref={ref} className="flex flex-col gap-y-2 md:gap-y-4 scroll-mt-24">
         <header className="portfolio-gallery-header">
-          <h3 className="font-extrabold">
+          <h2 className="text-heading-3 font-extrabold">
             <span className="capitalize">{category}</span> Photography
-          </h3>
+          </h2>
           <small className="inline md:hidden">
             *Tap thumbnail for full view
           </small>

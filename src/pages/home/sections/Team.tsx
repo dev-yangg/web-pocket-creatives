@@ -71,9 +71,9 @@ export default function Team() {
     <section className="py-14">
       <div className="content-boundary">
         <div className="team-grid">
-          <h3 className="team-header text-grayblue font-extrabold">
+          <h2 className="team-header text-heading-3 text-grayblue font-extrabold">
             Meet the Team
-          </h3>
+          </h2>
 
           <div
             role="tablist"

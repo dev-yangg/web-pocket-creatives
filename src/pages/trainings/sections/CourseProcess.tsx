@@ -5,9 +5,9 @@ export default function CourseProcess() {
   return (
     <section className="bg-blue py-14 lg:py-24">
       <div className="content-boundary text-white grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-y-8 md:gap-y-14">
-        <h1 className="font-extrabold leading-none">
+        <h2 className="font-extrabold leading-none text-heading-1">
           {courseProcess.headline}
-        </h1>
+        </h2>
         <div className="flex flex-col gap-y-4">
           {courseProcess.content.map((text) => (
             <p key={text} className="leading-tight">

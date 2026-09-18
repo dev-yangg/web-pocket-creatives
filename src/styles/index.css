@@ -78,25 +78,6 @@
     font-size: var(--text-regular);
   }
 
-  h1 {
-    font-size: var(--text-heading-1);
-  }
-
-  h2 {
-    font-size: var(--text-heading-2);
-  }
-
-  h3 {
-    font-size: var(--text-heading-3);
-  }
-
-  h4 {
-    font-size: var(--text-heading-4);
-  }
-  h5 {
-    font-size: var(--text-heading-5);
-  }
-
   svg {
     display: block;
     max-width: 100%;

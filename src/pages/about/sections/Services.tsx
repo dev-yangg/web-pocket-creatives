@@ -97,13 +97,13 @@ function ServiceContent({
   return (
     <section className="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,1.5fr)] lg:nth-[2]:grid-cols-[minmax(0,1.5fr)_minmax(0,2fr)] gap-4 lg:gap-x-8 lg:col-start-2 lg:[&:nth-child(2)_img]:col-start-1 lg:[&:nth-child(2)_div]:col-start-2 lg:[&:nth-child(2)_*]:row-start-1">
       <div className="flex flex-col lg:py-4 lg:px-8">
-        <h3 className="font-bold leading-none mb-4 lg:mb-8">
+        <h2 className="font-bold text-heading-3 leading-none mb-4 lg:mb-8">
           <HighlightedText
             text={headline}
             highlight={highlight}
             highlightClassName={highlightClassName}
           />
-        </h3>
+        </h2>
         <div className="flex flex-col gap-y-4">
           {description.map((descrip, index) => (
             <p key={`${descrip}-${index}`}>{descrip}</p>

@@ -14,13 +14,13 @@ export default function Hero() {
     <section className="pb-14">
       <div className="content-boundary grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <section className="flex flex-col items-start gap-y-2">
-          <h3 className="text-blue font-extrabold leading-snug text-balance">
+          <h1 className="text-heading-3 text-blue font-extrabold leading-snug text-balance">
             <HighlightedText
               text={headline}
               highlight={highlightedText}
               highlightClassName="bg-yellow text-black px-1.5 py-1"
             />
-          </h3>
+          </h1>
           <p>{subheadline}</p>
           <a
             href="mailto:"
@@ -35,7 +35,6 @@ export default function Hero() {
           {processHighlights.map((content, index) => {
             const { icon: Icon, title, description } = content;
             const isFirst = index === 0;
-            const Header = isFirst ? "h2" : "h3";
 
             return (
               <div
@@ -46,16 +45,16 @@ export default function Hero() {
                     "bg-yellow text-black": !isFirst,
                   },
                 )}>
-                <Header
+                <h2
                   className={cn(
-                    "font-bold flex leading-none py-3 items-start",
-                    { "gap-x-2": !isFirst },
+                    "font-bold flex leading-none py-3 items-start text-heading-2",
+                    { "gap-x-2 text-heading-3": !isFirst },
                   )}>
                   <span className="block w-[1.2em] h-[1.2em] shrink-0">
                     <Icon className="w-full h-full" />
                   </span>
                   <span>{title}</span>
-                </Header>
+                </h2>
                 <p className="leading-snug">{description}</p>
               </div>
             );

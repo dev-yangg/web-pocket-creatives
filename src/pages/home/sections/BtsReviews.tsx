@@ -9,13 +9,13 @@ export default function BtsReviews() {
       <div className="content-boundary flex flex-col gap-8">
         <header className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
           <hgroup className="flex flex-col gap-y-4 md:gap-y-8">
-            <h3 className="leading-none md:text-heading-2 font-extrabold text-pretty">
+            <h2 className="leading-none text-heading-3 md:text-heading-2 font-extrabold text-pretty">
               Go behind the scenes of our{" "}
               <span className="text-lightblue text-nowrap md:text-yellow relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-current">
                 5 Star
               </span>{" "}
               Service
-            </h3>
+            </h2>
             <p className="flex gap-2 md:text-heading-3 font-bold">
               <span className="block w-[1.75em]">
                 <img

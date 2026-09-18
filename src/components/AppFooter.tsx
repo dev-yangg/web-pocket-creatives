@@ -15,7 +15,7 @@ export default function AppFooter() {
       <div className="custom-underline pt-14 md:pt-24 pb-8">
         <div className="content-boundary flex flex-col gap-y-4 md:gap-y-14">
           <div className="w-[min(1000px,100%)] flex flex-col gap-y-4 md:gap-y-14">
-            <h2 className="text-white text-balance leading-none">
+            <h2 className="text-white text-balance leading-none text-heading-2">
               We love talking about what we do, so if you have a project, get in
               touch.
             </h2>
@@ -69,7 +69,7 @@ export default function AppFooter() {
       </div>
       <div className="max-md:custom-underline">
         <section className="content-boundary grid grid-cols-1 md:grid-cols-[2fr_1fr] pt-4 pb-8 md:pb-0 @container">
-          <h3 className="font-extrabold">QuickLinks</h3>
+          <h3 className="font-extrabold text-heading-3">QuickLinks</h3>
           <ul className="flex flex-wrap gap-x-4 gap-y-1 text-white text-[clamp(1.15rem,3.5cqi,1.35rem)]">
             {[...applinks, ...footerLinks].map((link) => (
               <li key={link.href}>

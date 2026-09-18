@@ -9,13 +9,13 @@ export default function Features() {
     <section className="bg-yellow py-14">
       <div className="content-boundary grid grid-cols-1 md:grid-cols-3 gap-14">
         <header className="md:col-start-1 md:col-end-3">
-          <hgroup className="text-white font-extrabold flex flex-col leading-none">
+          <h2 className="text-heading-2 text-white font-extrabold flex flex-col leading-none">
             {commitments.map((label) => (
-              <h2 key={label}>
+              <span key={label}>
                 {label} - <CheckBadge />
-              </h2>
+              </span>
             ))}
-          </hgroup>
+          </h2>
         </header>
         <ContactCta
           label="Say Hello"

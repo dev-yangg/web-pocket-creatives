@@ -12,9 +12,9 @@ export default function Videography({ category, items, ref }: Props) {
     <section ref={ref} className="py-14 scroll-mt-8">
       <div className="content-boundary flex flex-col gap-y-2 md:gap-y-4">
         <header className="portfolio-gallery-header">
-          <h3 className="font-extrabold">
+          <h2 className="text-heading-3 font-extrabold">
             <span className="capitalize">{category}</span> Videography
-          </h3>
+          </h2>
           <small className="inline md:hidden">*Tap Video to play</small>
           <small className="hidden md:inline">
             *Click on Video to play in large view

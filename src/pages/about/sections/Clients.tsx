@@ -5,9 +5,9 @@ export default function Clients() {
   return (
     <section className="lg:min-h-dvh grid place-items-center bg-blue text-white py-14">
       <div className="content-boundary flex flex-col gap-y-4">
-        <h1 className="capitalize text-balance leading-[1.15] font-bold">
+        <h2 className="capitalize text-heading-1 text-balance leading-[1.15] font-bold">
           Who we work with
-        </h1>
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-8 md:mt-12">
           <section className="flex flex-col gap-y-6">
             <p>

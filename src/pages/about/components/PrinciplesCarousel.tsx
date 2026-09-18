@@ -42,8 +42,12 @@ export default function PrinciplesCarousel() {
         <SwiperSlide key={`${princip.title}-${index}`}>
           <div className="w-[min(650px,100%)] flex flex-col gap-y-6">
             <header className="flex min-h-18 items-end gap-[1ch] leading-none font-bold">
-              <h1 className="text-blue leading-[.8]">{index + 1}</h1>
-              <h3 className="w-[min(500px,100%)]">{princip.title}</h3>
+              <span className="text-blue leading-[.8] inline-block text-heading-1">
+                {index + 1}
+              </span>
+              <h3 className="w-[min(500px,100%)] text-heading-3">
+                {princip.title}
+              </h3>
             </header>
             <div className="flex flex-col gap-y-3">
               <p className="text-blue ">Why is this important to us?</p>

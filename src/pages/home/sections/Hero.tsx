@@ -21,7 +21,7 @@ export default function Hero() {
             <img src={stock2} alt="" className="w-auto object-contain" />
           </div>
         </header>
-        <p className="text-heading-3 text-grayblue text-pretty py-3 mb-6">
+        <h1 className="text-heading-3 text-grayblue text-pretty py-3 mb-6">
           A <span className="font-bold text-blue">fast</span> &{" "}
           <span className="font-bold text-blue md:text-yellow">friendly</span>{" "}
           <span className="font-bold text-black">Video Production</span> and{" "}
@@ -29,7 +29,7 @@ export default function Hero() {
           <span className="font-bold text-black">bags of experience</span> and
           who <span className="text-red">♥</span> what we do.{" "}
           <span className="inline md:hidden">:)</span>
-        </p>
+        </h1>
         <VideoClip
           toggleMuteCaption
           isActive

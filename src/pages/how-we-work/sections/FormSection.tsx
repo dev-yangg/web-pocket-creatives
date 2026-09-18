@@ -17,9 +17,9 @@ export default function FormSection() {
       </div>
       <div className="content-boundary grid grid-cols-1 screen-900:grid-cols-2 gap-y-6 md:gap-x-4 md:items-center">
         <section className="flex flex-col gap-y-6">
-          <h1 className="font-extrabold leading-none text-balance text-center md:text-left mb-2 md:mb-6">
+          <h2 className="font-extrabold leading-none text-balance text-center md:text-left mb-2 md:mb-6 text-heading-1">
             {headline}
-          </h1>
+          </h2>
           {content.map((text) => (
             <p key={text} className="leading-tight">
               {text}

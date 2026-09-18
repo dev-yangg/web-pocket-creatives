@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="pb-14">
       <div className="content-boundary flex flex-col gap-4">
         <header>
-          <h2 className="leading-none sm:text-heading-1 md:text-balance 3xl:text-grayblue w-[min(900px,100%)] 3xl:w-full">
+          <h1 className="leading-none text-heading-2 sm:text-heading-1 md:text-balance 3xl:text-grayblue w-[min(900px,100%)] 3xl:w-full">
             About us at{" "}
             <span className="3xl:hidden">
               <span className="text-blue font-bold">Pocket</span>{" "}
@@ -17,7 +17,7 @@ export default function Hero() {
             <span className="hidden 3xl:inline-block w-[12em] max-w-full">
               <img src={flatLogo} alt="" className="w-full h-auto" />
             </span>
-          </h2>
+          </h1>
         </header>
         <section className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
           <div>
