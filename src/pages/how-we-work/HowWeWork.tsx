@@ -5,11 +5,11 @@ import ProcessAccordion from "./sections/ProcessAccordion";
 
 export default function HowWeWork() {
   return (
-    <>
+    <main className="pt-app-padding-top">
       <Hero />
       <ProcessAccordion />
       <CollaborationSection />
       <FormSection />
-    </>
+    </main>
   );
 }

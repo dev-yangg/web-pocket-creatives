@@ -26,6 +26,7 @@
   --breakpoint-3xl: 1920px;
 
   --pad: 1.5em;
+  --spacing-app-padding-top: calc(var(--spacing) * 28);
   --spacing-content-boundary-1440: min(1440px, 100%);
   --spacing-content-boundary: min(1280px, 100% - calc(var(--pad) * 1.25));
   --spacing-app-header: min(1200px, 100% - var(--pad));

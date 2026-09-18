@@ -9,9 +9,7 @@ export default function App() {
   return (
     <>
       <AppHeader toggleMenu={toggleMenu} isOpen={isOpen} />
-      <main className="pt-28">
-        <Outlet />
-      </main>
+      <Outlet />
       <AppFooter />
       <MainMenu isOpen={isOpen} closeMenu={closeMenu} />
       <ScrollRestoration />
