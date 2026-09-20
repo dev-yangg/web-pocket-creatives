@@ -12,10 +12,12 @@ export default function VideoShowcaseSection() {
           iconClass="stroke-[2.5]"
           label="Video Production"
         />
-        <ContactCta
-          label="Let's Talk"
-          className="bg-yellow md:bg-blue md:text-white md:hover:bg-yellow order-3 md:order-2 justify-self-center"
-        />
+        <div className="md:grid md:grid-cols-4 order-3 md:order-2 justify-self-center">
+          <ContactCta
+            label="Let's Talk"
+            className="bg-yellow md:bg-blue md:text-white md:hover:bg-yellow  md:col-start-3"
+          />
+        </div>
         <VideoShowcaseCarousel className="md:order-3 md:col-start-1 md:col-end-3" />
       </div>
     </section>

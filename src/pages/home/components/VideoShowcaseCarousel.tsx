@@ -3,6 +3,7 @@ import CarouselControls from "../../../components/CarouselControls";
 import type { Swiper as SwiperType } from "swiper";
 import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router";
 
 const videoProdSamples = [
   { label: "Beauty", src: "/videos/video-prod/beauty-slider.mp4" },
@@ -44,7 +45,9 @@ export default function VideoShowcaseCarousel({
             aria-roledescription="slide"
             aria-label={`${index + 1} of ${videoProdSamples.length}: ${video.label}`}
             className="flex flex-col">
-            <h3 className="font-extrabold text-grayblue">{video.label}</h3>
+            <h3 className="font-extrabold text-grayblue text-heading-3">
+              {video.label}
+            </h3>
             <VideoClip
               className="w-full h-auto object-cover rounded-lg"
               isActive={index === activeSlide}
@@ -55,12 +58,12 @@ export default function VideoShowcaseCarousel({
         ))}
         <SwiperSlide
           style={{ width: "min(450px, 100%)" }}
-          className="flex items-center justify-center">
-          <a
-            href="/"
+          className="flex items-center">
+          <Link
+            to="/"
             className="inline-flex items-center justify-center h-full leading-none w-fit text-heading-1 font-extrabold ml-4 hover:text-yellow underline">
             View <br /> All.
-          </a>
+          </Link>
         </SwiperSlide>
       </Swiper>
       <div className="flex justify-between items-center gap-y-2 gap-x-4">

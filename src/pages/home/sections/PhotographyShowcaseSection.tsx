@@ -23,10 +23,12 @@ export default function PhotographyShowcaseSection() {
           iconClass="fill-blue"
           label="Photography"
         />
-        <ContactCta
-          label="Let's Talk"
-          className="bg-blue text-white hover:bg-yellow justify-self-center hidden md:block"
-        />
+        <div className="hidden md:grid md:grid-cols-4 order-3 md:order-2 justify-self-center">
+          <ContactCta
+            label="Let's Talk"
+            className="bg-blue text-white hover:bg-yellow md:col-start-3"
+          />
+        </div>
       </div>
       <section className="max-md:content-boundary md:bleed-grid">
         <div className="grid grid-cols-1 md:grid-cols-3 md:items-center gap-4 md:gap-4 lg:gap-8 md:col-start-2 md:col-end-4">
@@ -44,7 +46,7 @@ export default function PhotographyShowcaseSection() {
                 key={categ.name}
                 className="inline-block overflow-hidden custom-underline">
                 <a
-                  href={categ.path}
+                  href="/"
                   className="inline-grid group py-1 font-bold text-heading-3">
                   <span className="col-start-1 row-start-1 text-nowrap text-grayblue md:text-black group-hover:-translate-y-full transition-transform duration-150 ease-swap">
                     {categ.name}
