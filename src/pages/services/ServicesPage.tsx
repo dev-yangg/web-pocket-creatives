@@ -5,8 +5,11 @@ import {
   servicesIntro1,
   servicesIntro2,
   servicesIntro3,
+  servicesProcess1,
+  servicesProcess2,
   type ServicesSectionKey,
 } from "./data";
+import ServiceShowcase from "./components/ServiceShowcase";
 
 export default function ServicesPage() {
   const videographyServicesRef = useRef<HTMLElement | null>(null);
@@ -29,12 +32,14 @@ export default function ServicesPage() {
         onClick={handleClick}
         className="bg-yellow max-md:pt-0"
       />
+      <ServiceShowcase {...servicesProcess1} />
       <SectionScroller
         {...servicesIntro2}
         sectionRef={photographyServicesRef}
         onClick={handleClick}
         className="bg-blue"
       />
+      <ServiceShowcase {...servicesProcess2} />
       <SectionScroller
         {...servicesIntro3}
         sectionRef={theRestServicesRef}
