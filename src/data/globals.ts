@@ -35,3 +35,32 @@ export const socials = [
   { label: "X", href: "https://x.com", icon: FaXTwitter },
   { label: "TikTok", href: "https://www.tiktok.com", icon: FaTiktok },
 ];
+
+export const formPopupFields = [
+  {
+    name: "fullName",
+    label: { base: "Full Name", breakpoint: "What's your name?" },
+    placeholder: "Full Name",
+    required: true,
+  },
+  {
+    name: "contactNumber",
+    label: { base: "Contact Number", breakpoint: "Your contact number?" },
+    placeholder: "Contact Number",
+    required: true,
+  },
+  {
+    name: "email",
+    label: { base: "Email Address", breakpoint: "Your email address?" },
+    placeholder: "Email Address",
+    required: true,
+    type: "email",
+  },
+  {
+    name: "message",
+    label: { base: "Message", breakpoint: "How can we help?" },
+    placeholder: "Message",
+    required: true,
+    type: "textarea",
+  },
+];

@@ -1,5 +1,6 @@
 import { FaStairs, FaFlagCheckered } from "react-icons/fa6";
 import { HiOutlineMail } from "react-icons/hi";
+import { formPopupFields } from "../../data/globals";
 
 export const processIntro = {
   headline:
@@ -83,34 +84,7 @@ export const processForm = {
   ],
   subheadline: "Ready to see what we could do with your next project?",
   form: {
-    fields: [
-      {
-        name: "fullName",
-        label: { base: "Full Name", breakpoint: "What's your name?" },
-        placeholder: "Full Name",
-        required: true,
-      },
-      {
-        name: "contactNumber",
-        label: { base: "Contact Number", breakpoint: "Your contact number?" },
-        placeholder: "Contact Number",
-        required: true,
-      },
-      {
-        name: "email",
-        label: { base: "Email Address", breakpoint: "Your email address?" },
-        placeholder: "Email Address",
-        required: true,
-        type: "email",
-      },
-      {
-        name: "message",
-        label: { base: "Message", breakpoint: "How can we help?" },
-        placeholder: "Message",
-        required: true,
-        type: "textarea",
-      },
-    ],
+    fields: formPopupFields,
     submitLabel: "Send",
   },
 };

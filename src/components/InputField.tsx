@@ -1,4 +1,4 @@
-import { cn } from "../../../lib/utils";
+import { cn } from "../lib/utils";
 
 export type ResponsiveLabel = string | { base: string; breakpoint: string };
 
@@ -10,6 +10,8 @@ export interface Props {
   type?: React.InputHTMLAttributes<HTMLInputElement>["type"] | "textarea";
   className?: string;
   inputClass?: string;
+  changeContentOnBreakpoint?: boolean;
+  rows?: number;
 }
 
 export default function InputField({
@@ -20,6 +22,8 @@ export default function InputField({
   type = "text",
   className,
   inputClass,
+  changeContentOnBreakpoint = true,
+  rows = 8,
 }: Props) {
   const isTextarea = type === "textarea";
   return (
@@ -29,8 +33,12 @@ export default function InputField({
           label
         ) : (
           <>
-            <span className="xl:hidden">{label.base}</span>
-            <span className="hidden xl:inline">{label.breakpoint}</span>
+            <span className={cn({ "xl:hidden": changeContentOnBreakpoint })}>
+              {label.base}
+            </span>
+            {changeContentOnBreakpoint && (
+              <span className="hidden xl:inline">{label.breakpoint}</span>
+            )}
           </>
         )}
         {required && <span className="text-red"> *</span>}
@@ -41,7 +49,7 @@ export default function InputField({
           name={name}
           required={required}
           placeholder={placeholder}
-          rows={8}
+          rows={rows}
           className={cn("resize-none", inputClass)}
         />
       ) : (

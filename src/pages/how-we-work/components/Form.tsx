@@ -1,5 +1,7 @@
 import { cn } from "../../../lib/utils";
-import InputField, { type Props as InputFieldProps } from "./InputField";
+import InputField, {
+  type Props as InputFieldProps,
+} from "../../../components/InputField";
 
 type FormField = Omit<InputFieldProps, "inputClass">;
 
