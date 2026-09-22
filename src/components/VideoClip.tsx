@@ -8,7 +8,9 @@ type VideoClipProps = {
   ariaLabel?: string;
   toggleMuteCaption?: boolean;
   captionAtTop?: boolean;
+  captionAtLeft?: boolean;
   captionClassName?: string;
+  wrapperClassName?: string;
 };
 
 export default function VideoClip({
@@ -18,7 +20,9 @@ export default function VideoClip({
   ariaLabel,
   toggleMuteCaption,
   captionAtTop = true,
+  captionAtLeft = true,
   captionClassName,
+  wrapperClassName,
 }: VideoClipProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
@@ -49,12 +53,13 @@ export default function VideoClip({
       className={cn("cursor-pointer", className)}
     />
   ) : (
-    <figure className="w-full flex flex-col relative">
+    <figure className={cn("w-full flex flex-col relative", wrapperClassName)}>
       <figcaption
         className={cn(
-          "left-0",
           { "mb-2 absolute bottom-full": captionAtTop },
           { "mt-2 absolute top-full": !captionAtTop },
+          { "right-0": !captionAtLeft },
+          { "left-0": captionAtLeft },
           captionClassName,
         )}>
         <span className="text-small text-grayblue ">
