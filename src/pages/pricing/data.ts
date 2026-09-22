@@ -8,10 +8,6 @@ export const heroData = {
     "We can either quote from scratch once we understand your brief, or work to your target spend. This flexibility makes us a great fit for both small and large clients alike.",
     "You can read a bit more below about how we structure our rates for both video production and photography below, and we're always here for any queries.",
   ],
-  image: {
-    src: "",
-    alt: "",
-  },
 };
 
 export const pricingOverviewData = {
