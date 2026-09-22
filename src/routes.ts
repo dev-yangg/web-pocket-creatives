@@ -8,6 +8,7 @@ import Trainings from "./pages/trainings/Trainings";
 import Blogs from "./pages/blogs/Blogs";
 import BlogInnerTemplate from "./pages/blogs/components/BlogInnerTemplate";
 import ServicesPage from "./pages/services/ServicesPage";
+import PricingPage from "./pages/pricing/PricingPage";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
       {
         path: "services",
         Component: ServicesPage,
+      },
+      {
+        path: "pricing",
+        Component: PricingPage,
       },
       {
         path: "how-we-work",
