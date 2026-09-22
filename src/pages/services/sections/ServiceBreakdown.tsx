@@ -1,22 +1,37 @@
-import { Swiper, SwiperSlide } from "swiper/react";
 import { servicesBreakdown1 } from "../data";
 import { useModal } from "../../../hooks/useModal";
+import CarouselControls from "../../../components/CarouselControls";
+import { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { SwiperRef, SwiperClass } from "swiper/react";
 
 export default function ServiceBreakdown() {
   const { srHeading, items } = servicesBreakdown1;
   const { openModal } = useModal();
+  const swiperRef = useRef<SwiperRef>(null);
+  const [canGoNext, setCanGoNext] = useState(true);
+  const [canGoPrev, setCanGoPrev] = useState(false);
+
+  const updateEdges = (swiper: SwiperClass) => {
+    setCanGoNext(swiper.isBeginning);
+    setCanGoPrev(swiper.isEnd);
+  };
 
   return (
     <section className="bg-white py-24">
       <div className="content-boundary flex flex-col gap-y-14">
         <h2 className="text-heading-2 font-extrabold">{srHeading}</h2>
         <Swiper
+          ref={swiperRef}
           className="w-full h-full"
           autoHeight
           slidesPerView="auto"
           grabCursor
           resistanceRatio={0}
-          spaceBetween={72}>
+          spaceBetween={72}
+          onSwiper={updateEdges}
+          onSlideChange={updateEdges}
+          onResize={updateEdges}>
           {items.map((item) => (
             <SwiperSlide
               key={item.title}
@@ -48,6 +63,15 @@ export default function ServiceBreakdown() {
             </button>
           </SwiperSlide>
         </Swiper>
+        <div className="grid justify-center min-[600px]:justify-start">
+          <CarouselControls
+            className="bg-blue text-white w-10 p-3"
+            onNext={() => swiperRef.current?.swiper.slideNext()}
+            onPrevious={() => swiperRef.current?.swiper.slidePrev()}
+            disableNext={canGoPrev}
+            disablePrevious={canGoNext}
+          />
+        </div>
       </div>
     </section>
   );
