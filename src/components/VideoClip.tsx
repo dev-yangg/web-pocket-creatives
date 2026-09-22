@@ -8,6 +8,7 @@ type VideoClipProps = {
   ariaLabel?: string;
   toggleMuteCaption?: boolean;
   captionAtTop?: boolean;
+  captionClassName?: string;
 };
 
 export default function VideoClip({
@@ -17,6 +18,7 @@ export default function VideoClip({
   ariaLabel,
   toggleMuteCaption,
   captionAtTop = true,
+  captionClassName,
 }: VideoClipProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
@@ -53,6 +55,7 @@ export default function VideoClip({
           "left-0",
           { "mb-2 absolute bottom-full": captionAtTop },
           { "mt-2 absolute top-full": !captionAtTop },
+          captionClassName,
         )}>
         <span className="text-small text-grayblue ">
           *<span className="inline lg:hidden">Tap</span>
