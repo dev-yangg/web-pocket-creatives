@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getCSSVar } from "../lib/utils";
 
-type BreakpointKey = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
+type BreakpointKey = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
 
 const FALLBACK: Record<BreakpointKey, number> = {
   xs: 360,
@@ -9,8 +9,8 @@ const FALLBACK: Record<BreakpointKey, number> = {
   md: 768,
   lg: 1024,
   xl: 1280,
-  "2xl": 1440,
-  "3xl": 1920,
+  xxl: 1440,
+  xxxl: 1920,
 };
 
 const readBreakpointPx = (variableName: string, fallback: number): number => {
@@ -26,8 +26,8 @@ export function useBreakpoint(): Record<BreakpointKey, number> {
     md: readBreakpointPx("breakpoint-md", FALLBACK.md),
     lg: readBreakpointPx("breakpoint-lg", FALLBACK.lg),
     xl: readBreakpointPx("breakpoint-xl", FALLBACK.xl),
-    "2xl": readBreakpointPx("breakpoint-2xl", FALLBACK["2xl"]),
-    "3xl": readBreakpointPx("breakpoint-3xl", FALLBACK["3xl"]),
+    xxl: readBreakpointPx("breakpoint-2xl", FALLBACK.xxl),
+    xxxl: readBreakpointPx("breakpoint-3xl", FALLBACK.xxxl),
   }));
 
   return breakpoint;
