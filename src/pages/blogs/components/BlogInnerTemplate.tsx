@@ -16,7 +16,7 @@ export default function BlogInnerTemplate() {
   if (!blog) return <EmptyStateHandler />;
 
   return (
-    <section>
+    <main className="pt-app-padding-top">
       <div className="content-boundary flex flex-col gap-y-8">
         <article>
           <Link
@@ -93,7 +93,7 @@ export default function BlogInnerTemplate() {
           <RelatedNews relatedIds={blog.relatedIds} />
         )}
       </div>
-    </section>
+    </main>
   );
 }
 
