@@ -1,6 +1,8 @@
 import { HiOutlineMail } from "react-icons/hi";
 import us from "/images/about/us.webp";
+import { useModal } from "../../../hooks/useModal";
 export default function StudioOverview() {
+  const { openModal } = useModal();
   return (
     <section className="bg-blue py-14 lg:py-24">
       <div className="content-boundary flex flex-col gap-y-6 md:gap-y-12">
@@ -43,11 +45,11 @@ export default function StudioOverview() {
             </p>
           </div>
         </section>
-        <a
-          href="mailto:"
+        <button
+          onClick={() => openModal("contact")}
           className="hidden md:block w-12 aspect-square bg-yellow rounded-full p-2.5">
           <HiOutlineMail className="w-full h-full" />
-        </a>
+        </button>
       </div>
     </section>
   );

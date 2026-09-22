@@ -1,10 +1,12 @@
 import { BiCheck } from "react-icons/bi";
 import ContactCta from "../../../components/ContactCta";
 import FeatureCarousel from "../components/FeatureCarousel";
+import { useModal } from "../../../hooks/useModal";
 
 const commitments = ["Services", "Quality", "People"];
 
 export default function Features() {
+  const { openModal } = useModal();
   return (
     <section className="bg-yellow py-14">
       <div className="content-boundary grid grid-cols-1 md:grid-cols-3 gap-14">
@@ -18,6 +20,7 @@ export default function Features() {
           </h2>
         </header>
         <ContactCta
+          onClick={() => openModal("contact")}
           label="Say Hello"
           className="bg-white text-blue hover:bg-blue hover:text-white order-3 md:order-2 justify-self-center md:self-center md:col-start-3 md:col-end-4"
         />

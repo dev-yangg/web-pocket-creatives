@@ -2,8 +2,10 @@ import { HiOutlineMail } from "react-icons/hi";
 import VideoClip from "../../../components/VideoClip";
 import heroClip from "/videos/about-hero-clip.mp4";
 import flatLogo from "../../../assets/logo-flat.svg";
+import { useModal } from "../../../hooks/useModal";
 
 export default function Hero() {
+  const { openModal } = useModal();
   return (
     <section className="pb-14">
       <div className="content-boundary flex flex-col gap-4">
@@ -34,7 +36,9 @@ export default function Hero() {
               you would choose us for your next video production or photography
               shoot.
             </p>
-            <button className="self-center md:self-auto px-3 py-3.5 md:uppercase flex items-center bg-blue text-white md:text-black rounded-xl md:rounded-none gap-[1ch] md:gap-[1.5ch]">
+            <button
+              onClick={() => openModal("contact")}
+              className="self-center md:self-auto px-3 py-3.5 md:uppercase flex items-center bg-blue text-white md:text-black rounded-xl md:rounded-none gap-[1ch] md:gap-[1.5ch]">
               <span className="inline-block w-[1.75em] md:w-[1.25em] aspect-auto">
                 <HiOutlineMail className="md:stroke-[1.5]" />
               </span>
