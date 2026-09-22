@@ -22,7 +22,7 @@ interface ProcessStepImage {
   alt: string;
 }
 
-interface ProcessStep {
+export interface ProcessStep {
   title: string;
   subtitle: string;
   description: string;
@@ -152,7 +152,7 @@ export const servicesProcess2: ServicesProcess = {
 };
 
 export const servicesBreakdown1 = {
-  srHeading: "Our Workflow", // sr-only
+  srHeading: "What we can offer",
   items: [
     {
       title: "Planning",
