@@ -10,6 +10,7 @@ import {
   type ServicesSectionKey,
 } from "./data";
 import ServiceShowcase from "./components/ServiceShowcase";
+import ServiceBreakdown from "./sections/ServiceBreakdown";
 
 export default function ServicesPage() {
   const videographyServicesRef = useRef<HTMLElement | null>(null);
@@ -46,6 +47,7 @@ export default function ServicesPage() {
         onClick={handleClick}
         className="bg-yellow"
       />
+      <ServiceBreakdown />
     </main>
   );
 }
