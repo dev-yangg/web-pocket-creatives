@@ -36,7 +36,7 @@ export const socials = [
   { label: "TikTok", href: "https://www.tiktok.com", icon: FaTiktok },
 ];
 
-export const formPopupFields = [
+export const baseContactFormFields = [
   {
     name: "fullName",
     label: { base: "Full Name", breakpoint: "What's your name?" },
