@@ -4,6 +4,7 @@ import { cn } from "../lib/utils";
 type VideoClipProps = {
   src: string;
   isActive: boolean;
+  unmuteOnActive?: boolean;
   className?: string;
   ariaLabel?: string;
   toggleMuteCaption?: boolean;
@@ -16,6 +17,7 @@ type VideoClipProps = {
 export default function VideoClip({
   src,
   isActive,
+  unmuteOnActive = false,
   className,
   ariaLabel,
   toggleMuteCaption,
@@ -26,8 +28,16 @@ export default function VideoClip({
 }: VideoClipProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
+  const [prevIsActive, setPrevIsActive] = useState(isActive);
 
   const toggleSound = () => setMuted((prev) => !prev);
+
+  if (isActive !== prevIsActive) {
+    setPrevIsActive(isActive);
+    if (isActive && unmuteOnActive) {
+      setMuted(false);
+    }
+  }
 
   useEffect(() => {
     const video = videoRef.current;
