@@ -5,6 +5,7 @@ export type ResponsiveLabel = string | { base: string; breakpoint: string };
 export interface Props {
   name: string;
   label: ResponsiveLabel;
+  labelClassName?: string;
   placeholder: string;
   required: boolean;
   type?: React.InputHTMLAttributes<HTMLInputElement>["type"] | "textarea";
@@ -17,6 +18,7 @@ export interface Props {
 export default function InputField({
   name,
   label,
+  labelClassName,
   placeholder,
   required,
   type = "text",
@@ -28,7 +30,9 @@ export default function InputField({
   const isTextarea = type === "textarea";
   return (
     <fieldset className={cn("@container flex flex-col", className)}>
-      <label htmlFor={name} className="md:text-[clamp(.95rem,2cqi,.95rem)]">
+      <label
+        htmlFor={name}
+        className={cn("md:text-[clamp(.95rem,2cqi,.95rem)]", labelClassName)}>
         {typeof label === "string" ? (
           label
         ) : (
