@@ -1,3 +1,4 @@
+import ContactForm from "./sections/ContactForm";
 import FAQs from "./sections/FAQs";
 import Hero from "./sections/Hero";
 import PricingOverview from "./sections/PricingOverview";
@@ -8,6 +9,7 @@ export default function PricingPage() {
       <Hero />
       <PricingOverview />
       <FAQs />
+      <ContactForm />
     </main>
   );
 }
