@@ -69,37 +69,52 @@ export const serviceDetailsSliderData = {
     {
       headline: "Video Production…",
       image: {
-        src: "",
+        src: "/pricing/detail-01.webp",
         alt: "",
       },
       paragraphs: [
         {
           text: "Video production is a more complex process compared with photography, both in planning, production and the fact that the edit time will span days rather than hours, as it does it photography.",
-          highlightedTexts: ["Video production"],
+          highlights: [
+            {
+              text: "Video production",
+              style: "font-bold underline",
+            },
+          ],
         },
         {
           text: "Similarly to a photo shoot, you'll need to think about the location: from studio spaces to Airbnbs for lifestyle work, and the consideration for sound as well.",
-          highlightedTexts: [],
+          highlights: [],
         },
         {
           text: "We may need a bigger team, if lighting, sound, or set requirements are needed. Additional equipment such as autocues, specialist lighting and microphones, cameras dedicated to slow motion may also be considered for more creative briefs.",
-          highlightedTexts: [],
+          highlights: [],
         },
         {
           text: "Actors and presenters, hair and makeup, set elements, props and materials, even fashion stylists, food stylists may required too.",
-          highlightedTexts: [],
+          highlights: [],
         },
         {
           text: "Editing often needs multiple days to complete, and we'll best estimate this for you, allowing for time to feed back and make changes. We can also include music, sound effects and voiceover.",
-          highlightedTexts: [],
+          highlights: [],
         },
         {
           text: "The Pocket Creatives team will always provide a full breakdown when we quote for you, which then makes it easier to see what resources your project needs to get made.",
-          highlightedTexts: ["Pocket Creatives"],
+          highlights: [
+            {
+              text: "Pocket Creatives",
+              style: "font-bold underline",
+            },
+          ],
         },
         {
           text: "To give you a general idea, a full day of filming with us starts at £940+VAT.",
-          highlightedTexts: ["£940+VAT"],
+          highlights: [
+            {
+              text: "£940+VAT",
+              style: "font-bold",
+            },
+          ],
         },
       ],
       nextLabel: "Photography",
@@ -107,37 +122,52 @@ export const serviceDetailsSliderData = {
     {
       headline: "Photography…",
       image: {
-        src: "",
+        src: "/pricing/detail-02.webp",
         alt: "",
       },
       paragraphs: [
         {
           text: "Video production is a more complex process compared with photography, both in planning, production and the fact that the edit time will span days rather than hours, as it does it photography.",
-          highlightedTexts: ["Video production"],
+          highlights: [
+            {
+              text: "Video production",
+              style: "font-bold underline",
+            },
+          ],
         },
         {
           text: "Similarly to a photo shoot, you'll need to think about the location: from studio spaces to Airbnbs for lifestyle work, and the consideration for sound as well.",
-          highlightedTexts: [],
+          highlights: [],
         },
         {
           text: "We may need a bigger team, if lighting, sound, or set requirements are needed. Additional equipment such as autocues, specialist lighting and microphones, cameras dedicated to slow motion may also be considered for more creative briefs.",
-          highlightedTexts: [],
+          highlights: [],
         },
         {
           text: "Actors and presenters, hair and makeup, set elements, props and materials, even fashion stylists, food stylists may required too.",
-          highlightedTexts: [],
+          highlights: [],
         },
         {
           text: "Editing often needs multiple days to complete, and we'll best estimate this for you, allowing for time to feed back and make changes. We can also include music, sound effects and voiceover.",
-          highlightedTexts: [],
+          highlights: [],
         },
         {
           text: "The Pocket Creatives team will always provide a full breakdown when we quote for you, which then makes it easier to see what resources your project needs to get made.",
-          highlightedTexts: ["Pocket Creatives"],
+          highlights: [
+            {
+              text: "Pocket Creatives",
+              style: "font-bold underline",
+            },
+          ],
         },
         {
           text: "To give you a general idea, a full day of filming with us starts at £940+VAT.",
-          highlightedTexts: ["£940+VAT"],
+          highlights: [
+            {
+              text: "£940+VAT",
+              style: "font-bold",
+            },
+          ],
         },
       ],
       nextLabel: "Video Production",
