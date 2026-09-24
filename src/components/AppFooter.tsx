@@ -1,9 +1,15 @@
 import { Link, NavLink } from "react-router";
-import { applinks, footerExtraLinks, footerLinks } from "../data/globals";
+import {
+  applinks,
+  contactInfo,
+  footerExtraLinks,
+  footerLinks,
+} from "../data/globals";
 import logo from "../assets/logo.svg";
 import SocialsList from "./SocialsList";
 
 export default function AppFooter() {
+  const { email, address, tel } = contactInfo;
   return (
     <footer
       className="bg-blue text-heading-4"
@@ -22,22 +28,19 @@ export default function AppFooter() {
             <section className="@container text-heading-3 font-bold w-full grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-x-8">
               <div>
                 <a
-                  href="mailto:team@pocketcreatives.co.uk"
+                  href={`mailto:${email}`}
                   className="underline max-w-full inline-block wrap-break-word text-balance text-[clamp(1.4rem,3.5cqi,1.75rem)]">
-                  team@pocketcreatives.co.uk
+                  {email}
                 </a>
               </div>
               <address className="not-italic leading-none underline md:row-start-1 md:row-end-3 md:col-start-2">
-                <a href="https://www.google.com/maps/@51.474706,-0.1456135,3a,90y,150.58h,90.26t/data=!3m7!1e1!3m5!1s0OQWGxEl7_F3Ig2ROdBLfQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.2560872843961022%26panoid%3D0OQWGxEl7_F3Ig2ROdBLfQ%26yaw%3D150.57895195361183!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D">
-                  Wow Workspaces BatterseaUnit 3, 7-9 Ingate PlaceBattersea,
-                  London SW8 3NS
-                </a>
+                <a href={address.mapHref}>{address.text}</a>
               </address>
               <div>
                 <a
-                  href="tel:+02036338494"
+                  href={`tel:${tel.href}`}
                   className="inline-block w-fit  text-[clamp(1.4rem,3.5cqi,1.75rem)]">
-                  020 3633 8494
+                  {tel.display}
                 </a>
               </div>
             </section>
