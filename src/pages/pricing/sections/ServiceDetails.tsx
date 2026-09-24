@@ -22,9 +22,9 @@ export default function ServiceDetails() {
             key={slide.headline}
             inert={index !== activeIndex}
             className={cn(
-              "py-14 xl:col-start-1 xl:row-start-1 transition-transform duration-300 ease-swap",
+              "py-14 xl:col-start-1 xl:row-start-1 transition-transform duration-600 ease-swap",
               { "bg-yellow text-black": isFirst },
-              { "bg-blue text-white": !isFirst },
+              { "bg-blue text-white border-b": !isFirst },
               {
                 "xl:translate-x-0": index === activeIndex,
                 "xl:translate-x-full": index > activeIndex,

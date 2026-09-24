@@ -34,7 +34,7 @@ export default function PricingOverview() {
             return (
               <li
                 key={`${index}-${title}`}
-                className="bg-blue text-white relative @container px-14">
+                className="bg-blue text-white relative @container px-8 lg:px-14">
                 <div
                   aria-hidden="true"
                   className={cn(
@@ -50,7 +50,7 @@ export default function PricingOverview() {
                   )}>
                   <EuroIcon />
                 </div>
-                <div className="flex flex-col gap-y-8 pt-18 lg:pt-14 pb-20 w-[min(700px,100%)] lg:w-[min(500px,100%)] mx-auto">
+                <div className="flex flex-col gap-y-8 pt-22 lg:pt-14 pb-20 w-[min(700px,100%)] lg:w-[min(500px,100%)] mx-auto">
                   <h3 className="text-heading-3 font-bold text-center leading-tight">
                     {title}
                   </h3>
