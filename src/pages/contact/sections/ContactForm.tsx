@@ -54,7 +54,7 @@ export default function ContactForm() {
                 <InputField
                   key={field.name}
                   {...field}
-                  labelClassName="text-white"
+                  labelClassName="text-white font-bold"
                   inputClass="bg-gray py-1 px-2"
                   className={cn({ "col-span-3": isTextarea })}
                   rows={isTextarea ? 12 : undefined}
