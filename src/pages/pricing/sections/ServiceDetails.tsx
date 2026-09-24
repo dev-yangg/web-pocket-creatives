@@ -2,21 +2,34 @@ import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { MultiHighlightedText } from "../../../components/MultiHighlightedText";
 import { cn } from "../../../lib/utils";
 import { serviceDetailsSliderData } from "../data";
+import { useState } from "react";
+import { useSkipCSSTransitionOnResize } from "../../../hooks/useSkipCSSTransitionOnResize";
 
 export default function ServiceDetails() {
   const { slides } = serviceDetailsSliderData;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const sectionRef = useSkipCSSTransitionOnResize<HTMLElement>();
+
   return (
-    <section>
+    <section
+      ref={sectionRef}
+      className="grid grid-cols-1 xl:grid-rows-1 overflow-hidden">
       {slides.map((slide, index) => {
         const isFirst = index === 0;
 
         return (
-          <section
+          <div
             key={slide.headline}
+            inert={index !== activeIndex}
             className={cn(
-              "py-14",
+              "py-14 xl:col-start-1 xl:row-start-1 transition-transform duration-300 ease-swap",
               { "bg-yellow text-black": isFirst },
               { "bg-blue text-white": !isFirst },
+              {
+                "xl:translate-x-0": index === activeIndex,
+                "xl:translate-x-full": index > activeIndex,
+                "xl:-translate-x-full": index < activeIndex,
+              },
             )}>
             <div
               className={cn("w-content-boundary-1440-pad mx-auto grid", {
@@ -51,6 +64,9 @@ export default function ServiceDetails() {
                 </figure>
               </div>
               <button
+                onClick={() =>
+                  setActiveIndex((prev) => (prev + 1) % slides.length)
+                }
                 className={cn(
                   "w-36 md:w-44 lg:w-38 aspect-square rounded-full self-center hidden xl:flex flex-col items-center justify-center gap-y-1 shrink-0 @container",
                   { "bg-blue text-white": isFirst },
@@ -66,7 +82,7 @@ export default function ServiceDetails() {
                 </span>
               </button>
             </div>
-          </section>
+          </div>
         );
       })}
     </section>
