@@ -9,6 +9,7 @@ import Blogs from "./pages/blogs/Blogs";
 import BlogInnerTemplate from "./pages/blogs/components/BlogInnerTemplate";
 import ServicesPage from "./pages/services/ServicesPage";
 import PricingPage from "./pages/pricing/PricingPage";
+import ContactPage from "./pages/contact/ContactPage";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path: "pricing",
         Component: PricingPage,
+      },
+      {
+        path: "contact",
+        Component: ContactPage,
       },
       {
         path: "how-we-work",
