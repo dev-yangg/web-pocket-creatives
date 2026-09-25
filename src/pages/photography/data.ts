@@ -102,7 +102,7 @@ export const photographyOverview: PhotographyOverview = {
     grid01: [
       {
         src: "/photography/grid/food.webp",
-        label: "Food",
+        label: "Food & Drink",
         alt: "Beautifully styled food photography for a food producer client",
       },
       {
