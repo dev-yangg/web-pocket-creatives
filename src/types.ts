@@ -7,3 +7,8 @@ export interface HighlightSegment {
   text: string;
   style: string;
 }
+
+export interface ContentParagraph {
+  text: string;
+  highlights?: HighlightSegment[];
+}
