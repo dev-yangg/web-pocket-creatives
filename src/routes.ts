@@ -10,6 +10,7 @@ import BlogInnerTemplate from "./pages/blogs/components/BlogInnerTemplate";
 import ServicesPage from "./pages/services/ServicesPage";
 import PricingPage from "./pages/pricing/PricingPage";
 import ContactPage from "./pages/contact/ContactPage";
+import PhotographyPage from "./pages/photography/PhotographyPage";
 
 export const router = createBrowserRouter([
   {
@@ -41,19 +42,23 @@ export const router = createBrowserRouter([
         Component: ContactPage,
       },
       {
+        path: "blogs",
+        children: [
+          { index: true, Component: Blogs },
+          { path: ":slug", Component: BlogInnerTemplate },
+        ],
+      },
+      {
+        path: "photography",
+        Component: PhotographyPage,
+      },
+      {
         path: "how-we-work",
         Component: HowWeWork,
       },
       {
         path: "trainings",
         Component: Trainings,
-      },
-      {
-        path: "blogs",
-        children: [
-          { index: true, Component: Blogs },
-          { path: ":slug", Component: BlogInnerTemplate },
-        ],
       },
     ],
   },
