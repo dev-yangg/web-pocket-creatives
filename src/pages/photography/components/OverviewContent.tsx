@@ -19,8 +19,8 @@ export default function OverviewContent({
         {banner}
       </h2>
       <div className="flex flex-col gap-y-4">
-        {description.map((content) => (
-          <p>
+        {description.map((content, index) => (
+          <p key={`${index}-${content.text}`}>
             <MultiHighlightedText {...content} />
           </p>
         ))}
