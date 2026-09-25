@@ -23,6 +23,8 @@ export const footerLinks = [{ label: "Blogs", href: "/blogs" }];
 export const footerExtraLinks = [
   { label: "How we work", href: "/how-we-work" },
   { label: "Trainings", href: "/trainings" },
+  { label: "Photography", href: "/photography" },
+  { label: "Videography", href: "/videography" },
 ];
 
 export const socials = [

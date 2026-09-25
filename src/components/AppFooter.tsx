@@ -78,7 +78,7 @@ export default function AppFooter() {
               <li key={link.href}>
                 <NavLink
                   to={link.href}
-                  className="inline-block uppercase font-normal ">
+                  className="inline-block uppercase font-normal hover:text-yellow transition-colors duration-300 ease-in-out relative">
                   {link.label}
                 </NavLink>
               </li>
@@ -97,12 +97,12 @@ export default function AppFooter() {
       </div>
       <div className="custom-underline">
         <section className="content-boundary py-2 md:pt-0 md:pb-4">
-          <ul className="uppercase text-white font-light flex flex-col md:flex-row gap-x-4">
+          <ul className="uppercase text-white flex flex-col md:flex-row gap-x-4 text-[clamp(1.15rem,3.5cqi,1.35rem)]">
             {footerExtraLinks.map((link) => (
               <li key={link.label} className="w-fit">
                 <NavLink
                   to={link.href}
-                  className="inline-block text-[clamp(1rem,2cqi,1.25rem)]">
+                  className="inline-block font-normal hover:text-yellow transition-colors duration-300 ease-in-out relative">
                   {link.label}
                 </NavLink>
               </li>
