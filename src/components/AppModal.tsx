@@ -31,10 +31,6 @@ export default function AppModal() {
     return () => dialog.removeEventListener("close", handleClose);
   }, [closeModal]);
 
-  useEffect(() => {
-    console.log(activeModal);
-  }, [activeModal]);
-
   const targetModal = activeModal ? MODALS[activeModal.name] : null;
   const ModalComponent = targetModal?.component ?? null;
 
