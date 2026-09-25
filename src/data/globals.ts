@@ -45,13 +45,13 @@ export const baseContactFormFields = [
   },
   {
     name: "contactNumber",
-    label: { base: "Contact Number", breakpoint: "Your contact number?" },
+    label: { base: "Contact", breakpoint: "Your contact number?" },
     placeholder: "Contact Number",
     required: true,
   },
   {
     name: "email",
-    label: { base: "Email Address", breakpoint: "Your email address?" },
+    label: { base: "Email", breakpoint: "Your email address?" },
     placeholder: "Email Address",
     required: true,
     type: "email",
