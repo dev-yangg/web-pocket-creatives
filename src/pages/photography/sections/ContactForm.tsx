@@ -5,7 +5,7 @@ import { contactForm } from "../data";
 export default function ContactForm() {
   const { headline, fields, submitLabel } = contactForm;
   return (
-    <section className="bg-yellow py-24">
+    <section className="bg-yellow py-16 md:py-24">
       <div className="content-boundary grid grid-cols-1 md:grid-cols-2  gap-y-14 gap-x-8 @container">
         <h2 className="text-[clamp(1.75rem,4rem+3cqi,3rem)] lg:text-heading-2 font-extrabold leading-none mt-3">
           {headline}
@@ -28,7 +28,7 @@ export default function ContactForm() {
           </div>
           <button
             type="submit"
-            className="bg-blue px-14 py-2 text-white font-bold text-center rounded-xl capitalize self-center md:self-end">
+            className="bg-blue w-[min(500px,100%)] min-[550px]:w-auto px-14 py-2 text-white font-bold text-center rounded-xl capitalize self-center md:self-end">
             {submitLabel}
           </button>
         </form>
