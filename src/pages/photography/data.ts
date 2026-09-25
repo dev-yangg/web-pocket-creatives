@@ -152,45 +152,48 @@ export const contactForm = {
   submitLabel: "send",
 };
 
-export const photographyDetails = [
-  {
-    image: {
-      src: "/photography/details/01.webp",
-      alt: "",
+export const photographyDetails = {
+  headline: "Photography Details", // sr-only
+  details: [
+    {
+      image: {
+        src: "/photography/details/01.webp",
+        alt: "",
+      },
+      heading: "How we work",
+      content: [
+        "We try to make the consultation process for our photography services as simple as possible - understanding your requirements as quickly as possible.",
+        "Quoting is relatively easy, as we charge based on time and resources (rather than per-image).",
+        "You can book our photography agency for as little as one hour - ideal when you need a handful of simple images, and are happy for us to work remotely.",
+        "We also offer either half day or full day slots, with full pre-planning consultation. We can help with props, backgrounds, locations and models where required. We have numerous shoot location options as well, including the possibility to come to you.",
+        "We like to think we have a solution to satisfy most challenges!",
+      ],
     },
-    heading: "How we work",
-    content: [
-      "We try to make the consultation process for our photography services as simple as possible - understanding your requirements as quickly as possible.",
-      "Quoting is relatively easy, as we charge based on time and resources (rather than per-image).",
-      "You can book our photography agency for as little as one hour - ideal when you need a handful of simple images, and are happy for us to work remotely.",
-      "We also offer either half day or full day slots, with full pre-planning consultation. We can help with props, backgrounds, locations and models where required. We have numerous shoot location options as well, including the possibility to come to you.",
-      "We like to think we have a solution to satisfy most challenges!",
-    ],
-  },
-  {
-    image: {
-      src: "/photography/details/02.webp",
-      alt: "",
+    {
+      image: {
+        src: "/photography/details/02.webp",
+        alt: "",
+      },
+      heading: "Technically speaking",
+      content: [
+        "We shoot on high resolution Nikon cameras, capable of delivering clean, crisp imagery with acres of detail.",
+        "Our lens options include Nikon's two workhorse focal length ranges (24-70mm and 70-200mm), and we support macro lenses for close-up work and ultra-wide, as wide as 12mm, for dramatic wide angles.",
+        "We use both studio lighting and portable battery-powered flash, which makes us a photography company able to shoot in all locations. Post-production is completed through Adobe Raw and Photoshop.",
+      ],
     },
-    heading: "Technically speaking",
-    content: [
-      "We shoot on high resolution Nikon cameras, capable of delivering clean, crisp imagery with acres of detail.",
-      "Our lens options include Nikon's two workhorse focal length ranges (24-70mm and 70-200mm), and we support macro lenses for close-up work and ultra-wide, as wide as 12mm, for dramatic wide angles.",
-      "We use both studio lighting and portable battery-powered flash, which makes us a photography company able to shoot in all locations. Post-production is completed through Adobe Raw and Photoshop.",
-    ],
-  },
-  {
-    image: {
-      src: "/photography/details/03.webp",
-      alt: "",
+    {
+      image: {
+        src: "/photography/details/03.webp",
+        alt: "",
+      },
+      heading: "The whole package",
+      content: [
+        "We try to make the consultation process for our photography services as simple as possible - understanding your requirements as quickly as possible.",
+        "Quoting is relatively easy, as we charge based on time and resources (rather than per-image).",
+        "You can book our photography agency for as little as one hour - ideal when you need a handful of simple images, and are happy for us to work remotely.",
+        "We also offer either half day or full day slots, with full pre-planning consultation. We can help with props, backgrounds, locations and models where required. We have numerous shoot location options as well, including the possibility to come to you.",
+        "We like to think we have a solution to satisfy most challenges!",
+      ],
     },
-    heading: "The whole package",
-    content: [
-      "We try to make the consultation process for our photography services as simple as possible - understanding your requirements as quickly as possible.",
-      "Quoting is relatively easy, as we charge based on time and resources (rather than per-image).",
-      "You can book our photography agency for as little as one hour - ideal when you need a handful of simple images, and are happy for us to work remotely.",
-      "We also offer either half day or full day slots, with full pre-planning consultation. We can help with props, backgrounds, locations and models where required. We have numerous shoot location options as well, including the possibility to come to you.",
-      "We like to think we have a solution to satisfy most challenges!",
-    ],
-  },
-];
+  ],
+};
