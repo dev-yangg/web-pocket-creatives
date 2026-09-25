@@ -11,6 +11,7 @@ type VideoClipProps = {
   captionAtTop?: boolean;
   captionAtLeft?: boolean;
   captionClassName?: string;
+  captionTextClassName?: string;
   wrapperClassName?: string;
 };
 
@@ -24,6 +25,7 @@ export default function VideoClip({
   captionAtTop = true,
   captionAtLeft = true,
   captionClassName,
+  captionTextClassName,
   wrapperClassName,
 }: VideoClipProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -72,7 +74,7 @@ export default function VideoClip({
           { "left-0": captionAtLeft },
           captionClassName,
         )}>
-        <span className="text-small text-grayblue ">
+        <span className={cn("text-small text-grayblue", captionTextClassName)}>
           *<span className="inline lg:hidden">Tap</span>
           <span className="hidden lg:inline">Click on</span> Video to toggle
           sound
