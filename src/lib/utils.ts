@@ -1,5 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { twMerge } from "./tw-merge-config";
 
 type CSSVariableOpt = {
   element?: HTMLElement;
