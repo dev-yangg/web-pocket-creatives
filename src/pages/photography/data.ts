@@ -2,6 +2,30 @@ import { HiOutlineMail } from "react-icons/hi";
 import { baseContactFormFields } from "../../data/globals";
 import type { ContentParagraph } from "../../types";
 
+export interface ContentSection {
+  banner: string;
+  description: ContentParagraph[];
+}
+
+export interface PhotographyOverviewContents {
+  leading: ContentSection;
+  ending: ContentSection;
+}
+
+export interface PhotographyOverviewImage {
+  src: string;
+  label: string;
+  alt: string;
+}
+
+export interface PhotographyOverview {
+  contents: PhotographyOverviewContents;
+  images: {
+    grid01: PhotographyOverviewImage[];
+    grid02: PhotographyOverviewImage[];
+  };
+}
+
 export const heroData = {
   headline: "Photography Services",
   subheading: {
@@ -37,7 +61,7 @@ const photographyLeadingContent: ContentParagraph[] = [
   {
     text: "Our professional photography services are flexible and affordably priced, so that you can scale up or down depending on your requirements. We create eye-catching results for use in advertising campaigns, product listings and e-commerce, and for social media.",
     highlights: [
-      { text: "flexible and affordably priced", style: "highlight" },
+      { text: "flexible and affordably priced", style: "font-bold" },
     ],
   },
   {
@@ -55,19 +79,70 @@ const photographyEndingContent: ContentParagraph[] = [
   {
     text: "We have now opened our brand new photography studio in London Waterloo, which gives us a great space to base our photography services from - and makes booking new projects easier than ever.",
     highlights: [
-      { text: "photography studio in London Waterloo", style: "highlight" },
+      {
+        text: "photography studio in London Waterloo",
+        style: "font-bold text-blue",
+      },
     ],
   },
 ];
 
-export const photographyOverview = {
-  banner: {
-    leading: "Photography",
-    ending: "Services",
-  },
+export const photographyOverview: PhotographyOverview = {
   contents: {
-    leading: photographyLeadingContent,
-    ending: photographyEndingContent,
+    leading: {
+      banner: "Photography",
+      description: photographyLeadingContent,
+    },
+    ending: {
+      banner: "Services",
+      description: photographyEndingContent,
+    },
+  },
+  images: {
+    grid01: [
+      {
+        src: "/photography/grid/food.webp",
+        label: "Food",
+        alt: "Beautifully styled food photography for a food producer client",
+      },
+      {
+        src: "/photography/grid/beauty.webp",
+        label: "Beauty",
+        alt: "Beauty product photography showcasing cosmetics and skincare",
+      },
+      {
+        src: "/photography/grid/product.webp",
+        label: "Product",
+        alt: "Commercial product photography for a new product release",
+      },
+      {
+        src: "/photography/grid/events.webp",
+        label: "Events",
+        alt: "Event coverage photography capturing key moments live",
+      },
+    ],
+    grid02: [
+      {
+        src: "/photography/grid/fashion.webp",
+        label: "Fashion",
+        alt: "Fashion brand photography featuring styled clothing and models",
+      },
+      {
+        src: "/photography/grid/people.webp",
+        label: "People",
+        alt: "Portrait and lifestyle photography featuring people",
+      },
+      {
+        src: "/photography/grid/crowdfunding.webp",
+        label: "Crowdfunding",
+        alt: "Photography created for a crowdfunding campaign",
+      },
+      {
+        src: "/photography/grid/jewellery.webp",
+        label: "Jewellery",
+        alt: "Jewellery and watch brand product photography",
+      },
+    ],
   },
 };
 
