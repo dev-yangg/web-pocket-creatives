@@ -13,10 +13,20 @@ const FALLBACK: Record<BreakpointKey, number> = {
   xxxl: 1920,
 };
 
+const getRootFontSizePx = (): number =>
+  parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+
 const readBreakpointPx = (variableName: string, fallback: number): number => {
-  const raw = getCSSVar(variableName, { fallback: `${fallback}px` });
-  const parsed = parseFloat(raw);
-  return Number.isNaN(parsed) ? fallback : parsed;
+  const raw = getCSSVar(variableName, { fallback: `${fallback}px` }).trim();
+  const value = parseFloat(raw);
+  if (Number.isNaN(value)) return fallback;
+
+  if (raw.endsWith("rem")) {
+    return value * getRootFontSizePx();
+  }
+
+  // covers "px" and any bare unitless number
+  return value;
 };
 
 export function useBreakpoint(): Record<BreakpointKey, number> {
