@@ -7,6 +7,7 @@ import {
 } from "../data/globals";
 import logo from "../assets/logo.svg";
 import SocialsList from "./SocialsList";
+import { cn } from "../lib/utils";
 
 export default function AppFooter() {
   const { email, address, tel } = contactInfo;
@@ -73,12 +74,17 @@ export default function AppFooter() {
       <div className="max-md:custom-underline">
         <section className="content-boundary grid grid-cols-1 md:grid-cols-[2fr_1fr] pt-4 pb-8 md:pb-0 @container">
           <h3 className="font-extrabold text-heading-3">QuickLinks</h3>
-          <ul className="flex flex-wrap gap-x-4 gap-y-1 text-white text-[clamp(1.15rem,3.5cqi,1.35rem)]">
+          <ul className="flex flex-wrap gap-x-4 gap-y-1 ">
             {[...applinks, ...footerLinks].map((link) => (
               <li key={link.href}>
                 <NavLink
                   to={link.href}
-                  className="inline-block uppercase font-normal hover:text-yellow transition-colors duration-300 ease-in-out relative">
+                  className={({ isActive }) =>
+                    cn(
+                      "inline-block uppercase font-normal text-white text-[clamp(1.15rem,3.5cqi,1.35rem)] hover:text-yellow transition-colors duration-300 ease-in-out relative",
+                      { "text-yellow": isActive },
+                    )
+                  }>
                   {link.label}
                 </NavLink>
               </li>
@@ -97,12 +103,17 @@ export default function AppFooter() {
       </div>
       <div className="custom-underline">
         <section className="content-boundary py-2 md:pt-0 md:pb-4">
-          <ul className="uppercase text-white flex flex-col md:flex-row gap-x-4 text-[clamp(1.15rem,3.5cqi,1.35rem)]">
+          <ul className="uppercase text-white flex flex-col md:flex-row gap-x-4">
             {footerExtraLinks.map((link) => (
               <li key={link.label} className="w-fit">
                 <NavLink
                   to={link.href}
-                  className="inline-block font-normal hover:text-yellow transition-colors duration-300 ease-in-out relative">
+                  className={({ isActive }) =>
+                    cn(
+                      "inline-block font-normal text-white text-[clamp(1.15rem,3.5cqi,1.35rem)] hover:text-yellow transition-colors duration-300 ease-in-out relative",
+                      { "text-yellow": isActive },
+                    )
+                  }>
                   {link.label}
                 </NavLink>
               </li>
