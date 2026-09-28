@@ -11,6 +11,7 @@ import ServicesPage from "./pages/services/ServicesPage";
 import PricingPage from "./pages/pricing/PricingPage";
 import ContactPage from "./pages/contact/ContactPage";
 import PhotographyPage from "./pages/photography/PhotographyPage";
+import VideographyPage from "./pages/videography/VideographyPage";
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: "photography",
         Component: PhotographyPage,
+      },
+      {
+        path: "videography",
+        Component: VideographyPage,
       },
       {
         path: "how-we-work",
