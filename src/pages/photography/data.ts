@@ -1,4 +1,3 @@
-import { HiOutlineMail } from "react-icons/hi";
 import { baseContactFormFields } from "../../data/globals";
 import type { ContentParagraph } from "../../types";
 
@@ -50,10 +49,6 @@ export const heroData = {
       "We put quality and creativity at the heart of what we do, and can organise locations, models, make-up artists and more to complete the picture.",
       "It really is the full package.",
     ],
-  },
-  cta: {
-    icon: HiOutlineMail,
-    label: "Have questions?",
   },
 };
 

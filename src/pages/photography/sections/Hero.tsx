@@ -1,15 +1,12 @@
 import { heroData } from "../data";
 import { MultiHighlightedText } from "../../../components/MultiHighlightedText";
 import VideoClip from "../../../components/VideoClip";
-import { useModal } from "../../../hooks/useModal";
+import InquiryCTA from "../../../components/InquiryCta";
 
 export default function Hero() {
-  const { headline, subheading, media, intro, description, cta } = heroData;
+  const { headline, subheading, media, intro, description } = heroData;
   const { text: subtext, highlights: subhighlight } = subheading;
   const { text: introtext, highlights: introhighlight } = intro;
-  const { icon: Icon, label } = cta;
-
-  const { openModal } = useModal();
 
   return (
     <section className="pt-app-padding-top pb-14 bg-blue">
@@ -46,14 +43,7 @@ export default function Hero() {
               {content}
             </p>
           ))}
-          <button
-            onClick={() => openModal("contact")}
-            className="bg-yellow p-4 md:py-2 md:pl-2 md:pr-3 max-md:rounded-xl max-md:shadow-below flex items-center gap-x-[.5ch] text-black self-center md:self-start">
-            <span className="w-[1.5em] aspect-square">
-              <Icon className="w-full h-full" />
-            </span>
-            <span>{label}</span>
-          </button>
+          <InquiryCTA />
         </div>
       </div>
     </section>
