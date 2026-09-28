@@ -24,7 +24,7 @@ export default function InquiryCTA({
       type="button"
       onClick={handleClick}
       className={cn(
-        "bg-yellow p-4 md:py-2 md:pl-2 md:pr-3 max-md:rounded-xl max-md:shadow-below flex items-center gap-x-[.5ch] text-black self-center md:self-start",
+        "bg-yellow p-4 md:py-2 md:pl-2 md:pr-3 max-md:rounded-xl max-md:shadow-below flex items-center gap-x-[.5ch] text-black self-center md:self-start rounded-xl",
         className,
       )}>
       <span className="w-[1.5em] aspect-square">
