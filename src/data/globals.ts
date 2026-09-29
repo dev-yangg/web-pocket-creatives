@@ -82,3 +82,22 @@ export const contactInfo = {
     href: "+02036338494",
   },
 };
+
+// consumed by tablists
+export const workCategories = [
+  { id: "beauty-cosmetics", label: "Beauty & Cosmetics" },
+  { id: "food-drink", label: "Food & Drink" },
+  { id: "products", label: "Products" },
+  { id: "events", label: "Events" },
+  { id: "crowdfunding", label: "Crowdfunding" },
+  { id: "fashion", label: "Fashion" },
+  { id: "people", label: "People" },
+  { id: "jewellery", label: "Jewellery" },
+  { id: "tv-ads", label: "TV-Ads" },
+  { id: "hr", label: "HR" },
+  { id: "education", label: "Education" },
+  { id: "explainers", label: "Explainers" },
+  { id: "social-first", label: "Social-First" },
+] as const;
+
+export type WorkCategoryId = (typeof workCategories)[number]["id"];

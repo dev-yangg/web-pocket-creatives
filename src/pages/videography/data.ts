@@ -1,3 +1,5 @@
+import type { WorkCategoryId } from "../../data/globals";
+
 export const heroData = {
   headline: "Video Production Services",
   subheading: {
@@ -34,69 +36,88 @@ export const videographyFaq = {
   },
 };
 
-export const videoProdPortfolio = {
+export type VideoItem = {
+  id: string;
+  categoryId: WorkCategoryId;
+  src: string;
+  client: string;
+  category: string;
+  description: string;
+};
+
+export type VideoProdPortfolio = {
+  headline: string;
+  featured: WorkCategoryId[];
+  items: VideoItem[];
+};
+
+export const videoProdPortfolio: VideoProdPortfolio = {
   headline: "A Snapshot of our Video Production Portfolio",
-  featuredTabs: [
+  featured: [
+    "beauty-cosmetics",
+    "food-drink",
+    "products",
+    "events",
+    "crowdfunding",
+  ],
+  items: [
     {
-      id: "beauty-cosmetics",
-      label: "Beauty & Cosmetics",
+      id: "beauty-cosmetics-1",
+      categoryId: "beauty-cosmetics",
+      src: "/training/bts/bts-03.mp4",
+      client: "James Read Tan",
+      category: "Beauty and Cosmetics Video",
+      description:
+        "Our professional video production services are used to promote beauty and cosmetics products. We can do this by creating brand films, delivering lifestyle content, covering cosmetic product launches and beauty events, and more!",
+    },
+    {
+      id: "beauty-cosmetics-2",
+      categoryId: "beauty-cosmetics",
       src: "/videos/video-prod/beauty-slider.mp4",
-      content: {
-        client: "James Read Tan",
-        title: "Beauty and Cosmetics Video",
-        description:
-          "Our professional video production services are used to promote beauty and cosmetics products. We can do this by creating brand films, delivering lifestyle content, covering cosmetic product launches and beauty events, and more!",
-      },
+      client: "Gatineau",
+      category: "Beauty and Cosmetics Video",
+      description:
+        "Our professional video production services are used to promote beauty and cosmetics products. We can do this by creating brand films, delivering lifestyle content, covering cosmetic product launches and beauty events, and more!",
     },
     {
-      id: "food-drink",
-      label: "Food & Drink",
+      id: "food-drink-1",
+      categoryId: "food-drink",
       src: "/videos/video-prod/food-drink-slider.mp4",
-      content: {
-        client: "",
-        title: "Food & Drink",
-        description: "",
-      },
+      client: "BIM'S",
+      category: "Food & Drink",
+      description: "",
     },
     {
-      id: "products",
-      label: "Products",
+      id: "products-1",
+      categoryId: "products",
       src: "/videos/video-prod/product-slider.mp4",
-      content: {
-        client: "",
-        title: "Products",
-        description: "",
-      },
+      client: "Little Cooks",
+      category: "Products",
+      description: "",
     },
     {
-      id: "events",
-      label: "Events",
-      src: "",
-      content: {
-        client: "",
-        title: "Events",
-        description: "",
-      },
+      id: "products-2",
+      categoryId: "products",
+      src: "/works/videography/beauty/client-1.2.mp4",
+      client: "Ayumi",
+      category: "Products",
+      description: "",
     },
     {
-      id: "crowdfunding",
-      label: "Crowdfunding",
+      id: "events-1",
+      categoryId: "events",
+      src: "/videos/video-prod/social-first-slider.mp4",
+      client: "Vida Glow",
+      category: "Events",
+      description: "",
+    },
+    {
+      id: "crowdfunding-1",
+      categoryId: "crowdfunding",
       src: "/videos/video-prod/crowdfunding-slider.mp4",
-      content: {
-        client: "",
-        title: "Crowdfunding",
-        description: "",
-      },
-    },
-    {
-      id: "all-others",
-      label: "All Others",
-      src: "",
-      content: {
-        client: "",
-        title: "All Others",
-        description: "",
-      },
+      client: "Hygie",
+      category: "Crowdfunding",
+      description: "",
     },
   ],
 };
