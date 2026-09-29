@@ -84,6 +84,10 @@ export const contactInfo = {
 };
 
 // consumed by tablists
+export interface Category<T extends string = string> {
+  id: T;
+  label: string;
+}
 export const workCategories = [
   { id: "beauty-cosmetics", label: "Beauty & Cosmetics" },
   { id: "food-drink", label: "Food & Drink" },
@@ -98,6 +102,8 @@ export const workCategories = [
   { id: "education", label: "Education" },
   { id: "explainers", label: "Explainers" },
   { id: "social-first", label: "Social-First" },
-] as const;
+] as const satisfies readonly Category[];
 
-export type WorkCategoryId = (typeof workCategories)[number]["id"];
+export type WorkCategory = (typeof workCategories)[number];
+export type WorkCategoryId = WorkCategory["id"];
+export type WorkCategoryLabel = WorkCategory["label"];
