@@ -53,17 +53,11 @@ export type VideoProdPortfolio = {
 
 export const videoProdPortfolio: VideoProdPortfolio = {
   headline: "A Snapshot of our Video Production Portfolio",
-  featured: [
-    "beauty-cosmetics",
-    "food-drink",
-    "products",
-    "events",
-    "crowdfunding",
-  ],
+  featured: ["beauty", "food", "products", "events", "crowdfunding"],
   items: [
     {
       id: "beauty-cosmetics-1",
-      categoryId: "beauty-cosmetics",
+      categoryId: "beauty",
       src: "/training/bts/bts-03.mp4",
       client: "James Read Tan",
       category: "Beauty and Cosmetics Video",
@@ -72,7 +66,7 @@ export const videoProdPortfolio: VideoProdPortfolio = {
     },
     {
       id: "beauty-cosmetics-2",
-      categoryId: "beauty-cosmetics",
+      categoryId: "beauty",
       src: "/videos/video-prod/beauty-slider.mp4",
       client: "Gatineau",
       category: "Beauty and Cosmetics Video",
@@ -81,7 +75,7 @@ export const videoProdPortfolio: VideoProdPortfolio = {
     },
     {
       id: "food-drink-1",
-      categoryId: "food-drink",
+      categoryId: "food",
       src: "/videos/video-prod/food-drink-slider.mp4",
       client: "BIM'S",
       category: "Food & Drink",

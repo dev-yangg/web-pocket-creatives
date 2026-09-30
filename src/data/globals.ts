@@ -89,8 +89,8 @@ export interface Category<T extends string = string> {
   label: string;
 }
 export const workCategories = [
-  { id: "beauty-cosmetics", label: "Beauty & Cosmetics" },
-  { id: "food-drink", label: "Food & Drink" },
+  { id: "beauty", label: "Beauty" },
+  { id: "food", label: "Food" },
   { id: "products", label: "Products" },
   { id: "events", label: "Events" },
   { id: "crowdfunding", label: "Crowdfunding" },

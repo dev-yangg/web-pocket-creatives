@@ -1,20 +1,24 @@
 import { useState } from "react";
-import { type Category } from "../data/globals";
+import {
+  workCategories,
+  type Category,
+  type WorkCategoryId,
+} from "../data/globals";
 import { IoMdArrowDropdown } from "react-icons/io";
 
-interface Props<T extends string> {
-  options: readonly Category<T>[];
-  value: T;
-  onChange: (id: T) => void;
+interface Props {
+  options?: readonly Category<WorkCategoryId>[];
+  value: WorkCategoryId;
+  onChange: (id: WorkCategoryId) => void;
   ariaLabel?: string;
 }
 
-export default function CategorySelection<T extends string>({
-  options,
+export default function WorkCategorySelection({
+  options = workCategories,
   value,
   onChange,
   ariaLabel,
-}: Props<T>) {
+}: Props) {
   const [open, setOpen] = useState(false);
   const selected = options.find((opt) => opt.id === value);
 
@@ -22,15 +26,15 @@ export default function CategorySelection<T extends string>({
     <div
       role="group"
       aria-label={ariaLabel ?? "Filter by category"}
-      className="outline-3 outline-black bg-white px-4 py-1">
+      className="w-[min(200px,100%)] mx-auto outline-3 outline-black bg-white pl-4 pr-2 py-1 flex flex-col">
       <button
         type="button"
         aria-expanded={open}
         onClick={() => setOpen((prev) => !prev)}
-        className="flex items-center gap-x-[.65ch]">
+        className="flex items-center justify-between gap-x-[1ch]">
         <span>{selected?.label}</span>
-        <span>
-          <IoMdArrowDropdown className="w-5 aspect-square" />
+        <span className="inline-block ml-auto w-5 aspect-square">
+          <IoMdArrowDropdown className="w-full h-full" />
         </span>
       </button>
 
