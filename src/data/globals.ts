@@ -25,6 +25,7 @@ export const footerExtraLinks = [
   { label: "Trainings", href: "/trainings" },
   { label: "Photography", href: "/photography" },
   { label: "Videography", href: "/videography" },
+  { label: "Testimonials", href: "/testimonials" },
 ];
 
 export const socials = [
