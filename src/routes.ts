@@ -12,6 +12,9 @@ import PricingPage from "./pages/pricing/PricingPage";
 import ContactPage from "./pages/contact/ContactPage";
 import PhotographyPage from "./pages/photography/PhotographyPage";
 import VideographyPage from "./pages/videography/VideographyPage";
+import TestimonialsPage from "./pages/testimonials/TestimonialsPage";
+import PhotographyTestimonials from "./pages/testimonials/photography/PhotographyTestimonials";
+import VideographyTestimonials from "./pages/testimonials/videography/VideographyTestimonials";
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +59,23 @@ export const router = createBrowserRouter([
       {
         path: "videography",
         Component: VideographyPage,
+      },
+      {
+        path: "testimonials",
+        children: [
+          {
+            index: true,
+            Component: TestimonialsPage,
+          },
+          {
+            path: "photography-testimonials",
+            Component: PhotographyTestimonials,
+          },
+          {
+            path: "videography-testimonials",
+            Component: VideographyTestimonials,
+          },
+        ],
       },
       {
         path: "how-we-work",
