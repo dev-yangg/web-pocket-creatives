@@ -1,7 +1,20 @@
-export default function QuoteMark() {
+import { cn } from "../lib/utils";
+
+interface Props {
+  className?: string;
+  quoteIconClassName?: string;
+}
+
+export default function QuoteMark({ className, quoteIconClassName }: Props) {
   return (
-    <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-20">
-      <div className="w-30 lg:w-60 absolute top-0 left-0">
+    <div
+      aria-hidden="true"
+      className={cn("absolute inset-0 -z-10 opacity-20", className)}>
+      <div
+        className={cn(
+          "w-30 lg:w-60 absolute top-0 left-0",
+          quoteIconClassName,
+        )}>
         <svg
           className="w-full h-full"
           viewBox="0 0 246 246"
@@ -23,7 +36,11 @@ export default function QuoteMark() {
           />
         </svg>
       </div>
-      <div className="w-30 lg:w-60 absolute bottom-0 right-0">
+      <div
+        className={cn(
+          "w-30 lg:w-60 absolute bottom-0 right-0",
+          quoteIconClassName,
+        )}>
         <svg
           className="w-full h-full"
           viewBox="0 0 246 246"

@@ -30,13 +30,13 @@ export const testimonialsIntro: TestimonialsIntro = {
       icon: FaCamera,
       title: "Photography\nTestimonials",
       subtitle: "Real moments, genuine feedback from our clients",
-      href: "/testimonials/photography-testimonials",
+      href: "/testimonials/photography",
     },
     {
       icon: FaVideo,
       title: "Videography\nTestimonials",
       subtitle: "Meaningful stories, honest feedback from our clients",
-      href: "/testimonials/videography-testimonials",
+      href: "/testimonials/videography",
     },
   ],
 };
@@ -88,6 +88,86 @@ export const slidesContent: TestimonialSlide[] = [
     logo: {
       src: "/images/logo-carousel/carousel-1/the-gym-group.webp",
       alt: "The Gym Group logo",
+    },
+  },
+  {
+    clientName: "Business Insider",
+    content: [
+      "Fun, innovative and unflappable. Pocket Creatives are great to work with - whether it's finding the perfect lighting for a trifle to capturing GoPro footage on a whisk, they always approach every situation with a steady yet game-changing attitude. I see the whole team as trusted creative partners to make great content together.",
+    ],
+    logo: {
+      src: "/images/logo-carousel/carousel-1/business-insider.webp",
+      alt: "Business Insider logo",
+    },
+  },
+  {
+    clientName: "Co-op",
+    content: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis purus vestibulum, commodo ante vitae, dignissim ligula. Maecenas at sodales.",
+    ],
+    logo: {
+      src: "/images/logo-carousel/carousel-1/coop.webp",
+      alt: "Co-op logo",
+    },
+  },
+  {
+    clientName: "Colman's",
+    content: [
+      "Fun, innovative and unflappable. Pocket Creatives are great to work with - whether it's finding the perfect lighting for a trifle to capturing GoPro footage on a whisk, they always approach every situation with a steady yet game-changing attitude. I see the whole team as trusted creative partners to make great content together.",
+    ],
+    logo: {
+      src: "/images/logo-carousel/carousel-2/colmans.webp",
+      alt: "Colman's logo",
+    },
+  },
+  {
+    clientName: "Soap & Glory",
+    content: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis purus vestibulum, commodo ante vitae, dignissim ligula. Maecenas at sodales.",
+    ],
+    logo: {
+      src: "/images/logo-carousel/carousel-1/soap-glory.webp",
+      alt: "Soap & Glory logo",
+    },
+  },
+  {
+    clientName: "Masabi",
+    content: [
+      "Fun, innovative and unflappable. Pocket Creatives are great to work with - whether it's finding the perfect lighting for a trifle to capturing GoPro footage on a whisk, they always approach every situation with a steady yet game-changing attitude. I see the whole team as trusted creative partners to make great content together.",
+    ],
+    logo: {
+      src: "/images/logo-carousel/carousel-2/masabi.webp",
+      alt: "Masabi logo",
+    },
+  },
+  {
+    clientName: "Nursem",
+    content: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis purus vestibulum, commodo ante vitae, dignissim ligula. Maecenas at sodales.",
+    ],
+    logo: {
+      src: "/images/logo-carousel/carousel-2/nursem.webp",
+      alt: "Nursem logo",
+    },
+  },
+  {
+    clientName: "Prestige Flowers",
+    content: [
+      "Fun, innovative and unflappable. Pocket Creatives are great to work with - whether it's finding the perfect lighting for a trifle to capturing GoPro footage on a whisk, they always approach every situation with a steady yet game-changing attitude. I see the whole team as trusted creative partners to make great content together.",
+    ],
+    logo: {
+      src: "/images/logo-carousel/carousel-2/prestige-flowers.webp",
+      alt: "Prestige Flowers logo",
+    },
+  },
+  {
+    clientName: "QVC",
+    content: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis purus vestibulum, commodo ante vitae, dignissim ligula. Maecenas at sodales.",
+    ],
+    logo: {
+      src: "/images/logo-carousel/carousel-2/qvc.webp",
+      alt: "QVC logo",
     },
   },
 ];

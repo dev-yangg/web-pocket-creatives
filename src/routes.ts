@@ -68,11 +68,11 @@ export const router = createBrowserRouter([
             Component: TestimonialsPage,
           },
           {
-            path: "photography-testimonials",
+            path: "photography",
             Component: PhotographyTestimonials,
           },
           {
-            path: "videography-testimonials",
+            path: "videography",
             Component: VideographyTestimonials,
           },
         ],

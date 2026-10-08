@@ -5,7 +5,7 @@ import { cn } from "../../lib/utils";
 export default function TestimonialsPage() {
   const { headline, subheading, cta } = testimonialsIntro;
   return (
-    <main className="pt-45 lg:pt-38 content-boundary min-h-dvh flex flex-col gap-y-8 pb-14 lg:pb-0">
+    <main className="pt-38 content-boundary min-h-dvh flex flex-col gap-y-8 pb-14">
       <hgroup className="flex flex-col leading-none gap-y-4">
         <h1 className="text-heading-1 font-extrabold">{headline}</h1>
         <p className="text-heading-3 px-2">{subheading}</p>
