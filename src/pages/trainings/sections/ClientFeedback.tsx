@@ -4,7 +4,7 @@ import { HighlightedText } from "../../../components/HighlightedText";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { useScreen } from "../../../hooks/useScreen";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
-import QuoteMark from "../components/QuoteMark";
+import QuoteMark from "../../../components/QuoteMark";
 
 const AUTO_ROTATE_MS = 5000;
 
