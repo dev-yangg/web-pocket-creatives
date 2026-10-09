@@ -3,7 +3,7 @@ import FilterTabs from "../components/FilterTabs";
 import { blogs, blogsPagination } from "../data";
 import BlogsGrid from "../components/BlogsGrid";
 import Pagination from "../components/Pagination";
-import { useSearchParams } from "react-router";
+import { useSearchParams } from "../../../hooks/useSearchParams";
 
 const PAGE_SIZE = 9;
 
@@ -16,17 +16,11 @@ export default function BlogsFilter() {
   const rawPage = Number(searchParams.get("page")) || 1;
 
   const handleSelectCategory = (nextCategory: string) => {
-    setSearchParams(
-      { category: nextCategory, page: "1" },
-      { preventScrollReset: true },
-    );
+    setSearchParams({ category: nextCategory, page: "1" });
   };
 
   const handlePageChange = (nextPage: number) => {
-    setSearchParams(
-      { category, page: String(nextPage) },
-      { preventScrollReset: true },
-    );
+    setSearchParams({ category, page: String(nextPage) });
     sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 

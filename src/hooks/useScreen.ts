@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 
 type ScreenQuery = number | string;
 
@@ -7,19 +7,19 @@ const buildQuery = (query: ScreenQuery): string =>
 
 export function useScreen(query: ScreenQuery): boolean {
   const targetBreakpoint = buildQuery(query);
-  const [matches, setMatches] = useState<boolean>(() =>
-    typeof window !== "undefined"
-      ? window.matchMedia(targetBreakpoint).matches
-      : false,
+
+  const subscribe = useCallback(
+    (onChange: () => void) => {
+      const mql = window.matchMedia(targetBreakpoint);
+      mql.addEventListener("change", onChange);
+      return () => mql.removeEventListener("change", onChange);
+    },
+    [targetBreakpoint],
   );
 
-  useEffect(() => {
-    const mql = window.matchMedia(targetBreakpoint);
-    const handleChange = (e: MediaQueryListEvent) => setMatches(e.matches);
-    mql.addEventListener("change", handleChange);
-
-    return () => mql.removeEventListener("change", handleChange);
-  }, [targetBreakpoint]);
-
-  return matches;
+  return useSyncExternalStore(
+    subscribe,
+    () => window.matchMedia(targetBreakpoint).matches, // browser
+    () => false, // server and hydration
+  );
 }

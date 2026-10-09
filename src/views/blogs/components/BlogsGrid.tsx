@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "gatsby";
 import type { Blog } from "../data";
 import { BsArrowRight } from "react-icons/bs";
 import { cn } from "../../../lib/utils";
@@ -66,7 +66,7 @@ function Card({ image, title, tags, slug, createdAt, author }: BlogCardData) {
             <span>{createdAt}</span>
           </p>
         </div>
-        <Link to={slug} className="flex items-center gap-x-2 group">
+        <Link to={`/blogs/${slug}`} className="flex items-center gap-x-2 group">
           <span className="group-hover:translate-x-0.75 transition-transform duration-300 ease-in-out will-change-transform">
             Read More
           </span>

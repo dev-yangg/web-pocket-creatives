@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { blogs, type Blog } from "../data";
-import { Link } from "react-router";
+import { Link } from "gatsby";
 import { BsArrowRight } from "react-icons/bs";
 import CarouselControls from "../../../components/CarouselControls";
 import { useRef, useState } from "react";
@@ -92,7 +92,9 @@ function SlideMedia({
             );
           })}
         </ul>
-        <Link to={slug} className="flex items-center gap-x-2 group mt-2">
+        <Link
+          to={`/blogs/${slug}`}
+          className="flex items-center gap-x-2 group mt-2">
           <span className="group-hover:translate-x-0.75 transition-transform duration-300 ease-in-out will-change-transform">
             Read More
           </span>

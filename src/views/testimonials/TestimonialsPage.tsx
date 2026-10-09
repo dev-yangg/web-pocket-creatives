@@ -1,6 +1,6 @@
 import { BsArrowRight } from "react-icons/bs";
 import { testimonialsIntro } from "./data";
-import { Link } from "react-router";
+import { Link } from "gatsby";
 import { cn } from "../../lib/utils";
 export default function TestimonialsPage() {
   const { headline, subheading, cta } = testimonialsIntro;

@@ -1,4 +1,5 @@
-import { Link, NavLink } from "react-router";
+import { Link } from "gatsby";
+import NavLink from "./NavLink";
 import {
   applinks,
   contactInfo,

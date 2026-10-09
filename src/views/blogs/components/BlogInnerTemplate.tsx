@@ -1,5 +1,5 @@
 import { SlArrowLeft } from "react-icons/sl";
-import { Link, useParams } from "react-router";
+import { Link } from "gatsby";
 import { blogs, type BlogBlock } from "../data";
 import EmptyStateHandler from "../../../components/EmptyStateHandler";
 import RelatedNews from "./RelatedNews";
@@ -9,9 +9,12 @@ interface ContentProps {
   block: BlogBlock;
 }
 
-export default function BlogInnerTemplate() {
-  const { slug } = useParams();
-  const blog = blogs.find((blog) => blog.slug === slug);
+export default function BlogInnerTemplate({
+  pageContext,
+}: {
+  pageContext: { slug: string };
+}) {
+  const blog = blogs.find((blog) => blog.slug === pageContext.slug);
 
   if (!blog) return <EmptyStateHandler />;
 

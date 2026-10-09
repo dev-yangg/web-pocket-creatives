@@ -30,15 +30,20 @@ const readBreakpointPx = (variableName: string, fallback: number): number => {
 };
 
 export function useBreakpoint(): Record<BreakpointKey, number> {
-  const [breakpoint] = useState<Record<BreakpointKey, number>>(() => ({
-    xs: readBreakpointPx("breakpoint-xs", FALLBACK.xs),
-    sm: readBreakpointPx("breakpoint-sm", FALLBACK.sm),
-    md: readBreakpointPx("breakpoint-md", FALLBACK.md),
-    lg: readBreakpointPx("breakpoint-lg", FALLBACK.lg),
-    xl: readBreakpointPx("breakpoint-xl", FALLBACK.xl),
-    xxl: readBreakpointPx("breakpoint-2xl", FALLBACK.xxl),
-    xxxl: readBreakpointPx("breakpoint-3xl", FALLBACK.xxxl),
-  }));
+  const [breakpoint] = useState<Record<BreakpointKey, number>>(() => {
+    // Gatsby renders on the server at build time, where there is no document
+    if (typeof window === "undefined") return FALLBACK;
+
+    return {
+      xs: readBreakpointPx("breakpoint-xs", FALLBACK.xs),
+      sm: readBreakpointPx("breakpoint-sm", FALLBACK.sm),
+      md: readBreakpointPx("breakpoint-md", FALLBACK.md),
+      lg: readBreakpointPx("breakpoint-lg", FALLBACK.lg),
+      xl: readBreakpointPx("breakpoint-xl", FALLBACK.xl),
+      xxl: readBreakpointPx("breakpoint-2xl", FALLBACK.xxl),
+      xxxl: readBreakpointPx("breakpoint-3xl", FALLBACK.xxxl),
+    };
+  });
 
   return breakpoint;
 }

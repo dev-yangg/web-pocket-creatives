@@ -1,8 +1,7 @@
 import { SlArrowLeft } from "react-icons/sl";
-import { useNavigate } from "react-router";
+import { navigate } from "gatsby";
 
 export default function GoBackButton() {
-  const navigate = useNavigate();
   return (
     <button
       type="button"

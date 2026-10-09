@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import NavLink from "./NavLink";
 import { applinks } from "../data/globals";
 import { cn } from "../lib/utils";
 

@@ -1,5 +1,5 @@
 import { blogs, type Blog } from "../data";
-import { Link } from "react-router";
+import { Link } from "gatsby";
 
 type Props = Pick<Blog, "relatedIds">;
 

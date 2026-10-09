@@ -3,7 +3,7 @@ import CarouselControls from "../../../components/CarouselControls";
 import type { Swiper as SwiperType } from "swiper";
 import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Link } from "react-router";
+import { Link } from "gatsby";
 
 const videoProdSamples = [
   { label: "Beauty", src: "/videos/video-prod/beauty-slider.mp4" },

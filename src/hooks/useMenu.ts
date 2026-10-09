@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router";
+import { useLocation } from "../contexts/LocationContext";
 
 export function useMenu() {
   const [isOpen, setIsOpen] = useState(false);
