@@ -1,5 +1,5 @@
 import Component from "../../views/testimonials/TestimonialsPage";
-import Seo from "../Seo";
+import Seo from "../../components/Seo";
 
 export const Head = () => <Seo title="Testimonials" />;
 

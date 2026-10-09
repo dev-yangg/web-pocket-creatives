@@ -3,6 +3,7 @@ import type { GatsbyBrowser } from "gatsby";
 import "@fontsource-variable/inter/wght.css";
 import "swiper/css/autoplay";
 import App from "./src/App";
+import "./src/styles/index.css";
 
 export const wrapPageElement: GatsbyBrowser["wrapPageElement"] = ({
   element,

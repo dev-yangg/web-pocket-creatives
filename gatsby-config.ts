@@ -4,7 +4,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: "Pocket Creatives",
   },
-  plugins: [],
+  plugins: ["gatsby-plugin-postcss"],
 };
 
 export default config;
