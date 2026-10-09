@@ -1,2 +1,5 @@
-import Component from "../views/home/Homepage"
-export default Component
+import Component from "../views/home/Homepage";
+import Seo from "./Seo";
+
+export const Head = () => <Seo />;
+export default Component;
