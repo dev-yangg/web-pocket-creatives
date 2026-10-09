@@ -1,8 +1,9 @@
 import { HiOutlineMail } from "react-icons/hi";
 import VideoClip from "../../../components/VideoClip";
-import heroClip from "/videos/about-hero-clip.mp4";
 import flatLogo from "../../../assets/logo-flat.svg";
 import { useModal } from "../../../hooks/useModal";
+
+const heroClip = "/videos/about-hero-clip.mp4";
 
 export default function Hero() {
   const { openModal } = useModal();

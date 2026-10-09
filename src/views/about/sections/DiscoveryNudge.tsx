@@ -1,5 +1,6 @@
 import VideoClip from "../../../components/VideoClip";
-import discovery from "/videos/discovery-clip.mp4";
+
+const discovery = "/videos/discovery-clip.mp4";
 
 export default function DiscoveryNudge() {
   return (

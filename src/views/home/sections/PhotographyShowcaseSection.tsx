@@ -1,8 +1,8 @@
 import { RiCameraLensLine } from "react-icons/ri";
 import SectionShowcaseHeading from "../../../components/SectionShowcaseHeading";
-import photographDisplay from "/images/photography/beauty.webp";
 import ContactCta from "../../../components/ContactCta";
 import { useModal } from "../../../hooks/useModal";
+const photographDisplay = "/images/photography/beauty.webp";
 
 const photographyCateg = [
   { name: "Beauty", path: "/works/beauty" },

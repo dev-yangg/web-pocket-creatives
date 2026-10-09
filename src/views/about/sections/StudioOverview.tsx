@@ -1,6 +1,8 @@
 import { HiOutlineMail } from "react-icons/hi";
-import us from "/images/about/us.webp";
 import { useModal } from "../../../hooks/useModal";
+
+const us = "/images/about/us.webp";
+
 export default function StudioOverview() {
   const { openModal } = useModal();
   return (

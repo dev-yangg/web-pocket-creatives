@@ -2,8 +2,9 @@ import flatLogo from "../../../assets/logo-flat.svg";
 import logo from "../../../assets/logo.svg";
 import stock1 from "../../../assets/stock1.webp";
 import stock2 from "../../../assets/stock2.webp";
-import heroClip from "/videos/hero-clip.mp4";
 import VideoClip from "../../../components/VideoClip";
+
+const heroClip = "/videos/hero-clip.mp4";
 
 export default function Hero() {
   return (

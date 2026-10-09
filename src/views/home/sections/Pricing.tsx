@@ -1,5 +1,6 @@
-import logo from "/pocket-creatives-logo.svg";
 import { BiCheck } from "react-icons/bi";
+
+const logo = "/pocket-creatives-logo.svg";
 
 export default function Pricing() {
   return (

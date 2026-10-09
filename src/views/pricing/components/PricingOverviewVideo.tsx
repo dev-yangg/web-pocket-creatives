@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import VideoClip from "../../../components/VideoClip";
-import clip from "/training/bts/bts-03.mp4";
 import PlayIcon from "../../works/components/PlayIcon";
 import PauseIcon from "../../works/components/PauseIcon";
 import { cn } from "../../../lib/utils";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import { useScreen } from "../../../hooks/useScreen";
 
+const clip = "/training/bts/bts-03.mp4";
 const CONTROLS_HIDE_DELAY = 1500;
 
 export default function PricingOverviewVideo() {

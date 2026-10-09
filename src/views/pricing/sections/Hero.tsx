@@ -2,7 +2,8 @@ import VideoClip from "../../../components/VideoClip";
 import { useBreakpoint } from "../../../hooks/useBreakpoint";
 import { useScreen } from "../../../hooks/useScreen";
 import { heroData } from "../data";
-import heroClip from "/videos/hero-clip.mp4";
+
+const heroClip = "/videos/hero-clip.mp4";
 
 export default function Hero() {
   const { preheading, headline, paragraphs } = heroData;
