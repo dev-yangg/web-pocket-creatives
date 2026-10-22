@@ -25,3 +25,7 @@ dist-ssr
 
 .cache/
 public/
+
+
+# env
+.env
