@@ -1,12 +1,35 @@
-import flatLogo from "../../../assets/logo-flat.svg";
-import logo from "../../../assets/logo.svg";
-import stock1 from "../../../assets/stock1.webp";
-import stock2 from "../../../assets/stock2.webp";
+import parse from "html-react-parser";
 import VideoClip from "../../../components/VideoClip";
 
-const heroClip = "/videos/hero-clip.mp4";
+type Media = {
+  node: {
+    mediaItemUrl: string;
+  };
+};
 
-export default function Hero() {
+export interface HeroProps {
+  heading: string | null;
+  video: Media | null;
+  bannerlogo: Media | null;
+  bannerlogoflat: Media | null;
+  bannercutout1: Media | null;
+  bannercutout2: Media | null;
+}
+
+export default function Hero({
+  heading,
+  video,
+  bannerlogo,
+  bannerlogoflat,
+  bannercutout1,
+  bannercutout2,
+}: HeroProps) {
+  const heroClip = video?.node.mediaItemUrl;
+  const flatLogo = bannerlogoflat?.node.mediaItemUrl;
+  const logo = bannerlogo?.node.mediaItemUrl;
+  const stock1 = bannercutout1?.node.mediaItemUrl;
+  const stock2 = bannercutout2?.node.mediaItemUrl;
+
   return (
     <section className="flex flex-col gap-8 items-center">
       <div className="content-boundary">
@@ -22,21 +45,17 @@ export default function Hero() {
             <img src={stock2} alt="" className="w-auto object-contain" />
           </div>
         </header>
-        <h1 className="text-heading-3 text-grayblue text-pretty py-3 mb-6">
-          A <span className="font-bold text-blue">fast</span> &{" "}
-          <span className="font-bold text-blue md:text-yellow">friendly</span>{" "}
-          <span className="font-bold text-black">Video Production</span> and{" "}
-          <span className="font-bold text-black">Photography</span> company with{" "}
-          <span className="font-bold text-black">bags of experience</span> and
-          who <span className="text-red">♥</span> what we do.{" "}
-          <span className="inline md:hidden">:)</span>
-        </h1>
-        <VideoClip
-          toggleMuteCaption
-          isActive
-          src={heroClip}
-          className="w-full h-full rounded-xl"
-        />
+        <div className="text-heading-3 text-grayblue text-pretty py-3 mb-6">
+          {heading && parse(heading)}
+        </div>
+        {heroClip && (
+          <VideoClip
+            toggleMuteCaption
+            isActive
+            src={heroClip}
+            className="w-full h-full rounded-xl"
+          />
+        )}
       </div>
     </section>
   );
