@@ -1,26 +1,21 @@
 import PartnersCarousel from "../../../components/PartnersCarousel";
+import parse from "html-react-parser";
 
-export default function PartnerShowcase() {
+export interface PartnerShowcaseProps {
+  intro: string;
+  description: string;
+}
+
+export default function PartnerShowcase({
+  intro,
+  description,
+}: PartnerShowcaseProps) {
   return (
     <section className="py-10 lg:py-24">
       <div className="content-boundary grid grid-cols-1 md:grid-cols-2 gap-12">
         <article className="text-grayblue text-pretty">
-          <p className="font-semibold flex flex-col gap-6 text-heading-3">
-            <span>
-              As you can see, we've{" "}
-              <span className="text-yellow md:text-blue">partnered</span> with a
-              lot of amazing people
-            </span>
-            <span className="font-bold text-blue md:text-black">
-              in many different Industries:
-            </span>
-          </p>
-          <p className="mt-4">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente
-            ad eveniet, rerum rem fugit placeat autem aspernatur possimus sed
-            tempore, praesentium ducimus quo labore exercitationem nulla commodi
-            iusto temporibus veritatis!
-          </p>
+          <div className="font-semibold text-heading-3">{parse(intro)}</div>
+          <div className="mt-4">{description}</div>
         </article>
         <PartnersCarousel />
       </div>

@@ -4,18 +4,17 @@ import ContactCta from "../../../components/ContactCta";
 import { useModal } from "../../../hooks/useModal";
 const photographDisplay = "/images/photography/beauty.webp";
 
-const photographyCateg = [
-  { name: "Beauty", path: "/works/beauty" },
-  { name: "Food&Drink", path: "/works/food-drink" },
-  { name: "Product", path: "/works/product" },
-  { name: "Events", path: "/works/events" },
-  { name: "Crowdfunding", path: "/works/crowdfunding" },
-  { name: "Fashion", path: "/works/fashion" },
-  { name: "People", path: "/works/people" },
-  { name: "Jewellery", path: "/works/jewellery" },
-];
+export interface PhotographyShowcaseProps {
+  heading: string;
+  categories: { name: string }[];
+  ctaLabel: string;
+}
 
-export default function PhotographyShowcaseSection() {
+export default function PhotographyShowcaseSection({
+  heading,
+  categories,
+  ctaLabel,
+}: PhotographyShowcaseProps) {
   const { openModal } = useModal();
   return (
     <section className="py-6 md:py-14 flex flex-col gap-6">
@@ -23,11 +22,11 @@ export default function PhotographyShowcaseSection() {
         <SectionShowcaseHeading
           icon={RiCameraLensLine}
           iconClass="fill-blue"
-          label="Photography"
+          label={heading}
         />
         <div className="hidden md:grid md:grid-cols-4 order-3 md:order-2 justify-self-center">
           <ContactCta
-            label="Let's Talk"
+            label={ctaLabel}
             className="bg-blue text-white hover:bg-yellow md:col-start-3"
             onClick={() => openModal("contact")}
           />
@@ -44,18 +43,18 @@ export default function PhotographyShowcaseSection() {
             />
           </div>
           <ul className="flex flex-col">
-            {photographyCateg.map((categ) => (
+            {categories.map(({ name }) => (
               <li
-                key={categ.name}
+                key={name}
                 className="inline-block overflow-hidden custom-underline">
                 <a
                   href="/"
                   className="inline-grid group py-1 font-bold text-heading-3">
                   <span className="col-start-1 row-start-1 text-nowrap text-grayblue md:text-black group-hover:-translate-y-full transition-transform duration-150 ease-swap">
-                    {categ.name}
+                    {name}
                   </span>
                   <span className="col-start-1 row-start-1 text-nowrap text-yellow translate-y-full group-hover:translate-y-0 transition-transform duration-150 ease-swap">
-                    View {categ.name}
+                    View {name}
                   </span>
                 </a>
               </li>

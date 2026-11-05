@@ -1,16 +1,29 @@
 import BtsReviews from "./sections/BtsReviews";
-import Features from "./sections/Features";
+import Features, { type FeatureProps } from "./sections/Features";
 import Hero, { type HeroProps } from "./sections/Hero";
-import PartnerShowcase from "./sections/PartnerShowcase";
-import PhotographyProdIntro from "./sections/PhotographyProdIntro";
-import PhotographyShowcaseSection from "./sections/PhotographyShowcaseSection";
+import PartnerShowcase, {
+  type PartnerShowcaseProps,
+} from "./sections/PartnerShowcase";
+import PhotographyProdIntro, {
+  type PhotographyShowcaseIntroProps,
+} from "./sections/PhotographyProdIntro";
+import PhotographyShowcaseSection, {
+  type PhotographyShowcaseProps,
+} from "./sections/PhotographyShowcaseSection";
 import Pricing from "./sections/Pricing";
 import Team from "./sections/Team";
-import VideoProdIntro from "./sections/VideoProdIntro";
+import VideoProdIntro, {
+  type VideoShowcaseIntroProps,
+} from "./sections/VideoProdIntro";
 import VideoShowcaseSection from "./sections/VideoShowcaseSection";
 
 export interface HomepageContent {
   hero: HeroProps;
+  partnerShowcase: PartnerShowcaseProps;
+  videoShowcaseIntro: VideoShowcaseIntroProps;
+  photographyShowcaseIntro: PhotographyShowcaseIntroProps;
+  photographyShowcase: PhotographyShowcaseProps;
+  features: FeatureProps;
 }
 
 interface Props {
@@ -21,12 +34,12 @@ export default function Homepage({ content }: Props) {
   return (
     <main className="pt-app-padding-top">
       <Hero {...content.hero} />
-      <PartnerShowcase />
-      <VideoProdIntro />
+      <PartnerShowcase {...content.partnerShowcase} />
+      <VideoProdIntro {...content.videoShowcaseIntro} />
       <VideoShowcaseSection />
-      <PhotographyProdIntro />
-      <PhotographyShowcaseSection />
-      <Features />
+      <PhotographyProdIntro {...content.photographyShowcaseIntro} />
+      <PhotographyShowcaseSection {...content.photographyShowcase} />
+      <Features {...content.features} />
       <Team />
       <BtsReviews />
       <Pricing />
