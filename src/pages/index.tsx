@@ -45,6 +45,37 @@ export const query = graphql`
               mediaItemUrl
             }
           },
+        },
+        partnerShowcase {
+          intro,
+          description,
+
+        },
+        videoShowcaseIntro {
+          heading,
+          description
+        },
+        photographyShowcaseIntro {
+          heading,
+          subheading,
+          description,
+        },
+        photographyShowcase {
+          heading,
+          categories {
+            name
+          },
+          ctaLabel
+        },
+        features {
+          commitments {
+            name
+          },
+          ctaLabel,
+          featurelist {
+            label,
+            description
+          }
         }
       }
   }
