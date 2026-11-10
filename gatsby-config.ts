@@ -11,6 +11,13 @@ const config: GatsbyConfig = {
       resolve: "gatsby-source-wordpress",
       options: {
         url: process.env.WP_URL,
+        type: {
+          MediaItem: {
+            localFile: {
+              excludeByMimeTypes: [`video/mp4`, `image/svg+xml`],
+            },
+          },
+        },
       },
     },
   ],
